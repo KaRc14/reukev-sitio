@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo ReuKev · Catálogo con pedidos por WhatsApp (Dulce Hogar)</title>
+  <meta name="description" content="Demo funcional de ReuKev: catálogo web para tienda de barrio con buscador, categorías, carrito y envío del pedido por WhatsApp. Datos de ejemplo." />
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg" />
+  <link rel="stylesheet" href="../../assets/css/site.css" />
+  <style>
+    .aviso-top{background:#0F172A;color:#E2E8F0;font-size:.76rem;text-align:center;padding:.45rem 16px}
+    .aviso-top strong{color:#fff}
+    .aviso-top a{color:#059669;font-weight:700;text-decoration:none}
+    .aviso-top a:hover{text-decoration:underline}
+    .material-symbols-outlined{font-family:"Material Symbols Outlined";font-weight:normal;font-style:normal;font-size:18px;line-height:1;vertical-align:-.14em;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:"liga";font-smoothing:antialiased;font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24}
+    .icon{width:1em;height:1em;vertical-align:-.14em;display:inline-block}
+    .scrollbar-none::-webkit-scrollbar{display:none}
+    .scrollbar-none{scrollbar-width:none;-ms-overflow-style:none}
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<div class="aviso-top">
+  <strong>Demo funcional</strong> de ReuKev · los datos se guardan solo en tu navegador ·
+  <a href="https://wa.me/593991371570" target="_blank" rel="noopener">pídela para tu negocio</a>
+</div>
+
+<main class="min-h-screen">
+
+<!-- Store Header Card -->
+<section class="bg-white border-b border-slate-200 px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div class="space-y-1">
+        <div class="flex items-center gap-2 flex-wrap">
+          <h1 class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Dulce Hogar · Tienda de Barrio & Snacks</h1>
+          <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-semibold">Abierto ahora</span>
+        </div>
+        <p class="text-slate-600 flex items-center gap-1 text-sm">
+          <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Entregas directas en moto en Quito Norte, La Carolina, Mariana de Jesús y Valles.
+        </p>
+        <p class="text-slate-500 text-xs pt-1">
+          Arma tu canasta: haz clic en los productos, los totales se calculan solos y con 1 botón mandas el pedido al WhatsApp de la tienda.
+        </p>
+      </div>
+      <div class="flex items-center gap-3 bg-slate-50 px-4 py-3 rounded-lg self-start lg:self-center">
+        <div class="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <div class="text-slate-500 text-xs">Atención en Línea</div>
+          <div class="text-slate-900 font-semibold">+593 99 137 1570</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Benefit Indicators -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 mt-4 bg-slate-50/60 px-4 py-3 rounded-lg text-center">
+      <div class="flex items-center justify-center gap-1.5 text-slate-700 text-xs font-medium">
+        <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Sin registrar usuarios
+      </div>
+      <div class="flex items-center justify-center gap-1.5 text-slate-700 text-xs font-medium">
+        <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg> Entregas en 25-45 min
+      </div>
+      <div class="flex items-center justify-center gap-1.5 text-slate-700 text-xs font-medium">
+        <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg> DeUna, Efectivo o Banco
+      </div>
+      <div class="flex items-center justify-center gap-1.5 text-slate-700 text-xs font-medium">
+        <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Precios de barrio sin recargos
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter & Search Toolbar -->
+<section class="bg-white border-b border-slate-200 px-4 sm:px-6 lg:px-8 py-4">
+  <div class="max-w-5xl mx-auto">
+    <div class="bg-slate-50 rounded-xl p-3 sm:p-4 shadow-sm flex flex-col md:flex-row items-center gap-3">
+      <div class="relative w-full md:w-80">
+        <svg class="icon absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="product-search" placeholder="Buscar galletas, café, leche, aceite..." class="w-full h-11 pl-10 pr-4 bg-white rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-inner text-sm" />
+      </div>
+      <div class="flex items-center gap-2 overflow-x-auto w-full pb-1 md:pb-0 scrollbar-none" id="category-pills">
+        <button class="cat-pill active px-3.5 py-2 rounded-lg font-medium text-sm whitespace-nowrap bg-emerald-600 text-white transition-all" data-cat="all">Todos (9)</button>
+        <button class="cat-pill px-3.5 py-2 rounded-lg font-medium text-sm whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" data-cat="bebidas">Bebidas y Lácteos</button>
+        <button class="cat-pill px-3.5 py-2 rounded-lg font-medium text-sm whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" data-cat="snacks">Snacks y Golosinas</button>
+        <button class="cat-pill px-3.5 py-2 rounded-lg font-medium text-sm whitespace-nowrap bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all" data-cat="despensa">Despensa y Granos</button>
+        <button class="cat-pill px-3.5 py-2 rounded-lg font-medium text-sm whitespace-nowrap bg-slate-100 text-emerald-700 hover:bg-emerald-50 transition-all" data-cat="combos">🔥 Combos del Ahorro</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Main Two-Column Structure -->
+<section class="px-4 sm:px-6 lg:px-8 py-6">
+  <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+    <!-- Catalog Column (70%) -->
+    <section class="lg:col-span-8 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <span class="text-lg font-bold text-slate-900" id="catalog-title">Productos disponibles</span>
+        <span class="text-slate-500 text-sm" id="product-count-label">Mostrando 9 productos</span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4" id="products-grid">
+        <!-- Product 1: Café Lojano -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="despensa" data-id="1" data-name="café lojano molido" data-price="3.80">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-mani.jpg" alt="Café Lojano Molido 250g" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">250g</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Despensa</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Café Lojano Molido</h3>
+              <p class="text-slate-600 text-sm">Tueste medio artesanal aromático para pasar o cafetera.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$3.80</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(1, 'Café Lojano Molido 250g', 3.80)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 2: Aceite La Favorita -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="despensa" data-id="2" data-name="aceite la favorita 900ml" data-price="2.40">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-detergente.jpg" alt="Aceite La Favorita 900ml" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">900 ml</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Despensa</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Aceite La Favorita</h3>
+              <p class="text-slate-600 text-sm">Aceite vegetal puro sin colesterol para la cocina diaria.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$2.40</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(2, 'Aceite La Favorita 900ml', 2.40)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 3: Leche Entera Vita -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="bebidas" data-id="3" data-name="leche entera vita funda" data-price="0.95">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-jugo.jpg" alt="Leche Entera Vita 1L" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded text-[12px] font-bold shadow-sm">Funda 1 Litro</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Lácteos</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Leche Entera Vita</h3>
+              <p class="text-slate-600 text-sm">Leche pasteurizada fresca de origen andino, 100% natural.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$0.95</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(3, 'Leche Entera Vita 1L (Funda)', 0.95)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 4: Galletas Amor Vainilla -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="snacks" data-id="4" data-name="galletas amor vainilla pack" data-price="1.20">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-galletas.jpg" alt="Galletas Amor Vainilla Pack 4" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">Tira Pack x4</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Snacks</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Galletas Amor Vainilla</h3>
+              <p class="text-slate-600 text-sm">Wafers crocantes rellenos de crema de vainilla para la colación.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$1.20</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(4, 'Galletas Amor Vainilla Pack 4', 1.20)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 5: Arroz Flor Huasteca -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="despensa" data-id="5" data-name="arroz flor huasteca 2kg" data-price="2.85">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-papas.jpg" alt="Arroz Flor Huasteca 2kg" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">Funda 2 Kg</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Granos</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Arroz Flor Huasteca</h3>
+              <p class="text-slate-600 text-sm">Grano largo selecto de alto rendimiento, graneado perfecto.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$2.85</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(5, 'Arroz Flor Huasteca 2kg', 2.85)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 6: Papas Ruffles Queso -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="snacks" data-id="6" data-name="papas ruffles queso grande" data-price="1.50">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-papas.jpg" alt="Papas Ruffles Queso Grande" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">Funda Grande</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Snacks</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Ruffles Queso Grande</h3>
+              <p class="text-slate-600 text-sm">Papas fritas onduladas crocantes con intenso sabor a queso.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$1.50</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(6, 'Papas Ruffles Queso Grande', 1.50)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 7: Chocolate Manicho x3 -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="snacks" data-id="7" data-name="chocolate manicho barra x3" data-price="1.75">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-galletas.jpg" alt="Chocolate Manicho x3" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">Tripack</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Golosinas</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Chocolate Manicho (x3)</h3>
+              <p class="text-slate-600 text-sm">Chocolate con leche tradicional relleno con maní tostado.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$1.75</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(7, 'Chocolate Manicho Barra x3', 1.75)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 8: Detergente Deja Limón -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100" data-cat="despensa" data-id="8" data-name="detergente deja limon 1kg" data-price="2.60">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-detergente.jpg" alt="Detergente Deja Limón 1kg" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-white/90 px-2 py-0.5 rounded text-[12px] font-medium text-slate-900 shadow-sm">1 Kg Bolsa</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-emerald-600 uppercase tracking-wider">Limpieza</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Detergente Deja Limón</h3>
+              <p class="text-slate-600 text-sm">Remoción rápida de manchas con aroma cítrico concentrado.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm block">Precio</span>
+              <span class="text-lg font-extrabold text-slate-900">$2.60</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(8, 'Detergente Deja Limón 1kg', 2.60)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 9: Combo Desayuno Rápido -->
+        <article class="product-item bg-white rounded-xl p-4 shadow-sm flex flex-col justify-between transition-all hover:shadow-md border border-slate-100 sm:col-span-2 xl:col-span-1" data-cat="combos" data-id="9" data-name="combo desayuno rapido cafe leche galletas" data-price="5.50">
+          <div>
+            <div class="relative w-full h-44 rounded-lg bg-slate-100 overflow-hidden mb-3 flex items-center justify-center">
+              <img src="../../assets/img/demos/demo1/prod-cola.jpg" alt="Combo Desayuno Rápido" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <span class="absolute top-2 left-2 bg-amber-100 text-amber-800 px-2 py-0.5 rounded text-[12px] font-bold shadow-sm">Ahorra $0.45</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[12px] font-medium text-amber-600 uppercase tracking-wider">Ahorro del Día</span>
+              <h3 class="text-base font-bold text-slate-900 leading-snug">Combo Desayuno Rápido</h3>
+              <p class="text-slate-600 text-sm">Café Lojano 250g + Leche Vita 1L + Galletas Amor Pack 4.</p>
+            </div>
+          </div>
+          <div class="pt-3 mt-2 flex items-center justify-between border-t border-slate-100">
+            <div>
+              <span class="text-slate-500 text-sm line-through block">$5.95</span>
+              <span class="text-lg font-extrabold text-amber-600">$5.50</span>
+            </div>
+            <button class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(9, 'Combo Desayuno Rápido', 5.50)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              <span>Agregar</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- System Value Pitch Card -->
+      <div class="bg-slate-100 rounded-xl p-4 sm:p-6 shadow-sm mt-4 border border-slate-200">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-medium text-xs font-bold">Para tenderos y dueños de negocio</span>
+            <h4 class="text-lg font-bold text-slate-900">¿Quieres este catálogo funcional con tus propios productos?</h4>
+            <p class="text-slate-600 text-sm">
+              Por $250 USD configuramos tus fotos, categorías, datos de banco y tu número de WhatsApp. Listo para enviar enlaces a clientes por estados y grupos.
+            </p>
+          </div>
+          <a class="px-4 py-2 bg-slate-900 text-white rounded-lg font-medium text-sm hover:bg-slate-700 transition-all whitespace-nowrap shadow-sm" href="https://wa.me/593991371570?text=Hola%20ReuKev,%20quiero%20el%20cat%C3%A1logo%20WhatsApp%20por%20$250" target="_blank" rel="noopener">
+            Pedir el mío hoy
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar Cart Column (30%) -->
+    <aside class="lg:col-span-4 sticky top-24 space-y-4">
+      <div class="bg-white rounded-xl p-4 shadow-sm border border-slate-200">
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
+          <div class="flex items-center gap-2">
+            <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+            <h2 class="text-lg font-bold text-slate-900">Tu Pedido actual</h2>
+          </div>
+          <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-xs font-bold" id="items-badge">0 productos</span>
+        </div>
+
+        <!-- Items in cart list -->
+        <div class="space-y-3 max-h-[290px] overflow-y-auto pr-1" id="cart-items-container">
+          <p id="cart-empty" class="text-slate-500 text-sm text-center py-8">Tu carrito está vacío.<br>Añade productos desde el catálogo.</p>
+        </div>
+
+        <!-- Free Shipping Notice -->
+        <div class="mt-2 p-2 bg-slate-50 rounded-lg text-center text-xs text-slate-600">
+          <span>🛵 Envío gratis a partir de <strong>$15.00</strong></span>
+          <div class="w-full bg-slate-200 h-1.5 rounded-full mt-1 overflow-hidden">
+            <div class="bg-emerald-600 h-full rounded-full transition-all" id="free-shipping-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Numerical Breakdown -->
+        <div class="mt-2 pt-2 space-y-1 text-sm border-t border-slate-200">
+          <div class="flex justify-between text-slate-600">
+            <span>Subtotal productos</span>
+            <span class="font-semibold text-slate-900" id="subtotal-val">$0.00</span>
+          </div>
+          <div class="flex justify-between text-slate-600">
+            <span>Envío en moto estimado</span>
+            <span class="font-semibold text-slate-900" id="shipping-val">$0.00</span>
+          </div>
+          <div class="flex justify-between text-lg font-bold text-slate-900 pt-1">
+            <span>Total a pagar</span>
+            <span class="text-emerald-600 font-bold" id="total-val">$0.00 USD</span>
+          </div>
+        </div>
+
+        <!-- Checkout Form Section -->
+        <div class="mt-4 pt-3 space-y-3 border-t border-slate-200">
+          <label class="block text-xs font-semibold text-slate-700">Datos de entrega rápida:</label>
+          <input type="text" id="cust-name" placeholder="Tu nombre / quien recibe" value="Carlos Mendoza" class="w-full h-10 px-3 bg-slate-50 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-inner text-sm" oninput="updateWhatsappPreview()" />
+          <input type="text" id="cust-address" placeholder="Dirección o referencia del barrio" value="Av. América y Mariana de Jesús (Edif. Las Palmas)" class="w-full h-10 px-3 bg-slate-50 rounded-lg text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-inner text-sm" oninput="updateWhatsappPreview()" />
+          <select id="cust-payment" class="w-full h-10 px-3 bg-slate-50 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600 shadow-inner text-sm" onchange="updateWhatsappPreview()">
+            <option value="Efectivo contra entrega">Efectivo contra entrega</option>
+            <option value="Transferencia Banco Pichincha">Transferencia Banco Pichincha</option>
+            <option value="DeUna / PayPhone rápido">DeUna / PayPhone rápido</option>
+          </select>
+        </div>
+
+        <!-- Main WhatsApp Button -->
+        <div class="mt-4">
+          <button class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-base font-semibold flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]" id="send-whatsapp-btn" onclick="triggerWhatsappSend()">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span id="whatsapp-btn-text">Enviar pedido por WhatsApp</span>
+          </button>
+          <p class="text-xs text-center text-slate-500 mt-1.5 flex items-center justify-center gap-1">
+            <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Se abrirá tu app de WhatsApp con la lista redactada
+          </p>
+        </div>
+
+        <!-- WhatsApp Message Live Preview Box -->
+        <div class="mt-4 pt-3 bg-slate-50/90 rounded-lg p-3 border border-slate-200">
+          <div class="flex items-center justify-between text-slate-600 text-xs mb-1">
+            <span class="flex items-center gap-1 text-emerald-600 font-bold">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Mensaje automático de WhatsApp:
+            </span>
+            <span class="text-[11px] text-slate-400">Vista previa</span>
+          </div>
+          <pre class="whitespace-pre-wrap font-mono text-[11px] text-slate-700 leading-tight bg-white p-2 rounded shadow-inner max-h-36 overflow-y-auto" id="wa-preview">Elige productos para armar el mensaje.</pre>
+        </div>
+      </div>
+
+      <!-- Trust badge under sidebar -->
+      <div class="bg-slate-50 rounded-xl p-3 text-center space-y-1 border border-slate-200">
+        <p class="text-xs font-semibold text-slate-700">¿Por qué funciona tan bien para PYMEs?</p>
+        <p class="text-sm text-slate-600 leading-snug">
+          Cero comisiones del 25% como apps de delivery. El tendero conserva el 100% de su margen y el cliente pide en segundos.
+        </p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-slate-200 mt-8">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div class="space-y-2">
+        <div class="flex items-center gap-2 mb-2">
+          <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="text-lg font-bold text-slate-900">Dulce Hogar</span>
+        </div>
+        <p class="text-slate-600 text-sm leading-relaxed">Abarrotes, snacks, bebidas y despensa diaria con entregas directas a domicilio en moto.</p>
+        <p class="text-slate-500 text-xs flex items-center gap-1 mt-2">
+          <svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cobertura local en sectores seleccionados
+        </p>
+      </div>
+      <div class="space-y-2">
+        <h4 class="text-xs font-medium text-slate-500 uppercase tracking-wider mb-2">Formas de Pago</h4>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li class="flex items-center gap-2"><svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Efectivo contra entrega</li>
+          <li class="flex items-center gap-2"><svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M16 11h.01"/></svg>Transferencia Pichincha / Produbanco</li>
+          <li class="flex items-center gap-2"><svg class="icon text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>DeUna / PayPhone rápido</li>
+        </ul>
+      </div>
+      <div class="space-y-2 bg-slate-50 p-4 rounded-xl border border-slate-200">
+        <div class="flex items-center gap-2 text-emerald-600">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="text-lg font-bold">Pedidos 100% por WhatsApp</span>
+        </div>
+        <p class="text-slate-600 text-sm">Sin apps extra, sin registro. El pedido llega directo al chat de la tienda.</p>
+        <a href="https://wa.me/593991371570" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3 py-2 bg-emerald-600 text-white rounded-lg font-medium text-sm hover:bg-emerald-700 transition-all">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Probar demo en WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <div class="pt-4 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-slate-500">
+      <div class="flex items-center gap-1.5">
+        <span>Desarrollado por</span>
+        <a href="https://wa.me/593991371570" target="_blank" rel="noopener" class="text-emerald-600 font-medium hover:underline">ReuKev</a>
+      </div>
+      <div class="flex items-center gap-1.5">
+        <a href="../../creditos.html" class="hover:underline">Créditos de imágenes</a>
+        <span>·</span>
+        <a href="../../privacidad.html" class="hover:underline">Privacidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Cart state
+  const cart = {};
+
+  function cartCount() {
+    return Object.values(cart).reduce((sum, it) => sum + it.qty, 0);
+  }
+
+  function cartTotal() {
+    return Object.values(cart).reduce((sum, it) => sum + it.qty * it.price, 0);
+  }
+
+  function money(n) {
+    return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function addToCart(id, name, price) {
+    if (!cart[name]) cart[name] = { price: price, qty: 0 };
+    cart[name].qty++;
+    renderCart();
+    const btn = event.currentTarget;
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Listo</span>`;
+    btn.style.background = "#047857";
+    setTimeout(() => { btn.innerHTML = originalHTML; btn.style.background = ""; }, 900);
+  }
+
+  function renderCart() {
+    const badge = document.getElementById("items-badge");
+    const container = document.getElementById("cart-items-container");
+    const emptyEl = document.getElementById("cart-empty");
+    const subtotalEl = document.getElementById("subtotal-val");
+    const shippingEl = document.getElementById("shipping-val");
+    const totalEl = document.getElementById("total-val");
+    const waBtnText = document.getElementById("whatsapp-btn-text");
+    const progressBar = document.getElementById("free-shipping-bar");
+
+    const count = cartCount();
+    const subtotal = cartTotal();
+    const shipping = subtotal >= 15 ? 0 : 1.50;
+    const finalTotal = subtotal + shipping;
+
+    badge.textContent = count === 1 ? "1 producto" : count + " productos";
+    badge.classList.toggle("hidden", count === 0);
+
+    if (count === 0) {
+      container.innerHTML = "";
+      emptyEl.style.display = "block";
+      subtotalEl.textContent = "$0.00";
+      shippingEl.textContent = "$0.00";
+      totalEl.textContent = "$0.00 USD";
+      waBtnText.textContent = "Enviar pedido por WhatsApp";
+      document.getElementById("send-whatsapp-btn").disabled = true;
+      document.getElementById("send-whatsapp-btn").style.opacity = "0.5";
+      progressBar.style.width = "0%";
+      updateWhatsappPreview();
+      return;
+    }
+
+    emptyEl.style.display = "none";
+    document.getElementById("send-whatsapp-btn").disabled = false;
+    document.getElementById("send-whatsapp-btn").style.opacity = "1";
+
+    let html = "";
+    Object.keys(cart).forEach(name => {
+      const it = cart[name];
+      const itemSub = it.price * it.qty;
+      html += `
+        <div class="cart-item bg-slate-50/70 p-2 rounded-lg flex items-center justify-between gap-2" data-cart-name="${name.replace(/"/g, '"')}">
+          <div class="min-w-0 flex-1">
+            <h5 class="text-sm font-medium text-slate-900 truncate">${name}</h5>
+            <p class="text-xs text-slate-500">${money(it.price)} c/u</p>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="updateQty('${name.replace(/'/g, "\\'")}', -1)" class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center font-bold hover:bg-slate-300 transition-colors">−</button>
+            <span class="w-6 text-center text-sm font-medium text-slate-900">${it.qty}</span>
+            <button onclick="updateQty('${name.replace(/'/g, "\\'")}', 1)" class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center font-bold hover:bg-slate-300 transition-colors">+</button>
+          </div>
+          <div class="text-right min-w-[50px]">
+            <span class="text-sm font-medium text-slate-900">${money(itemSub)}</span>
+            <button onclick="removeItem('${name.replace(/'/g, "\\'")}')" class="text-red-600 block text-[11px] hover:underline ml-auto">Quitar</button>
+          </div>
+        </div>
+      `;
+    });
+    container.innerHTML = html;
+
+    subtotalEl.textContent = money(subtotal);
+    shippingEl.textContent = shipping === 0 ? "Gratis" : money(shipping);
+    totalEl.textContent = money(finalTotal) + " USD";
+    waBtnText.textContent = "Enviar pedido por WhatsApp (" + money(finalTotal) + ")";
+
+    const progressPct = Math.min(100, Math.round((subtotal / 15) * 100));
+    progressBar.style.width = progressPct + "%";
+
+    updateWhatsappPreview(subtotal, shipping, finalTotal);
+  }
+
+  function updateQty(name, delta) {
+    if (!cart[name]) return;
+    cart[name].qty += delta;
+    if (cart[name].qty <= 0) delete cart[name];
+    renderCart();
+  }
+
+  function removeItem(name) {
+    delete cart[name];
+    renderCart();
+  }
+
+  function updateWhatsappPreview(subtotalVal, shippingVal, finalTotalVal) {
+    const previewEl = document.getElementById('wa-preview');
+    if (!previewEl) return;
+
+    if (Object.keys(cart).length === 0) {
+      previewEl.textContent = 'Elige productos para armar el mensaje.';
+      return;
+    }
+
+    const name = document.getElementById('cust-name')?.value || 'Cliente';
+    const address = document.getElementById('cust-address')?.value || 'Por definir con la tienda';
+    const payment = document.getElementById('cust-payment')?.value || 'Efectivo';
+
+    let sub = 0;
+    const lines = Object.keys(cart).map(n => {
+      const it = cart[n];
+      const lineCost = it.price * it.qty;
+      sub += lineCost;
+      return `- ${it.qty}x ${n} (${money(lineCost)})`;
+    });
+
+    const ship = sub >= 15 ? 0 : 1.50;
+    const grand = sub + ship;
+
+    const message =
+`Hola Dulce Hogar, quiero hacer este pedido:
+${lines.join('\n')}
+---------------------
+Subtotal: ${money(sub)}
+Envío en moto: ${ship === 0 ? 'Gratis' : money(ship)}
+TOTAL: ${money(grand)} USD
+Método de Pago: ${payment}
+Cliente: ${name}
+Dirección: ${address}
+
+¿Me confirman tiempo estimado de entrega? Gracias!`;
+
+    previewEl.textContent = message;
+  }
+
+  function triggerWhatsappSend() {
+    if (Object.keys(cart).length === 0) {
+      alert('Por favor agrega al menos un producto al pedido.');
+      return;
+    }
+    const previewText = document.getElementById('wa-preview')?.textContent || '';
+    const encoded = encodeURIComponent(previewText);
+    window.open(`https://wa.me/593991371570?text=${encoded}`, '_blank');
+  }
+
+  // Filter Categories
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.cat-pill');
+    const items = document.querySelectorAll('.product-item');
+    const countLabel = document.getElementById('product-count-label');
+    const searchInput = document.getElementById('product-search');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('active', 'bg-emerald-600', 'text-white');
+          p.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        pill.classList.add('active', 'bg-emerald-600', 'text-white');
+        pill.classList.remove('bg-slate-100', 'text-slate-700');
+
+        const cat = pill.getAttribute('data-cat');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const itemCat = item.getAttribute('data-cat');
+          if (cat === 'all' || itemCat === cat) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (countLabel) countLabel.textContent = `Mostrando ${visibleCount} productos`;
+      });
+    });
+
+    // Real-time search
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const name = item.getAttribute('data-name') || '';
+          if (name.includes(query)) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (countLabel) countLabel.textContent = `Mostrando ${visibleCount} productos`;
+      });
+    }
+
+    renderCart();
+  });
+</script>
+</body>
+</html>
