@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary": "#ffffff", "inverse-on-surface": "#eef0ff", "on-background": "#131b2e", "primary-fixed": "#85f8c4", "on-secondary": "#ffffff", "tertiary": "#9b3e3b", "surface-bright": "#faf8ff", "on-primary-fixed": "#002114", "on-tertiary-fixed": "#410004", "secondary-fixed": "#97f5cc", "surface-variant": "#dae2fd", "background": "#faf8ff", "on-tertiary-container": "#fffbff", "surface-dim": "#d2d9f4", "surface-container": "#eaedff", "tertiary-container": "#ba5551", "on-primary-container": "#f5fff7", "secondary-container": "#97f5cc", "surface-container-highest": "#dae2fd", "surface-tint": "#006c4a", "on-tertiary-fixed-variant": "#7f2928", "on-primary-fixed-variant": "#005137", "on-secondary-fixed": "#002115", "outline": "#6d7a72", "error": "#ba1a1a", "surface-container-high": "#e2e7ff", "tertiary-fixed": "#ffdad7", "on-tertiary": "#ffffff", "surface": "#faf8ff", "inverse-surface": "#283044", "outline-variant": "#bccac0", "surface-container-low": "#f2f3ff", "tertiary-fixed-dim": "#ffb3ae", "on-surface-variant": "#3d4a42", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#00513a", "on-secondary-container": "#007353", "primary": "#006948", "primary-fixed-dim": "#68dba9", "inverse-primary": "#68dba9", "primary-container": "#00855d", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#7bd8b1", "on-error": "#ffffff", "on-surface": "#131b2e", "on-error-container": "#93000a", "secondary": "#006c4e" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-xl": "2.5rem", "gutter": "1.5rem", "space-xs": "0.5rem", "margin": "2rem", "space-md": "1rem", "space-lg": "1.5rem", "space-sm": "0.75rem" }, fontFamily: { "headline-sm": ["Inter"], "label-sm": ["Inter"], "display-hero-mobile": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "display-hero": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"] }, fontSize: { "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-28 flex flex-col justify-between px-space-md"><div class="flex items-center justify-between h-9 px-space-xs bg-surface-container rounded-full mt-1"><div class="flex items-center gap-1.5 overflow-hidden"><span class="w-2 h-2 rounded-full bg-primary animate-pulse flex-shrink-0"></span><span class="font-label-sm text-label-sm text-on-surface truncate">Demo por ReuKev · Citas $490</span></div><a class="font-label-sm text-label-sm text-primary font-semibold flex-shrink-0 px-2 py-1" href="#">Volver</a></div><div class="flex items-center justify-between pb-2"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Sonrisas Dental</span><span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">schedule</span>Lun-Sáb 9:00 - 19:00</span></div><div class="flex items-center gap-2"><a aria-label="Llamada rápida" class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed active:scale-95 transition-transform" href="tel:+525500000000"><span class="material-symbols-outlined text-[20px]">call</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-28 pb-32 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="px-space-md pt-2 pb-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-1.5 self-start px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold">Demo interactiva lista</span>
+</div>
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Clínica Dental ProSonrisa</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Agenda tu consulta en 60 segundos sin filas ni esperas telefónicas.</p>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+        Quito Norte
+      </span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">bolt</span>
+        Cita sin llamadas
+      </span>
+<span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">chat</span>
+        Aviso WhatsApp
+      </span>
+</div>
+</div>
+<section class="px-space-md py-space-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] font-bold">1</span>
+        Selecciona tu Tratamiento
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 opciones</span>
+</div>
+<div class="flex flex-col gap-2.5" id="treatment-list">
+<div class="treatment-card cursor-pointer p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between transition-all bg-primary-fixed/20 text-on-surface" data-duration="45 min" data-price="35" data-title="Limpieza Dental Profunda" data-treatment="limpieza">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">clean_hands</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Limpieza Dental Profunda</span>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">schedule</span> 45 min</span>
+<span>•</span>
+<span class="text-primary font-semibold">Profilaxis + Ultrasonido</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm text-primary">$35</span>
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+</div>
+<div class="treatment-card cursor-pointer p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between transition-all text-on-surface hover:bg-surface-container-low" data-duration="30 min" data-price="20" data-title="Evaluación &amp; Radiografía" data-treatment="evaluacion">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">radiology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Evaluación &amp; Radiografía</span>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">schedule</span> 30 min</span>
+<span>•</span>
+<span>Diagnóstico integral</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">$20</span>
+<span class="w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+</div>
+</div>
+<div class="treatment-card cursor-pointer p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between transition-all text-on-surface hover:bg-surface-container-low" data-duration="50 min" data-price="30" data-title="Curación Resina Estética" data-treatment="resina">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">dentistry</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Curación Resina Estética</span>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">schedule</span> 50 min</span>
+<span>•</span>
+<span>Tono natural del diente</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">$30</span>
+<span class="w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+</div>
+</div>
+<div class="treatment-card cursor-pointer p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between transition-all text-on-surface hover:bg-surface-container-low" data-duration="60 min" data-price="90" data-title="Blanqueamiento LED" data-treatment="blanqueamiento">
+<div class="flex items-start gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">flare</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Blanqueamiento LED</span>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-0.5"><span class="material-symbols-outlined text-[14px]">schedule</span> 60 min</span>
+<span>•</span>
+<span>Aclara hasta 4 tonos</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0 pl-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">$90</span>
+<span class="w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center mt-1">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-space-md py-space-sm flex flex-col gap-space-sm mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] font-bold">2</span>
+        Profesional Odontológico
+      </span>
+<span class="font-label-sm text-label-sm text-outline">Equipo de ejemplo</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5" id="doctor-list">
+<div class="doctor-card cursor-pointer p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2 transition-all bg-primary-fixed/20 text-on-surface" data-doctor="valeria" data-name="Dra. Valeria Paredes">
+<div class="relative w-full h-24 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of Doctor Valeria Paredes, a friendly professional female dentist in clean medical uniform with warm lighting and bright clinic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTNuL00dYtSbl0FnAqnkUtiCtblLaWSGdO3CWmLyLpBLgmNnjJhHQq1fv18FD8JiQThT-Ib7xxFkTXmfF5O1yqPoiEYgx2CAWkzm3ko-vkvjd5ZKfpdtvAdR9eChCqDwXh_Y4rKmiCCkDJ61u6SHHE1NCOmMlWRwAY4I5FjyQ-fNlushvLPib1zuC1rvEMrDgEmgtX4Pi3uiR4pzgHNi0MIvkByD9WQuHdIVoRbjw"/>
+<span class="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Dra. Valeria Paredes</span>
+<span class="font-label-sm text-label-sm text-primary truncate">General &amp; Estética</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[12px] mt-0.5">Exp. 7 años · 4.9 ★</span>
+</div>
+</div>
+<div class="doctor-card cursor-pointer p-3 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2 transition-all text-on-surface hover:bg-surface-container-low" data-doctor="esteban" data-name="Dr. Esteban Andrade">
+<div class="relative w-full h-24 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Portrait of Doctor Esteban Andrade, professional male oral rehabilitation dentist in navy scrub standing inside modern dental facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCieF7NSuMhyPsvbP3Amq5eQcfWkCNFRYqzZdrimXe-mpV7i0shyC0Rpb81CpPzBHkIQ1IJdhMq5z8eAlAKckXgj6s8Z_01G6FlddIPiG9naOkrU1ycFbul6loSmUd0ygSGuMDJsoLyW8p6M3f0u5KJYJRyi6S63ZVmw80pV2pYX9-By6jXWVjvPDICXSziAKHdixjn7T_actF2JwQOYWTXJ2e38GbzKi1sik5rORc"/>
+<span class="absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]">add</span>
+</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Dr. Esteban Andrade</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Rehabilitación Oral</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[12px] mt-0.5">Exp. 10 años · 5.0 ★</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-space-md py-space-sm flex flex-col gap-space-sm mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] font-bold">3</span>
+        Fecha y Turno
+      </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Octubre 2024</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="days-row">
+<button class="day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-low" data-day="Lun 14 Oct" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lun</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">14</span>
+</button>
+<button class="day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-low" data-day="Mar 15 Oct" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mar</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">15</span>
+</button>
+<button class="day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-primary text-on-primary shadow-sm transition-all" data-day="Mié 16 Oct" type="button">
+<span class="font-label-sm text-label-sm opacity-90">Mié</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">16</span>
+</button>
+<button class="day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-low" data-day="Jue 17 Oct" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Jue</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">17</span>
+</button>
+<button class="day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-low" data-day="Vie 18 Oct" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vie</span>
+<span class="font-headline-sm text-headline-sm font-bold mt-0.5">18</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 mt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Horarios disponibles:</span>
+<div class="grid grid-cols-5 gap-1.5" id="hours-grid">
+<button class="hour-chip py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm text-center shadow-sm" data-hour="09:00" type="button">09:00</button>
+<button class="hour-chip py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm text-center shadow-sm" data-hour="10:30" type="button">10:30</button>
+<button class="hour-chip py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm text-center shadow-sm" data-hour="14:30" type="button">14:30</button>
+<button class="hour-chip py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold text-center shadow-sm" data-hour="15:30" type="button">15:30</button>
+<button class="hour-chip py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm text-center shadow-sm" data-hour="17:00" type="button">17:00</button>
+</div>
+</div>
+</section>
+<section class="px-space-md py-space-sm flex flex-col gap-space-sm mt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[12px] font-bold">4</span>
+        Datos de Contacto
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sin registro</span>
+</div>
+<div class="flex flex-col gap-3 p-4 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="input-name">Nombre y Apellido</label>
+<div class="flex items-center gap-2 px-3 h-11 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px] text-outline">person</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface outline-none placeholder:text-outline" id="input-name" type="text" value="Carlos Mendoza"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="input-phone">WhatsApp para confirmación</label>
+<div class="flex items-center gap-2 px-3 h-11 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px] text-primary">chat</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface outline-none placeholder:text-outline" id="input-phone" type="tel" value="+593 99 824 1092"/>
+</div>
+</div>
+<label class="flex items-start gap-2.5 pt-1 cursor-pointer select-none">
+<input checked="" class="mt-0.5 w-4 h-4 rounded text-primary focus:ring-0 accent-primary" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-snug">Quiero recibir recordatorio por WhatsApp 24h antes con ubicación GPS</span>
+</label>
+</div>
+</section>
+<section class="px-space-md py-space-sm flex flex-col gap-3 mt-1">
+<div class="p-4 rounded-2xl bg-surface-container flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+          Resumen de Cita
+        </span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Turno Pre-reservado</span>
+</div>
+<div class="flex flex-col gap-2 p-3 rounded-xl bg-surface-container-lowest text-on-surface">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface" id="summary-treatment">Tu Cita: Limpieza Dental ($35)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="summary-datetime">Mié 16 Oct · 15:30 con Dra. Valeria Paredes</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-primary font-bold" id="summary-total">$35</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span class="material-symbols-outlined text-[16px] text-primary">pin_drop</span>
+<span>Edif. Ágora, Av. Eloy Alfaro, Quito</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Mensaje pre-armado simulado:</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">WhatsApp Directo</span>
+</div>
+<div class="p-3 rounded-xl bg-on-surface/5 text-on-surface flex flex-col gap-1">
+<p class="font-label-sm text-label-sm text-on-surface leading-relaxed" id="whatsapp-preview">
+            "Hola ProSonrisa, deseo confirmar mi cita de *Limpieza Dental Profunda* para el *Mié 16 Oct a las 15:30* con la *Dra. Valeria Paredes*. Mi nombre es *Carlos Mendoza*. Total: *$35 USD*."
+          </p>
+</div>
+</div>
+<button class="w-full h-12 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:scale-[0.99] transition-transform shadow-md" id="btn-confirm" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span id="confirm-btn-text">Confirmar Cita por WhatsApp ($35)</span>
+</button>
+<p class="font-label-sm text-label-sm text-center text-on-surface-variant">
+        🔒 Sin registros ni contraseñas. Tu turno queda apartado al instante.
+      </p>
+</div>
+</section>
+<section class="px-space-md pt-2 pb-space-lg flex flex-col">
+<div class="p-4 rounded-2xl bg-surface-container-high flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">storefront</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md font-semibold text-on-surface">¿Quieres este sistema para tu consultorio?</span>
+<span class="font-label-sm text-label-sm text-primary">Solución lista para PYMEs odontológicas</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Por <strong class="text-on-surface">$490 USD</strong> te armamos tu agenda web con recordatorios automáticos por WhatsApp y panel de control personalizado.
+      </p>
+<div class="flex items-center gap-3 pt-1">
+<a class="w-full h-11 rounded-xl bg-on-surface text-inverse-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 active:scale-[0.99] transition-transform" href="https://wa.me/525500000000?text=Hola%20ReuKev,%20quiero%20cotizar%20el%20sistema%20de%20citas%20dental%20de%20$490">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+          Cotizar con ReuKev ($490)
+        </a>
+</div>
+</div>
+</section>
+<script>
+    (function() {
+      const state = {
+        treatment: 'Limpieza Dental Profunda',
+        price: '35',
+        doctor: 'Dra. Valeria Paredes',
+        day: 'Mié 16 Oct',
+        hour: '15:30',
+        name: 'Carlos Mendoza'
+      };
+
+      const treatmentCards = document.querySelectorAll('.treatment-card');
+      const doctorCards = document.querySelectorAll('.doctor-card');
+      const dayChips = document.querySelectorAll('.day-chip');
+      const hourChips = document.querySelectorAll('.hour-chip');
+      const inputName = document.getElementById('input-name');
+      const summaryTreatment = document.getElementById('summary-treatment');
+      const summaryDatetime = document.getElementById('summary-datetime');
+      const summaryTotal = document.getElementById('summary-total');
+      const confirmBtnText = document.getElementById('confirm-btn-text');
+      const whatsappPreview = document.getElementById('whatsapp-preview');
+
+      function updateSummary() {
+        summaryTreatment.textContent = `Tu Cita: ${state.treatment} ($${state.price})`;
+        summaryDatetime.textContent = `${state.day} · ${state.hour} con ${state.doctor}`;
+        summaryTotal.textContent = `$${state.price}`;
+        confirmBtnText.textContent = `Confirmar Cita por WhatsApp ($${state.price})`;
+        whatsappPreview.textContent = `"Hola ProSonrisa, deseo confirmar mi cita de *${state.treatment}* para el *${state.day} a las ${state.hour}* con la *${state.doctor}*. Mi nombre es *${state.name}*. Total: *$${state.price} USD*."`;
+      }
+
+      treatmentCards.forEach(card => {
+        card.addEventListener('click', () => {
+          treatmentCards.forEach(c => {
+            c.classList.remove('bg-primary-fixed/20');
+            c.classList.add('bg-surface-container-lowest');
+            const iconWrap = c.querySelector('span.material-symbols-outlined:last-child');
+            if (iconWrap && iconWrap.parentElement) {
+              iconWrap.parentElement.className = 'w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center mt-1';
+              iconWrap.textContent = 'add';
+            }
+          });
+
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-primary-fixed/20');
+          const activeIcon = card.querySelector('span.material-symbols-outlined:last-child');
+          if (activeIcon && activeIcon.parentElement) {
+            activeIcon.parentElement.className = 'w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center mt-1';
+            activeIcon.textContent = 'check';
+          }
+
+          state.treatment = card.dataset.title;
+          state.price = card.dataset.price;
+          updateSummary();
+        });
+      });
+
+      doctorCards.forEach(card => {
+        card.addEventListener('click', () => {
+          doctorCards.forEach(c => {
+            c.classList.remove('bg-primary-fixed/20');
+            c.classList.add('bg-surface-container-lowest');
+            const badge = c.querySelector('.absolute');
+            if (badge) {
+              badge.className = 'absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-surface-container text-outline flex items-center justify-center shadow-sm';
+              const ico = badge.querySelector('.material-symbols-outlined');
+              if (ico) ico.textContent = 'add';
+            }
+          });
+
+          card.classList.remove('bg-surface-container-lowest');
+          card.classList.add('bg-primary-fixed/20');
+          const activeBadge = card.querySelector('.absolute');
+          if (activeBadge) {
+            activeBadge.className = 'absolute top-1.5 right-1.5 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm';
+            const ico = activeBadge.querySelector('.material-symbols-outlined');
+            if (ico) ico.textContent = 'check';
+          }
+
+          state.doctor = card.dataset.name;
+          updateSummary();
+        });
+      });
+
+      dayChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          dayChips.forEach(c => {
+            c.className = 'day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-surface-container-lowest text-on-surface shadow-sm transition-all hover:bg-surface-container-low';
+          });
+          chip.className = 'day-chip flex flex-col items-center justify-center min-w-[62px] py-2 px-1 rounded-xl bg-primary text-on-primary shadow-sm transition-all';
+          state.day = chip.dataset.day;
+          updateSummary();
+        });
+      });
+
+      hourChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          hourChips.forEach(c => {
+            c.className = 'hour-chip py-2 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm text-center shadow-sm';
+          });
+          chip.className = 'hour-chip py-2 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold text-center shadow-sm';
+          state.hour = chip.dataset.hour;
+          updateSummary();
+        });
+      });
+
+      if (inputName) {
+        inputName.addEventListener('input', (e) => {
+          state.name = e.target.value.trim() || 'Paciente';
+          updateSummary();
+        });
+      }
+
+      const btnConfirm = document.getElementById('btn-confirm');
+      if (btnConfirm) {
+        btnConfirm.addEventListener('click', () => {
+          const text = encodeURIComponent(`Hola ProSonrisa, deseo confirmar mi cita de ${state.treatment} para el ${state.day} a las ${state.hour} con ${state.doctor}. Mi nombre es ${state.name}. Total: $${state.price} USD.`);
+          window.open(`https://wa.me/593998241092?text=${text}`, '_blank');
+        });
+      }
+    })();
+  </script>
+</div><footer class="w-full mt-auto px-space-md py-space-lg bg-surface-container-low flex flex-col gap-space-xs text-center"><p class="font-label-md text-label-md text-on-surface">Sonrisas Dental · Consultorio Odontológico</p><p class="font-label-sm text-label-sm text-on-surface-variant flex items-center justify-center gap-1"><span class="material-symbols-outlined text-[16px]">pin_drop</span> Av. Principal 124, Consultorio 3 · Tel. (55) 1234-5678</p><div class="flex items-center justify-center gap-1 pt-1"><span class="font-label-sm text-label-sm text-outline">Desarrollo web por</span><span class="font-label-sm text-label-sm font-semibold text-primary">ReuKev</span></div></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 transition-colors text-primary font-semibold" data-path="citas" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5">Citas</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="tratamientos" href="#"><span class="material-symbols-outlined text-[22px]">medical_services</span><span class="font-label-sm text-label-sm mt-0.5">Tratamientos</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="doctores" href="#"><span class="material-symbols-outlined text-[22px]">badge</span><span class="font-label-sm text-label-sm mt-0.5">Doctores</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] px-2 text-on-surface-variant hover:text-on-surface transition-colors" data-path="ubicacion" href="#"><span class="material-symbols-outlined text-[22px]">location_on</span><span class="font-label-sm text-label-sm mt-0.5">Ubicación</span></a></div></nav></body></html>

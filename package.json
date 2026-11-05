@@ -1,0 +1,16 @@
+{
+  "name": "reukev-sitio-freelance",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio portafolio de ReuKev (servicios freelance): build local de CSS y herramientas de verificación.",
+  "scripts": {
+    "build:css": "npx tailwindcss@3.4.17 -i src/tailwind.css -o sitio-web/assets/css/site.css --minify",
+    "verify": "node tools/verify.mjs",
+    "capturas": "node tools/capturas.mjs",
+    "serve": "python3 -m http.server 8080 --directory sitio-web"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

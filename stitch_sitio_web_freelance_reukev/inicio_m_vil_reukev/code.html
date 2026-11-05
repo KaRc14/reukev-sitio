@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-container": "#f5fff7", "error-container": "#ffdad6", "on-tertiary-fixed": "#410004", "outline": "#6d7a72", "surface-container": "#eaedff", "surface": "#ffffff", "inverse-primary": "#68dba9", "on-tertiary-container": "#fffbff", "on-tertiary-fixed-variant": "#7f2928", "secondary-fixed-dim": "#7bd8b1", "secondary": "#006c4e", "tertiary-container": "#ba5551", "inverse-on-surface": "#eef0ff", "inverse-surface": "#283044", "primary-fixed-dim": "#68dba9", "surface-bright": "#faf8ff", "on-secondary-container": "#007353", "on-secondary-fixed-variant": "#00513a", "on-tertiary": "#ffffff", "surface-dim": "#d2d9f4", "surface-container-high": "#e2e7ff", "on-primary": "#ffffff", "primary": "#006948", "on-secondary": "#ffffff", "on-surface-variant": "#3d4a42", "tertiary": "#9b3e3b", "on-primary-fixed": "#002114", "secondary-fixed": "#97f5cc", "tertiary-fixed-dim": "#ffb3ae", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "surface-container-lowest": "#ffffff", "primary-fixed": "#85f8c4", "on-secondary-fixed": "#002115", "primary-container": "#00855d", "surface-container-highest": "#dae2fd", "secondary-container": "#97f5cc", "on-surface": "#131b2e", "surface-tint": "#006c4a", "surface-variant": "#dae2fd", "on-primary-fixed-variant": "#005137", "background": "#ffffff", "tertiary-fixed": "#ffdad7", "on-background": "#131b2e", "outline-variant": "#bccac0", "on-error": "#ffffff", "on-error-container": "#93000a" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.75rem", "space-xl": "2.5rem", "space-xs": "0.5rem", "gutter": "1.5rem" }, fontFamily: { "label-md": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "headline-lg": ["Inter"], "body-lg": ["Inter"], "display-hero-mobile": ["Inter"], "label-sm": ["Inter"], "display-hero": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"] }, fontSize: { "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ReuKev</span><span class="w-1.5 h-1.5 rounded-full bg-primary mb-1"></span></div><div class="flex items-center gap-space-xs"><a class="min-h-[44px] px-space-sm rounded-lg bg-primary hover:bg-primary-container text-on-primary flex items-center gap-1 font-label-md text-label-md transition-colors" href="https://wa.me/" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp</span></a><button aria-label="Menú de opciones" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-on-surface rounded-lg transition-colors"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="flex flex-col px-space-md pt-4 pb-8 bg-surface">
+<!-- Badge Ubicación / Enfoque -->
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-xs mb-3 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-semibold tracking-wide">Software ágil para PYMEs en Ecuador</span>
+</div>
+<!-- Titular Principal -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mb-3">
+      Deja de perder pedidos en WhatsApp. Te armo un sistema simple, con precio fijo.
+    </h1>
+<!-- Subtítulo -->
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+      Pedidos, citas, inventario y reportes para negocios de Ecuador. Entrega en días, el código es tuyo.
+    </p>
+<!-- Botones de Acción Móvil -->
+<div class="flex flex-col gap-3 w-full mb-6">
+<a class="w-full h-12 px-space-md rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-[0.98]" href="https://wa.me/" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Escríbeme por WhatsApp</span>
+</a>
+<a class="w-full h-12 px-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" href="#demos-section">
+<span class="material-symbols-outlined text-[20px] text-primary">visibility</span>
+<span>Ver demos en vivo</span>
+</a>
+</div>
+<!-- Garantías Clave -->
+<div class="flex flex-col gap-2 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm mb-6">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm">Precio fijo antes de empezar</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm">Código y accesos a tu nombre</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-label-sm">30 días de garantía de funcionamiento</span>
+</div>
+</div>
+<!-- Mockup Móvil de Demo Simplificado -->
+<div class="w-full rounded-2xl bg-surface-container-high p-2 shadow-md">
+<!-- Barra de navegación simulada -->
+<div class="flex items-center justify-between px-3 py-1.5 mb-2 bg-surface-container-lowest rounded-t-xl text-outline">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed"></span>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">lock</span> panel.reukev.ec
+        </span>
+<span class="material-symbols-outlined text-[14px]">more_vert</span>
+</div>
+<!-- Contenido interactivo del panel demo -->
+<div class="bg-surface-container-lowest rounded-xl p-3 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-sm text-xs text-outline">Despachos de hoy</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">14 pedidos</p>
+</div>
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-xs font-semibold">
+            94% a tiempo
+          </span>
+</div>
+<!-- Tarjetas de pedidos en el mockup -->
+<div class="flex flex-col gap-2">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-xs text-on-surface truncate">Distribuidora Morales (Quito)</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">3 bultos · Pago verificado</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-primary text-on-primary">Listo</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">inventory_2</span>
+</div>
+<div class="min-w-0">
+<p class="font-label-md text-xs text-on-surface truncate">Ferretería Central (Guayaquil)</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant">12 ítems · Empacando</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-secondary-container text-on-secondary-container">En ruta</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. EL DÍA A DÍA (REALIDAD CONTEXTUAL) -->
+<section class="flex flex-col px-space-md py-space-xl bg-surface-container-low">
+<div class="mb-5">
+<span class="font-label-sm text-xs uppercase tracking-wider text-primary font-bold">Problemas frecuentes</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-2">
+        La realidad de manejar un negocio con libretas y chats dispersos
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Cuando tu negocio empieza a vender más, la mezcla de WhatsApp, hojas de cálculo y memoria humana deja de funcionar y empieza a costar dinero.
+      </p>
+</div>
+<!-- 3 Tarjetas de dolores operativos -->
+<div class="flex flex-col gap-3.5">
+<!-- Tarjeta 1 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">chat_error</span>
+</div>
+<h3 class="font-headline-sm text-[17px] text-on-surface">Pedidos que se pierden</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">
+          El pedido entra por WhatsApp, se anota en un cuaderno y nadie sabe cuáles quedaron pendientes ni a quién le correspondía despachar.
+        </p>
+<div class="flex items-center gap-1.5 text-tertiary font-label-sm text-xs pt-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Alerta: Clientes molestos por demoras continuas.</span>
+</div>
+</div>
+<!-- Tarjeta 2 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">production_quantity_limits</span>
+</div>
+<h3 class="font-headline-sm text-[17px] text-on-surface">Inventario a ojo</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">
+          Se vende lo que ya no hay en stock físico, falta sincronización entre vendedores y se pierde dinero haciendo devoluciones apresuradas.
+        </p>
+<div class="flex items-center gap-1.5 text-tertiary font-label-sm text-xs pt-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Alerta: Rotura de stock no detectada a tiempo.</span>
+</div>
+</div>
+<!-- Tarjeta 3 -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">schedule_send</span>
+</div>
+<h3 class="font-headline-sm text-[17px] text-on-surface">Reportes a mano</h3>
+</div>
+<p class="font-body-md text-sm text-on-surface-variant">
+          Alguien del equipo se queda hasta tarde los domingos copiando datos en Excel o libretas para cuadrar las ventas de la semana y calcular ganancias.
+        </p>
+<div class="flex items-center gap-1.5 text-tertiary font-label-sm text-xs pt-1">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Alerta: Horas semanales perdidas en tareas mecánicas.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. MÍRALO FUNCIONANDO (DEMOS) -->
+<section class="flex flex-col px-space-md py-space-xl bg-surface" id="demos-section">
+<div class="mb-5">
+<span class="font-label-sm text-xs uppercase tracking-wider text-primary font-bold">Soluciones comprobadas</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-2">
+        Míralo funcionando: sistemas reales y fáciles de usar
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Herramientas digitales creadas para ser aprendidas en menos de 10 minutos. Cero configuraciones enredadas.
+      </p>
+</div>
+<!-- 3 Tarjetas de Demo -->
+<div class="flex flex-col gap-5">
+<!-- Demo 1 -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="h-44 w-full bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A clean modern mobile UI mockup of a product catalog in Spanish for an Ecuadorian retail shop with shopping cart, price in USD, and green WhatsApp order button on a light background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqw9VALU0FlnNN7euLHyaiW9arlreGk0YygFY3RXC2fsNTzoL78JaQxF3hIiTi65afybbBDTnga0HLnLMvlwDCEdvW4ZvPcxePR5IWV6GSsAHVknFoYqf43K4jVsDZ7wUIXVP_SZMmGnejnxT_8O2gZwIo7F2hdPiI5YWtQdopEnmPL-hXqjoQpQn73yDqrhQi3uV985Oq9ebDSe1O6NiN-QsuR2pC6QaLvX3Opqs"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-surface/90 backdrop-blur font-label-sm text-xs text-primary font-semibold shadow-sm">
+            Demo 01
+          </div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<span class="inline-block self-start px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-xs">
+            Ideal para: Tiendas y emprendedores
+          </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Catálogo con pedidos por WhatsApp</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+            Tus clientes eligen productos, el carro calcula el total exacto con entrega local y envía el resumen con un solo clic listo para despachar.
+          </p>
+<button class="mt-2 w-full h-11 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span>Abrir demo interactiva</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Demo 2 -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="h-44 w-full bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Modern smartphone appointment booking calendar interface showing Ecuadorian business hours, client appointment slots, and automated reminder alerts on clean minimal UI layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI7jZA9YzAP5udFmeBd5RKUmUkHcAalHaZoGEIT20t3Guxt8ZA3XOvojdwSFyoEgbdbQQzi-mYgI2Ggpau0CGZDJiqrCWnEL4tiYBYPgtYh66JpiUXr4uq4Oc6dbxbJtPD-Xpm9VQKa0lEVcusl76gfeJmCfnhVBKGeLJUQBH2fn8yPC97w_rgY4r9sNp614tjtOk4imzSRsDU4_mHnqJLFsodG4P9tDO8TR6uLt0"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-surface/90 backdrop-blur font-label-sm text-xs text-primary font-semibold shadow-sm">
+            Demo 02
+          </div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<span class="inline-block self-start px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-xs">
+            Ideal para: Consultorios y servicios con cita
+          </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Clínica con agenda de citas</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+            Disponibilidad en tiempo real sin cruces de turnos, confirmación automática por WhatsApp y bloqueo de horarios de almuerzo o feriados.
+          </p>
+<button class="mt-2 w-full h-11 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span>Abrir demo interactiva</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Demo 3 -->
+<div class="flex flex-col rounded-2xl bg-surface-container-lowest shadow-sm overflow-hidden">
+<div class="h-44 w-full bg-surface-container-high relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Clean corporate dashboard card preview displaying mobile daily sales report, stock inventory alerts, and revenue metrics in US Dollars with clear green highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH7ce6KBYf4VvL4NyAi8Hazp7ld7V2yUFST1V3mK_uJBoQGU50Y5DoRtHBEvX5Mc61FnHmQhUFwjLLjIsIfHjxxP8E35TjvzYoD-dV_HlfgPf8ELe8YC5Ocj9ZXcr7d1-dFZ6kAJKLWRHG1-Ju228ETRiJ8SpPsI6lxBMo3CJszxLXVhxWYAb5sAgSZdVC9bu9m3rwepBVh_ovvxOflb7FV1Z8Lk_OZqKkMIYh1mc"/>
+<div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-surface/90 backdrop-blur font-label-sm text-xs text-primary font-semibold shadow-sm">
+            Demo 03
+          </div>
+</div>
+<div class="p-4 flex flex-col gap-2">
+<span class="inline-block self-start px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-xs">
+            Ideal para: Negocios con equipo de ventas
+          </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inventario con reportes</h3>
+<p class="font-body-md text-sm text-on-surface-variant">
+            Control de entradas, salidas por sucursal, alertas preventivas antes de quedarte sin stock y cierre de caja automático diario.
+          </p>
+<button class="mt-2 w-full h-11 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors" type="button">
+<span>Abrir demo interactiva</span>
+<span class="material-symbols-outlined text-[18px] text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Nota Destacada Demos -->
+<div class="mt-5 p-3 rounded-xl bg-surface-container flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-[20px] text-primary shrink-0">info</span>
+<p class="font-label-sm text-xs">
+        Demos funcionales con datos de ejemplo. Pídela personalizada con el logo y productos de tu negocio.
+      </p>
+</div>
+</section>
+<!-- 4. PRECIOS CLAROS -->
+<section class="flex flex-col px-space-md py-space-xl bg-surface-container-low">
+<div class="mb-4">
+<span class="font-label-sm text-xs uppercase tracking-wider text-primary font-bold">Inversión transparente</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-1">
+        Precios claros, sin letras pequeñas ni sorpresas
+      </h2>
+<p class="font-label-sm text-xs text-on-surface-variant">
+        Precios en USD + IVA · 50% al empezar y 50% contra entrega conforme.
+      </p>
+</div>
+<!-- Banner Programa Fundadores -->
+<div class="mb-5 p-4 rounded-xl bg-primary text-on-primary shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-on-primary text-primary font-label-md text-xs font-bold uppercase">
+          Solo 3 cupos
+        </span>
+<span class="font-label-sm text-xs text-on-primary-container">Ecuador 2026</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-primary">Programa Fundadores (-20%)</h3>
+<p class="font-body-md text-xs text-on-primary-container">
+        Obtén 20% de descuento directo en cualquier plan a cambio de documentar tu caso de éxito y publicar un testimonio corto de tu negocio.
+      </p>
+<a class="mt-1 w-full h-10 rounded-lg bg-surface text-primary font-label-md text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" href="https://wa.me/?text=Hola%20Kevin,%20quiero%20aplicar%20al%20cupo%20del%20Programa%20Fundadores" target="_blank">
+<span>Aplicar al cupo (-20%)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Tarjetas de Planes -->
+<div class="flex flex-col gap-4">
+<!-- Plan Básico -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Básico</h3>
+<p class="font-label-sm text-xs text-outline">Para empezar a ordenar pedidos</p>
+</div>
+<span class="font-label-sm text-xs px-2 py-0.5 rounded bg-surface-container text-on-surface">3-7 días</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">$250</span>
+<span class="font-label-sm text-xs text-outline">USD + IVA</span>
+</div>
+<ul class="flex flex-col gap-2 font-label-sm text-xs text-on-surface-variant mb-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>1 entregable (landing o catálogo con WhatsApp)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>1 automatización puntual de notificación</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Capacitación en video grabado para tu equipo</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>30 días de garantía con soporte directo</span>
+</li>
+</ul>
+<a class="w-full h-11 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors" href="https://wa.me/?text=Hola%20Kevin,%20me%20interesa%20el%20Plan%20Basico" target="_blank">
+          Elegir Básico
+        </a>
+</div>
+<!-- Plan Estándar (Destacado) -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-md flex flex-col gap-3 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary px-3 py-1 rounded-bl-xl text-on-primary font-label-sm text-[11px] font-bold uppercase tracking-wider">
+          Recomendado
+        </div>
+<div class="flex justify-between items-start pt-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Estándar</h3>
+<p class="font-label-sm text-xs text-outline">Para negocios en crecimiento activo</p>
+</div>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">$490</span>
+<span class="font-label-sm text-xs text-outline">USD + IVA</span>
+<span class="ml-2 font-label-sm text-[11px] text-secondary font-medium">1-2 semanas</span>
+</div>
+<ul class="flex flex-col gap-2 font-label-sm text-xs text-on-surface-variant mb-2">
+<li class="flex items-center gap-2 font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+<span>Hasta 3 piezas conectadas (agenda, pedidos, cotizador PDF)</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Hasta 3 automatizaciones ligeras</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>2 rondas completas de revisión y ajustes</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>30 días de garantía y acompañamiento</span>
+</li>
+</ul>
+<a class="w-full h-11 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center shadow-sm transition-transform active:scale-98" href="https://wa.me/?text=Hola%20Kevin,%20quiero%20empezar%20con%20el%20Plan%20Estandar" target="_blank">
+          Elegir plan Estándar
+        </a>
+</div>
+<!-- Plan Avanzado -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Avanzado</h3>
+<p class="font-label-sm text-xs text-outline">Operaciones con múltiples sucursales</p>
+</div>
+<span class="font-label-sm text-xs px-2 py-0.5 rounded bg-surface-container text-on-surface">2-4 semanas</span>
+</div>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold">$1.150</span>
+<span class="font-label-sm text-xs text-outline">USD + IVA</span>
+</div>
+<ul class="flex flex-col gap-2 font-label-sm text-xs text-on-surface-variant mb-2">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Varios usuarios con roles y permisos específicos</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Reportes automáticos semanales programados</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Conexión con tu facturador o SRI por API</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">check</span>
+<span>Capacitación en vivo de 2 horas para tu equipo</span>
+</li>
+</ul>
+<a class="w-full h-11 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center transition-colors" href="https://wa.me/?text=Hola%20Kevin,%20quiero%20conversar%20sobre%20el%20Plan%20Avanzado" target="_blank">
+          Elegir Avanzado
+        </a>
+</div>
+</div>
+<!-- Acordeón Desplegable: Extras y Mantenimiento -->
+<div class="mt-4 rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-label-md text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.chevron-icon').classList.toggle('rotate-180');" type="button">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">add_circle</span>
+<span>Extras y mantenimiento mensual opcional</span>
+</span>
+<span class="material-symbols-outlined text-[20px] transition-transform chevron-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 pt-1 font-body-md text-xs text-on-surface-variant flex flex-col gap-2.5">
+<div class="flex justify-between items-center py-1">
+<span>Mantenimiento preventivo mensual y backups</span>
+<span class="font-bold text-on-surface">$35 / mes</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span>Automatización o webhook adicional</span>
+<span class="font-bold text-on-surface">$50</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span>Integración de pasarela de pago (Payphone/Datafast)</span>
+<span class="font-bold text-on-surface">$120</span>
+</div>
+<p class="font-label-sm text-[11px] text-outline mt-1">El mantenimiento es 100% voluntario. Tú decides si lo gestionas solo o con mi apoyo.</p>
+</div>
+</div>
+<div class="mt-4 text-center">
+<a class="font-label-sm text-xs text-primary hover:underline flex items-center justify-center gap-1" href="https://wa.me/?text=Hola%20Kevin,%20tengo%20un%20proyecto%20especifico%20y%20necesito%20cotizacion" target="_blank">
+<span>¿Necesitas algo más grande o específico? Escríbeme y lo cotizamos</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</section>
+<!-- 5. CÓMO TRABAJO & QUIÉN SOY -->
+<section class="flex flex-col px-space-md py-space-xl bg-surface">
+<div class="mb-5">
+<span class="font-label-sm text-xs uppercase tracking-wider text-primary font-bold">Metodología ágil</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-2">
+        Cómo trabajo
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Sin burocracia ni intermediarios. Cada etapa tiene objetivos claros y entregables visibles desde la primera semana.
+      </p>
+</div>
+<!-- 4 Pasos numerados en lista vertical -->
+<div class="flex flex-col gap-3 mb-8">
+<!-- Paso 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-md text-xs flex items-center justify-center shrink-0">
+          1
+        </div>
+<div>
+<h4 class="font-headline-sm text-sm text-on-surface">Conversación gratis (30-45 min)</h4>
+<p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+            Analizamos tu flujo actual, vemos dónde se traban los pedidos y acordamos qué vale la pena automatizar primero.
+          </p>
+</div>
+</div>
+<!-- Paso 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-md text-xs flex items-center justify-center shrink-0">
+          2
+        </div>
+<div>
+<h4 class="font-headline-sm text-sm text-on-surface">Alcance y precio cerrado</h4>
+<p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+            Un documento de 1 página con qué hace exactamente el sistema, la fecha de entrega y el costo total inamovible.
+          </p>
+</div>
+</div>
+<!-- Paso 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-md text-xs flex items-center justify-center shrink-0">
+          3
+        </div>
+<div>
+<h4 class="font-headline-sm text-sm text-on-surface">Desarrollo con avances reales</h4>
+<p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+            Pruebas el sistema en un enlace privado desde los primeros días. Ajustamos detalles sobre la marcha sin sorpresas.
+          </p>
+</div>
+</div>
+<!-- Paso 4 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary font-label-md text-xs flex items-center justify-center shrink-0">
+          4
+        </div>
+<div>
+<h4 class="font-headline-sm text-sm text-on-surface">Entrega y 30 días de garantía</h4>
+<p class="font-body-md text-xs text-on-surface-variant mt-0.5">
+            Todas las claves a tu nombre, capacitación grabada para tus empleados y soporte directo para cualquier ajuste.
+          </p>
+</div>
+</div>
+</div>
+<!-- Tarjeta Quién Soy -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-3.5">
+<div class="relative shrink-0">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Kevin, an Ecuadorian pragmatic software developer with a friendly smile, casual navy polo shirt, modern warm home office background in Quito." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrzohAxA6Hm7Q4fWNQDBnZi0UHR9JqnB6H4DQOGxqC9ovOi3xGkdRGjKjhsB-PTLFTV-2jBa14YUahHA7B3aWMnG6M_-gYbVyImaVsaB-B2vIWLJOxIU0lbjY_0MkEefM3UGnoMNCMc4m9BdRUp1it-C1Yaa4RE0VKw3tCyqaIFEEyiS-oax303beMiSm8aeIIb_QL-jH3MLknyE6DHix7KdAEavxvkB6u4NZIeAw"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-base text-on-surface">Kevin · ReuKev</h3>
+</div>
+<p class="font-label-sm text-xs text-primary font-medium">Desarrollador de software en Ecuador</p>
+</div>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant italic bg-surface-container-low p-3 rounded-xl">
+        "Hablas directo conmigo. Yo defino, reviso y pruebo cada entrega, y uso herramientas modernas de IA para construir rápido y sin rodeos costosos."
+      </p>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-[11px] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">location_on</span>
+          Ecuador · Remoto
+        </span>
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-[11px] flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+          Respuesta en &lt; 2 horas
+        </span>
+</div>
+</div>
+</section>
+<!-- 6. PREGUNTAS FRECUENTES (FAQ) & FORMULARIO -->
+<section class="flex flex-col px-space-md py-space-xl bg-surface-container-low">
+<div class="mb-5">
+<span class="font-label-sm text-xs uppercase tracking-wider text-primary font-bold">Dudas resueltas</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight mt-1 mb-2">
+        Preguntas frecuentes
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Respuestas honestas sobre costos, tiempos y propiedad de tus sistemas.
+      </p>
+</div>
+<!-- Acordeón FAQ -->
+<div class="flex flex-col gap-2.5 mb-8">
+<!-- FAQ 1 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿Cuánto cuesta?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Los proyectos típicos van desde $250 hasta $1.150 USD + IVA dependiendo de la complejidad. El precio se define antes de comenzar y nunca aumenta.
+        </div>
+</div>
+<!-- FAQ 2 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿En cuánto tiempo lo tengo?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Entre 3 y 14 días laborables según el plan. Al trabajar de manera ágil y sin intermediarios, las primeras pantallas funcionales las pruebas a los pocos días de iniciar.
+        </div>
+</div>
+<!-- FAQ 3 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿El código es mío?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Sí, 100%. Te entrego el repositorio de código, credenciales de alojamiento y accesos a tu propio nombre. Cero retenciones ni dependencias obligatorias.
+        </div>
+</div>
+<!-- FAQ 4 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿Y si algo falla?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Tienes 30 días de garantía total después de la entrega. Si surge cualquier error o falla inesperada, lo soluciono de inmediato sin costo extra.
+        </div>
+</div>
+<!-- FAQ 5 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿Por qué no usar Tiendanube o Shopify?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Esas plataformas cobran mensualidades eternas en dólares, comisiones por transacción y no se adaptan al flujo local de pago contra entrega o transferencias Pichincha/Guayaquil como lo hace una solución a medida.
+        </div>
+</div>
+<!-- FAQ 6 -->
+<div class="rounded-xl bg-surface-container-lowest overflow-hidden shadow-sm">
+<button class="w-full p-4 flex items-center justify-between text-left font-headline-sm text-sm text-on-surface" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('.faq-icon').classList.toggle('rotate-180');" type="button">
+<span>¿Sirve para un negocio pequeño?</span>
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform faq-icon">expand_more</span>
+</button>
+<div class="hidden px-4 pb-4 font-body-md text-xs text-on-surface-variant">
+          Precisamente está pensado para negocios de 1 a 15 personas. Te ahorra la contratación de personal administrativo adicional ordenando tus canales desde el día uno.
+        </div>
+</div>
+</div>
+<!-- FORMULARIO DE CONTACTO DIRECTO -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cuéntame sobre tu negocio</h3>
+<p class="font-body-md text-xs text-on-surface-variant mt-1">
+          Completa los datos y te enviará un mensaje directo a mi WhatsApp para coordinar la llamada de 30 minutos sin compromiso.
+        </p>
+</div>
+<form class="flex flex-col gap-3" id="contact-form" onsubmit="event.preventDefault(); const n=document.getElementById('c-name').value; const b=document.getElementById('c-biz').value; const p=document.getElementById('c-prob').value; const text=encodeURIComponent('Hola Kevin, mi nombre es ' + n + ' de ' + b + '. Problema a resolver: ' + p); window.open('https://wa.me/?text=' + text, '_blank');">
+<!-- Campo: Nombre -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-xs text-on-surface font-semibold" for="c-name">Tu nombre</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface text-on-surface font-body-md text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="c-name" placeholder="Ej. Carlos Mendoza" required="" type="text"/>
+</div>
+<!-- Campo: Negocio -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-xs text-on-surface font-semibold" for="c-biz">Nombre de tu negocio o rubro</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface text-on-surface font-body-md text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="c-biz" placeholder="Ej. Distribuidora Quito / Calzado" required="" type="text"/>
+</div>
+<!-- Campo: Problema -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-xs text-on-surface font-semibold" for="c-prob">¿Qué problema necesitas resolver?</label>
+<textarea class="w-full p-3 rounded-lg bg-surface text-on-surface font-body-md text-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary resize-none shadow-sm" id="c-prob" placeholder="Ej. Perdemos tiempo pasando pedidos de WhatsApp a facturas y no sabemos el stock real." required="" rows="3"></textarea>
+</div>
+<!-- Botón Enviar WhatsApp -->
+<button class="mt-2 w-full h-12 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-[0.98]" type="submit">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Escribir por WhatsApp</span>
+</button>
+<!-- Privacidad -->
+<p class="font-label-sm text-[11px] text-outline text-center mt-1 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">lock</span>
+<span>Tus datos son privados. Solo los usaré para responderte directamente.</span>
+</p>
+</form>
+</div>
+</section>
+<!-- CIERRE RÁPIDO DE CONFIANZA -->
+<section class="px-space-md py-6 bg-surface text-center flex flex-col items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+</div>
+<p class="font-headline-sm text-base text-on-surface">¿Listo para ordenar las operaciones de tu empresa?</p>
+<p class="font-body-md text-xs text-on-surface-variant max-w-[320px]">
+      Hablemos hoy mismo. Evaluemos juntos si el software a medida es la mejor opción para tu momento actual.
+    </p>
+</section>
+</div><footer class="mt-space-xl px-space-md py-space-lg bg-surface border-t-0 shadow-[0_-1px_6px_rgba(0,0,0,0.02)] flex flex-col gap-space-sm text-on-surface-variant"><div class="flex flex-col gap-1"><p class="font-headline-sm text-headline-sm text-on-surface">ReuKev</p><p class="font-label-sm text-label-sm">Software e ingeniería operacional para PYMEs.</p></div><div class="flex flex-col gap-1.5 mt-space-xs text-outline"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">location_on</span><span class="font-body-md text-body-md text-on-surface-variant">Ecuador</span></div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">schedule</span><span class="font-body-md text-body-md text-on-surface-variant">Lun - Vie: 9:00 - 18:00 (GMT-5)</span></div></div><div class="flex flex-wrap gap-x-space-md gap-y-2 mt-space-xs pt-space-xs font-label-sm text-label-sm"><a class="hover:text-primary transition-colors min-h-[44px] flex items-center" data-path="servicios" href="#">Servicios</a><a class="hover:text-primary transition-colors min-h-[44px] flex items-center" data-path="nosotros" href="#">Nosotros</a><a class="hover:text-primary transition-colors min-h-[44px] flex items-center" data-path="contacto" href="#">Contacto</a><a class="hover:text-primary transition-colors min-h-[44px] flex items-center" data-path="privacidad" href="#">Privacidad</a></div><p class="font-label-sm text-label-sm text-outline mt-space-xs">© 2026 ReuKev. Todos los derechos reservados.</p></footer></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] transition-colors text-primary font-bold" data-path="inicio" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm text-xs">Inicio</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="servicios" href="#"><span class="material-symbols-outlined text-[22px]">terminal</span><span class="font-label-sm text-label-sm text-xs">Servicios</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="proyectos" href="#"><span class="material-symbols-outlined text-[22px]">layers</span><span class="font-label-sm text-label-sm text-xs">Proyectos</span></a><a class="flex flex-col items-center justify-center min-w-[44px] min-h-[44px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="contacto" href="#"><span class="material-symbols-outlined text-[22px]">call</span><span class="font-label-sm text-label-sm text-xs">Contacto</span></a></div></nav></body></html>

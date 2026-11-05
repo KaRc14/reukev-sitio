@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed-variant": "#005137", "on-error-container": "#93000a", "error": "#ba1a1a", "on-error": "#ffffff", "on-primary": "#ffffff", "on-secondary-fixed-variant": "#00513a", "surface-container-highest": "#dae2fd", "outline-variant": "#bccac0", "tertiary-fixed-dim": "#ffb3ae", "primary-fixed-dim": "#68dba9", "on-surface-variant": "#3d4a42", "primary": "#006948", "on-secondary": "#ffffff", "inverse-surface": "#283044", "tertiary": "#9b3e3b", "secondary-container": "#97f5cc", "on-primary-fixed": "#002114", "on-secondary-fixed": "#002115", "error-container": "#ffdad6", "on-tertiary-fixed": "#410004", "surface-container": "#eaedff", "inverse-on-surface": "#eef0ff", "on-background": "#131b2e", "surface-bright": "#faf8ff", "secondary": "#006c4e", "on-tertiary": "#ffffff", "tertiary-fixed": "#ffdad7", "surface-container-low": "#f2f3ff", "tertiary-container": "#ba5551", "secondary-fixed": "#97f5cc", "surface-container-high": "#e2e7ff", "on-secondary-container": "#007353", "inverse-primary": "#68dba9", "primary-container": "#00855d", "surface-tint": "#006c4a", "on-tertiary-container": "#fffbff", "on-surface": "#131b2e", "surface-dim": "#d2d9f4", "primary-fixed": "#85f8c4", "background": "#faf8ff", "outline": "#6d7a72", "on-primary-container": "#f5fff7", "surface-variant": "#dae2fd", "surface-container-lowest": "#ffffff", "on-tertiary-fixed-variant": "#7f2928", "secondary-fixed-dim": "#7bd8b1", "surface": "#faf8ff" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-sm": "0.75rem", "gutter": "1.5rem", "space-xl": "2.5rem", "space-lg": "1.5rem", "margin": "2rem", "space-xs": "0.5rem" }, "fontFamily": { "headline-md": ["Inter"], "headline-sm": ["Inter"], "display-hero": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "label-md": ["Inter"], "display-hero-mobile": ["Inter"], "body-md": ["Inter"], "headline-lg-mobile": ["Inter"], "label-sm": ["Inter"] }, "fontSize": { "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "display-hero": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700"}], "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}], "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "display-hero-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-lg-mobile": ["26px", {"lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700"}], "label-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 w-full z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full bg-inverse-surface text-inverse-on-surface px-margin py-space-xs text-center flex flex-wrap items-center justify-center gap-space-sm font-label-sm text-label-sm"><span class="flex items-center gap-1 font-label-sm text-label-sm text-surface-container-highest"><span class="material-symbols-outlined text-[16px]">info</span>Demo funcional creada por ReuKev</span><span class="hidden sm:inline text-surface-variant/40">·</span><a class="underline hover:text-surface-container-highest transition-colors font-label-sm text-label-sm" href="#">Volver al sitio principal</a><span class="hidden sm:inline text-surface-variant/40">·</span><a class="bg-primary text-on-primary px-space-sm py-0.5 rounded font-label-sm text-label-sm hover:bg-primary-container transition-colors" href="#">Quiero un catálogo así por $250</a></div><div class="h-20 bg-surface/95 backdrop-blur-xl border-b border-outline-variant/30"><div class="max-w-[1200px] mx-auto px-margin h-full flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-headline-sm shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"><span class="material-symbols-outlined text-[24px]">storefront</span></div><div><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Dulce Hogar</span><span class="hidden sm:inline-block px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Minimarket</span></div><p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span>Abierto hoy hasta las 20:00 · Envíos en moto Quito/Guayaquil</p></div></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-lg"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded" data-path="catalogo-de-productos" href="#">Catálogo</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded" data-path="ofertas-y-combos" href="#">Combos del Día</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded" data-path="seguimiento-de-pedido" href="#">Estado de Pedido</a></nav><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] font-label-md text-label-md" data-path="resumen-del-pedido" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="hidden sm:inline">Mi Pedido</span><span class="ml-1 px-1.5 py-0.2 bg-white/20 rounded-full font-label-sm text-label-sm text-on-primary">0</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-28 bg-surface min-h-[calc(100vh-28rem)]"><div class="flex flex-col w-full">
+<!-- Demo banner strip embedded inside demo view -->
+<div class="w-full bg-surface-container-high py-space-xs px-margin flex items-center justify-between text-on-surface flex-wrap gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="inline-flex w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-bold text-on-surface">Demo Interactiva #1:</span>
+<span class="text-on-surface-variant">Catálogo Web WhatsApp para Tiendas y Minimarkets</span>
+</div>
+<div class="flex items-center gap-space-md font-label-sm text-label-sm">
+<span class="hidden md:inline text-on-surface-variant">¿Tienes una tienda? Se entrega listo en 4 días</span>
+<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1" href="#">
+<span>Cotizar sistema $250</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="max-w-[1240px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-space-md">
+<!-- Store Header Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm mb-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Dulce Hogar · Tienda de Barrio &amp; Snacks</h1>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">Abierto ahora</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[18px]">near_me</span>
+            Entregas directas en moto en Quito Norte, La Carolina, Mariana de Jesús y Valles.
+          </p>
+<p class="font-label-sm text-label-sm text-on-surface-variant/90 pt-1">
+            Arma tu canasta de inmediato: haz clic en los productos, tus totales se calculan solos y con 1 botón mandas el pedido formal al WhatsApp de la tienda.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-sm rounded-lg self-start lg:self-center">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">chat</span>
+</div>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Atención en Línea</div>
+<div class="font-label-md text-label-md text-on-surface">+593 99 824 1092</div>
+</div>
+</div>
+</div>
+<!-- Quick Benefit Indicators -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-md mt-space-md bg-surface-container-low/60 p-space-sm rounded-lg text-center">
+<div class="flex items-center justify-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">speed</span> Sin registrar usuarios
+        </div>
+<div class="flex items-center justify-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">delivery_dining</span> Entregas en 25 - 45 min
+        </div>
+<div class="flex items-center justify-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">qr_code</span> DeUna, Efectivo o Banco
+        </div>
+<div class="flex items-center justify-center gap-1.5 font-label-sm text-label-sm text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">lock</span> Precios de barrio sin recargos
+        </div>
+</div>
+</div>
+<!-- Filter & Search Toolbar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm sm:p-space-md shadow-sm mb-space-md flex flex-col md:flex-row items-center gap-space-sm">
+<div class="relative w-full md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant/70 text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-4 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary shadow-inner" id="product-search" placeholder="Buscar galletas, café, leche, aceite..." type="text"/>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto w-full pb-1 md:pb-0 scrollbar-none" id="category-pills">
+<button class="cat-pill active px-3.5 py-2 rounded-lg font-label-sm text-label-sm whitespace-nowrap bg-primary text-on-primary transition-all" data-cat="all">
+          Todos (9)
+        </button>
+<button class="cat-pill px-3.5 py-2 rounded-lg font-label-sm text-label-sm whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-cat="bebidas">
+          Bebidas y Lácteos
+        </button>
+<button class="cat-pill px-3.5 py-2 rounded-lg font-label-sm text-label-sm whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-cat="snacks">
+          Snacks y Golosinas
+        </button>
+<button class="cat-pill px-3.5 py-2 rounded-lg font-label-sm text-label-sm whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-cat="despensa">
+          Despensa y Granos
+        </button>
+<button class="cat-pill px-3.5 py-2 rounded-lg font-label-sm text-label-sm whitespace-nowrap bg-surface-container-low text-on-surface hover:bg-surface-container transition-all" data-cat="combos">
+          🔥 Combos del Ahorro
+        </button>
+</div>
+</div>
+<!-- Main Two-Column Structure (70% Catalog / 30% Live Order Sidebar) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Catalog Column (approx 70% width: 8 cols out of 12) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface" id="catalog-title">Productos disponibles</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="product-count-label">Mostrando 9 productos</span>
+</div>
+<!-- Product Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-space-md" id="products-grid">
+<!-- Product 1 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="despensa" data-id="1" data-name="café lojano molido" data-price="3.80">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Traditional Ecuadorian packaged ground coffee bag from Loja, warm studio lighting with burlap coffee beans background, pristine product packaging photo, emerald accent styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2xi6J3IK14Bos5Yzm9nPvX0L8GgusC__VEREzJgfqglcPdUFJQN-Yfc8AcKngYo1CqhCqCYPh6eWM_HbUBAuEj8r6KDfoxHwp3-cyXVZ0Ob3YaITwJFZYXzz8zG8jdE_i6XhbqCQNyjX7Z5A7zHzQGbHGbsh4wzrr-sKttq8BV_MZXpF7yB2WLtfUlWVrNUWXNcQmjs04exXJ3x1ZGxBLjpTcydrHLOfZqP3s5p4"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">250g</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Despensa</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Café Lojano Molido</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Tueste medio artesanal aromático para pasar o cafetera.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$3.80</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(1, 'Café Lojano Molido 250g', 3.80)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="despensa" data-id="2" data-name="aceite la favorita 900ml" data-price="2.40">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Plastic bottle of cooking vegetable oil with gold sunflower liquid on clean white kitchen pantry shelf, bright direct lighting, commercial grocery store packaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB19RATMPxcCkPj623eb1yu-rbwi_YUunZz5FkckvVwf3vmf7PmlramGdez3D8Cpta0k7er6xnw5QtENkFg6A9JQwsy8FqEaocgW281413iwp-7FmjMtnZD-VANPc8pSrVZUuK8QpPyztrK3bXhLZF5Ssmv8ySA5pHg8fukR-pGpco6PAz0oIrPqIWpOKUGKPnBqaLRDzzWmYH31N56WzsHu8uoRfS9l-4jXly0UZU"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">900 ml</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Despensa</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Aceite La Favorita</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Aceite vegetal puro sin colesterol para la cocina diaria.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$2.40</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(2, 'Aceite La Favorita 900ml', 2.40)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="bebidas" data-id="3" data-name="leche entera vita funda" data-price="0.95">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Ecuadorian pasteurized whole milk pouch pack on chilled marble counter with fresh morning kitchen sunlight, crisp clean grocery product shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZvFrSvvYB-2cicIb1nIPFDwGGo2oBbg0DWgzJ-ugpBhvoi52sJ243UJnHQ1O_YIyYdVuMGelXFd6DYi-rTgXRO8-1MFw5ci1665vzGFblg3zqPHzewvK2gIYOEoKDX62BQdjQIFdbpCfBne1vM5Ig2fdkrNLpgYqsaPnlXkjTsaibf9CJx78CutS3iotoHAJ7318Mi4q7PQrt4ojltI0fLMprlzn84oNVuGk6zkM"/>
+<span class="absolute top-2 left-2 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[12px] font-label-sm font-bold shadow-sm">Funda 1 Litro</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Lácteos</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Leche Entera Vita</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Leche pasteurizada fresca de origen andino, 100% natural.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$0.95</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(3, 'Leche Entera Vita 1L (Funda)', 0.95)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 4 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="snacks" data-id="4" data-name="galletas amor vainilla pack" data-price="1.20">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Wafer cookie multipack Amor Vanilla red and cream wrapping, Ecuadorian favorite snack snack bar setting, clear vibrant lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdALVHlUqL4RDd4oOrCoVYni8W1KI4zVnGs2JtpUQ3NVcCsdKhZN6E4Q17yGSXTizzb3nK9evi_9AVGulu1Qxw6--8UeqI59YAtbs8CjERvCainid3SH3j4ad5GNGL9NElkodFR7eozW-q2EJtA2dAOQqxQGc4LMulVAO3q2C5rWKQwEwXSX5hWhcmEV35bIx9jHY-v5QPlla8V3KAeYm74uIYPWMy1TjVRSta7nU"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">Tira Pack x4</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Snacks</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Galletas Amor Vainilla</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Wafers crocantes rellenos de crema de vainilla para la colación.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$1.20</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(4, 'Galletas Amor Vainilla Pack 4', 1.20)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 5 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="despensa" data-id="5" data-name="arroz flor huasteca 2kg" data-price="2.85">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Two kilogram grain rice bag sealed packaging labeled Flor Huasteca, natural grocery store shelf environment with soft warm ambient shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUUgvnfVMWrIDMQKHohQgNWgCP6ybssuXUSf5x1SFWA6tdoDD1Qy7RmXx89cZ4E0iGaUxkFZiE_bPvStVcllpDno53xhgw1eQwi4JchHOmq_v8AldPN9Y4MybnXH6Yvopov5nThrMXRSEnMo5C75bhtXmFphPcFGaAxlQGrtpWEEg7nCWKAqXypVqF_os4I3HYNIckffyvgh3YFbKkz-GAruYddCfND54dlz9n7OI"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">Funda 2 Kg</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Granos</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Arroz Flor Huasteca</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Grano largo selecto de alto rendimiento, graneado perfecto.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$2.85</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(5, 'Arroz Flor Huasteca 2kg', 2.85)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 6 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="snacks" data-id="6" data-name="papas ruffles queso grande" data-price="1.50">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Large bag of ridged potato chips cheddar cheese flavored packaging on wooden table with soda cup nearby, sharp detail and vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1i37HlgmXP_ouVj5T6CxCi8Sh7HftmXesI-NAurGvsd-WSiD13t_h6544cfcpoHL5N07g0MEOE92gT0dTx6BSPFKjMfaOmrIqERQktK1EbyzpFbu7EldL17FMBAPFLIcYXKx4l71CYDn3MdvRc3tIYc7BQ3e4juVscJXPVUpxEUky2H7YsU7KSKCLtzyR-a_uBBMWJkhgkgyyUI7OMXU1gvOkEbJj8trbw6baZEU"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">Funda Grande</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Snacks</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Ruffles Queso Grande</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Papas fritas onduladas crocantes con intenso sabor a queso.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$1.50</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(6, 'Papas Ruffles Queso Grande', 1.50)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 7 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="snacks" data-id="7" data-name="chocolate manicho barra x3" data-price="1.75">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Trio pack of Ecuadorian peanut milk chocolate bars Manicho in classic yellow wrappers on wood snack table with sliced cocoa nibs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoaCQvmrtrPOmj1dHL-VE4Zqet_ZSRzeK1N-UMGeIUNpyADPsQAafK-1V3wxVHeNggQWaTORlORVEvqsIqR-aves3pLPulDDtd8MrXRkMAOWtJ58vng3PECP8DI2p_6qlTYTvnIdYxGIHF-_LE1sS0h0M2ku9kG_7VEcDp0wOEpQ_5n62mG6P5qugMrd451QWNZE7cygKfqAd8qNFySfHlfMOYuUGS3mGFlzCdl9c"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">Tripack</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Golosinas</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Chocolate Manicho (x3)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Chocolate con leche tradicional relleno con maní tostado.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$1.75</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(7, 'Chocolate Manicho Barra x3', 1.75)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 8 -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group" data-cat="despensa" data-id="8" data-name="detergente deja limon 1kg" data-price="2.60">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Ecuadorian laundry powder detergent bag Deja Limon on bright clean tile surface with fresh laundry bubbles and natural morning illumination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJpjygO9_QM1rEERYrl2LO5eQrXfy1GFjxFMNY5gMl1DATWsELdgzvKc12jr6lwkXLgtJ2Aahyzxfv6XFu48_Pfu3MoW_NE4-Igs6jlqEwDoRNpi4juGwrzWRPTBUVgF8zNQyVXbp0uxWJILJw6knlagKxwqh85ZjjHu0PTMSnxTLprP3K8lIDn8BbyaOFavLAw5A9dCjzgvUPDzeFqsJqfR65X1pb0nZeV1V_tug"/>
+<span class="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-0.5 rounded text-[12px] font-label-sm text-on-surface shadow-sm">1 Kg Bolsa</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-primary uppercase font-bold tracking-wider">Limpieza</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Detergente Deja Limón</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Remoción rápida de manchas con aroma cítrico concentrado.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Precio</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-extrabold">$2.60</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(8, 'Detergente Deja Limón 1kg', 2.60)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+<!-- Product 9 (Combo) -->
+<article class="product-item bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between transition-all hover:shadow-md group sm:col-span-2 xl:col-span-1" data-cat="combos" data-id="9" data-name="combo desayuno rapido cafe leche galletas" data-price="5.50">
+<div>
+<div class="relative w-full h-44 rounded-lg bg-surface-container overflow-hidden mb-space-sm flex items-center justify-center">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" data-alt="Combo breakfast grocery bundle featuring bag of ground coffee, fresh milk pouch, and vanilla cookies set together on a bright wooden countertop, clean appetizing food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsZMM-bvW5_CKvZd95D2t-vRHQ7WggEywnTJNJoTR9gXIZBKH4xjYv0oCNtX1spufXDzZg7U-eGzsFYeH1VDQz3TOxJqf1Tp-YMOQ1a8puHILVtBH91XHplpAzqsKWqCJBj7J9G37Ca6M5Yi58zq18XI3rg-jPipO3ZOsguDdwJRrm836RdBzOIg_QJfxZMibsHALOeCsfH8MKnD_Bsei_xGLge9yXm8S1y9LUhZk"/>
+<span class="absolute top-2 left-2 bg-tertiary text-on-tertiary px-2 py-0.5 rounded text-[12px] font-label-sm font-bold shadow-sm">Ahorra $0.45</span>
+</div>
+<div class="space-y-1">
+<span class="text-[12px] font-label-sm text-tertiary uppercase font-bold tracking-wider">Ahorro del Día</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug">Combo Desayuno Rápido</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-[14px]">Café Lojano 250g + Leche Vita 1L + Galletas Amor Pack 4.</p>
+</div>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant line-through text-[12px] block">$5.95</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-extrabold">$5.50</span>
+</div>
+<button class="px-3.5 py-2 bg-primary hover:bg-primary-container text-on-primary rounded-lg font-label-md text-label-md flex items-center gap-1 transition-all shadow-sm active:scale-95" onclick="addToCart(9, 'Combo Desayuno Rápido', 5.50)">
+<span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+<span>Agregar</span>
+</button>
+</div>
+</article>
+</div>
+<!-- System Value Pitch Card for business buyer -->
+<div class="bg-surface-container rounded-xl p-space-md sm:p-space-lg shadow-sm mt-space-md">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold">Para tenderos y dueños de negocio</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">¿Quieres este catálogo funcional con tus propios productos?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Por $250 USD configuramos tus fotos, categorías, datos de banco y tu número de WhatsApp. Listo para enviar enlaces a clientes por estados y grupos.
+              </p>
+</div>
+<a class="px-space-md py-space-xs bg-inverse-surface text-inverse-on-surface rounded-lg font-label-md text-label-md hover:bg-on-surface transition-all whitespace-nowrap shadow-sm" href="#">
+              Pedir el mío hoy
+            </a>
+</div>
+</div>
+</section>
+<!-- Sidebar Cart Column (approx 30% width: 4 cols out of 12) -->
+<aside class="lg:col-span-4 sticky top-28 space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<!-- Cart Header -->
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">shopping_basket</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Tu Pedido actual</h2>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold" id="items-badge">3 productos</span>
+</div>
+<!-- Items in cart list -->
+<div class="space-y-space-sm max-h-[290px] overflow-y-auto pr-1" id="cart-items-container">
+<!-- Default loaded item 1 -->
+<div class="cart-item bg-surface-container-low/70 p-space-sm rounded-lg flex items-center justify-between gap-2" data-cart-id="3">
+<div class="min-w-0 flex-1">
+<h5 class="font-label-md text-label-md text-on-surface truncate">Leche Entera Vita 1L</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">$0.95 c/u</p>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(3, -1)">-</button>
+<span class="w-6 text-center font-label-md text-label-md text-on-surface qty-val">2</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(3, 1)">+</button>
+</div>
+<div class="text-right min-w-[50px]">
+<span class="font-label-md text-label-md text-on-surface font-bold item-total">$1.90</span>
+<button class="text-error block text-[11px] hover:underline ml-auto" onclick="removeItem(3)">Quitar</button>
+</div>
+</div>
+<!-- Default loaded item 2 -->
+<div class="cart-item bg-surface-container-low/70 p-space-sm rounded-lg flex items-center justify-between gap-2" data-cart-id="1">
+<div class="min-w-0 flex-1">
+<h5 class="font-label-md text-label-md text-on-surface truncate">Café Lojano 250g</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">$3.80 c/u</p>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(1, -1)">-</button>
+<span class="w-6 text-center font-label-md text-label-md text-on-surface qty-val">1</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(1, 1)">+</button>
+</div>
+<div class="text-right min-w-[50px]">
+<span class="font-label-md text-label-md text-on-surface font-bold item-total">$3.80</span>
+<button class="text-error block text-[11px] hover:underline ml-auto" onclick="removeItem(1)">Quitar</button>
+</div>
+</div>
+<!-- Default loaded item 3 -->
+<div class="cart-item bg-surface-container-low/70 p-space-sm rounded-lg flex items-center justify-between gap-2" data-cart-id="4">
+<div class="min-w-0 flex-1">
+<h5 class="font-label-md text-label-md text-on-surface truncate">Galletas Amor Pack</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">$1.20 c/u</p>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(4, -1)">-</button>
+<span class="w-6 text-center font-label-md text-label-md text-on-surface qty-val">1</span>
+<button class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors" onclick="updateQty(4, 1)">+</button>
+</div>
+<div class="text-right min-w-[50px]">
+<span class="font-label-md text-label-md text-on-surface font-bold item-total">$1.20</span>
+<button class="text-error block text-[11px] hover:underline ml-auto" onclick="removeItem(4)">Quitar</button>
+</div>
+</div>
+</div>
+<!-- Free Shipping Notice / Progress -->
+<div class="mt-space-sm p-space-xs bg-surface-container-low rounded-lg text-center font-label-sm text-label-sm text-on-surface-variant">
+<span>🛵 Envío gratis a partir de <strong>$15.00</strong></span>
+<div class="w-full bg-surface-dim h-1.5 rounded-full mt-1 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all" id="free-shipping-bar" style="width: 46%;"></div>
+</div>
+</div>
+<!-- Numerical Breakdown -->
+<div class="mt-space-sm pt-space-sm space-y-1 font-body-md text-body-md">
+<div class="flex justify-between text-on-surface-variant">
+<span>Subtotal productos</span>
+<span class="font-semibold text-on-surface" id="subtotal-val">$6.90</span>
+</div>
+<div class="flex justify-between text-on-surface-variant">
+<span>Envío en moto estimado</span>
+<span class="font-semibold text-on-surface" id="shipping-val">$1.50</span>
+</div>
+<div class="flex justify-between font-headline-sm text-headline-sm text-on-surface pt-1">
+<span>Total a pagar</span>
+<span class="text-primary font-bold" id="total-val">$8.40 USD</span>
+</div>
+</div>
+<!-- Checkout Form Section -->
+<div class="mt-space-md pt-space-sm space-y-space-xs">
+<label class="block font-label-sm text-label-sm text-on-surface font-semibold">Datos de entrega rápida:</label>
+<input class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-[14px] text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="cust-name" oninput="updateWhatsappPreview()" placeholder="Tu nombre / quien recibe" type="text" value="Carlos Mendoza"/>
+<input class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-[14px] text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="cust-address" oninput="updateWhatsappPreview()" placeholder="Dirección o referencia del barrio" type="text" value="Av. América y Mariana de Jesús (Edif. Las Palmas)"/>
+<select class="w-full h-10 px-3 bg-surface-container-low rounded-lg font-body-md text-[14px] text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" id="cust-payment" onchange="updateWhatsappPreview()">
+<option selected="" value="Efectivo contra entrega">Efectivo contra entrega</option>
+<option value="Transferencia Banco Pichincha">Transferencia Banco Pichincha</option>
+<option value="DeUna / PayPhone rápido">DeUna / PayPhone rápido</option>
+</select>
+</div>
+<!-- Main WhatsApp Button -->
+<div class="mt-space-md">
+<button class="w-full py-3.5 bg-primary hover:bg-primary-container text-on-primary rounded-xl font-headline-sm text-[16px] flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98]" id="send-whatsapp-btn" onclick="triggerWhatsappSend()">
+<span class="material-symbols-outlined text-[24px]">send</span>
+<span id="whatsapp-btn-text">Enviar pedido por WhatsApp ($8.40)</span>
+</button>
+<p class="font-label-sm text-label-sm text-center text-on-surface-variant mt-1.5 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+              Se abrirá tu app de WhatsApp con la lista redactada
+            </p>
+</div>
+<!-- WhatsApp Message Live Preview Box -->
+<div class="mt-space-md pt-space-sm bg-surface-container-low/90 rounded-lg p-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="flex items-center gap-1 text-primary font-bold">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                Mensaje automático de WhatsApp:
+              </span>
+<span class="text-[11px] text-on-surface-variant">Vista previa</span>
+</div>
+<pre class="whitespace-pre-wrap font-mono text-[12px] text-on-surface leading-tight bg-surface-container-lowest p-2 rounded shadow-inner max-h-36 overflow-y-auto" id="wa-preview">Hola Dulce Hogar, quiero hacer este pedido:
+- 2x Leche Vita ($1.90)
+- 1x Café Lojano ($3.80)
+- 1x Galletas Amor ($1.20)
+Total: $8.40 | Pago: Efectivo
+Entrega: Av. América y Mariana de Jesús</pre>
+</div>
+</div>
+<!-- Trust badge under sidebar -->
+<div class="bg-surface-container-low rounded-xl p-space-sm text-center space-y-1">
+<p class="font-label-sm text-label-sm text-on-surface font-semibold">¿Por qué funciona tan bien para PYMEs?</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-snug">
+            Cero comisiones del 25% como Rappi o Uber. El tendero conserva el 100% de su margen y el cliente pide en segundos.
+          </p>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  // State
+  const cartState = [
+    { id: 3, name: 'Leche Entera Vita 1L (Funda)', price: 0.95, qty: 2 },
+    { id: 1, name: 'Café Lojano Molido 250g', price: 3.80, qty: 1 },
+    { id: 4, name: 'Galletas Amor Vainilla Pack 4', price: 1.20, qty: 1 }
+  ];
+
+  function addToCart(id, name, price) {
+    const existing = cartState.find(item => item.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cartState.push({ id, name, price, qty: 1 });
+    }
+    renderCart();
+    // Micro interaction feedback
+    const btn = event.currentTarget;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">check</span><span>Listo</span>`;
+    setTimeout(() => { btn.innerHTML = originalText; }, 900);
+  }
+
+  function updateQty(id, delta) {
+    const item = cartState.find(i => i.id === id);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+      removeItem(id);
+      return;
+    }
+    renderCart();
+  }
+
+  function removeItem(id) {
+    const index = cartState.findIndex(i => i.id === id);
+    if (index !== -1) {
+      cartState.splice(index, 1);
+    }
+    renderCart();
+  }
+
+  function renderCart() {
+    const container = document.getElementById('cart-items-container');
+    const badge = document.getElementById('items-badge');
+    const subtotalEl = document.getElementById('subtotal-val');
+    const shippingEl = document.getElementById('shipping-val');
+    const totalEl = document.getElementById('total-val');
+    const waBtnText = document.getElementById('whatsapp-btn-text');
+    const progressBar = document.getElementById('free-shipping-bar');
+
+    if (!container) return;
+
+    if (cartState.length === 0) {
+      container.innerHTML = `
+        <div class="py-8 text-center text-on-surface-variant">
+          <span class="material-symbols-outlined text-[36px] text-outline-variant block mb-1">remove_shopping_cart</span>
+          <p class="font-label-md text-label-md">Tu carrito está vacío</p>
+          <p class="font-label-sm text-label-sm">Haz clic en "Agregar" en cualquier producto</p>
+        </div>
+      `;
+      badge.textContent = '0 productos';
+      subtotalEl.textContent = '$0.00';
+      shippingEl.textContent = '$0.00';
+      totalEl.textContent = '$0.00 USD';
+      waBtnText.textContent = 'Canasta vacía';
+      progressBar.style.width = '0%';
+      updateWhatsappPreview();
+      return;
+    }
+
+    let subtotal = 0;
+    let totalItems = 0;
+
+    container.innerHTML = cartState.map(item => {
+      const itemSub = item.price * item.qty;
+      subtotal += itemSub;
+      totalItems += item.qty;
+      return `
+        <div class="cart-item bg-surface-container-low/70 p-space-sm rounded-lg flex items-center justify-between gap-2" data-cart-id="${item.id}">
+          <div class="min-w-0 flex-1">
+            <h5 class="font-label-md text-label-md text-on-surface truncate">${item.name}</h5>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">$${item.price.toFixed(2)} c/u</p>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="updateQty(${item.id}, -1)" class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors">-</button>
+            <span class="w-6 text-center font-label-md text-label-md text-on-surface qty-val">${item.qty}</span>
+            <button onclick="updateQty(${item.id}, 1)" class="w-7 h-7 rounded bg-surface-container text-on-surface flex items-center justify-center font-bold hover:bg-surface-dim transition-colors">+</button>
+          </div>
+          <div class="text-right min-w-[50px]">
+            <span class="font-label-md text-label-md text-on-surface font-bold item-total">$${itemSub.toFixed(2)}</span>
+            <button onclick="removeItem(${item.id})" class="text-error block text-[11px] hover:underline ml-auto">Quitar</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const shipping = subtotal >= 15.00 ? 0 : 1.50;
+    const finalTotal = subtotal + shipping;
+
+    badge.textContent = `${totalItems} producto${totalItems > 1 ? 's' : ''}`;
+    subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+    shippingEl.textContent = shipping === 0 ? 'Gratis' : `$${shipping.toFixed(2)}`;
+    totalEl.textContent = `$${finalTotal.toFixed(2)} USD`;
+    waBtnText.textContent = `Enviar pedido por WhatsApp ($${finalTotal.toFixed(2)})`;
+
+    const progressPct = Math.min(100, Math.round((subtotal / 15) * 100));
+    progressBar.style.width = `${progressPct}%`;
+
+    updateWhatsappPreview(subtotal, shipping, finalTotal);
+  }
+
+  function updateWhatsappPreview(subtotalVal, shippingVal, finalTotalVal) {
+    const previewEl = document.getElementById('wa-preview');
+    if (!previewEl) return;
+
+    if (cartState.length === 0) {
+      previewEl.textContent = 'Elige productos para armar el mensaje.';
+      return;
+    }
+
+    const name = document.getElementById('cust-name')?.value || 'Cliente';
+    const address = document.getElementById('cust-address')?.value || 'Por definir con la tienda';
+    const payment = document.getElementById('cust-payment')?.value || 'Efectivo';
+
+    let sub = 0;
+    const lines = cartState.map(i => {
+      const lineCost = i.price * i.qty;
+      sub += lineCost;
+      return `- ${i.qty}x ${i.name} ($${lineCost.toFixed(2)})`;
+    });
+
+    const ship = sub >= 15 ? 0 : 1.50;
+    const grand = sub + ship;
+
+    const message = 
+`Hola Dulce Hogar, quiero hacer este pedido:
+${lines.join('\n')}
+---------------------
+Subtotal: $${sub.toFixed(2)}
+Envío en moto: ${ship === 0 ? 'Gratis' : '$' + ship.toFixed(2)}
+TOTAL: $${grand.toFixed(2)} USD
+Método de Pago: ${payment}
+Cliente: ${name}
+Dirección: ${address}`;
+
+    previewEl.textContent = message;
+  }
+
+  function triggerWhatsappSend() {
+    if (cartState.length === 0) {
+      alert('Por favor agrega al menos un producto al pedido.');
+      return;
+    }
+    const previewText = document.getElementById('wa-preview')?.textContent || '';
+    const encoded = encodeURIComponent(previewText);
+    const storeNumber = "593998241092";
+    window.open(`https://api.whatsapp.com/send?phone=${storeNumber}&text=${encoded}`, '_blank');
+  }
+
+  // Filter Categories
+  document.addEventListener('DOMContentLoaded', () => {
+    const pills = document.querySelectorAll('.cat-pill');
+    const items = document.querySelectorAll('.product-item');
+    const countLabel = document.getElementById('product-count-label');
+
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('active', 'bg-primary', 'text-on-primary');
+          p.classList.add('bg-surface-container-low', 'text-on-surface');
+        });
+        pill.classList.add('active', 'bg-primary', 'text-on-primary');
+        pill.classList.remove('bg-surface-container-low', 'text-on-surface');
+
+        const cat = pill.getAttribute('data-cat');
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const itemCat = item.getAttribute('data-cat');
+          if (cat === 'all' || itemCat === cat) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (countLabel) countLabel.textContent = `Mostrando ${visibleCount} productos`;
+      });
+    });
+
+    // Real-time search
+    const searchInput = document.getElementById('product-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        items.forEach(item => {
+          const name = item.getAttribute('data-name') || '';
+          if (name.includes(query)) {
+            item.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+
+        if (countLabel) countLabel.textContent = `Mostrando ${visibleCount} productos`;
+      });
+    }
+
+    renderCart();
+  });
+</script></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/30 mt-space-xl"><div class="max-w-[1200px] mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-lg"><div class="space-y-space-xs"><div class="flex items-center gap-space-xs mb-space-xs"><span class="material-symbols-outlined text-primary text-[24px]">storefront</span><span class="font-headline-sm text-headline-sm text-on-surface">Dulce Hogar</span></div><p class="font-body-md text-body-md text-on-surface-variant">Abarrotes, snacks, bebidas y despensa diaria con entregas directas a domicilio en moto.</p><p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-xs mt-space-sm"><span class="material-symbols-outlined text-primary text-[18px]">location_on</span>Cobertura local en sectores seleccionados (Quito &amp; Guayaquil)</p></div><div class="space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-xs">Formas de Pago Sencillas</h4><ul class="space-y-space-xs font-body-md text-body-md text-on-surface-variant"><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">payments</span>Efectivo contra entrega</li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">account_balance</span>Transferencia Pichincha &amp; Produbanco</li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">qr_code_2</span>DeUna &amp; PayPhone rápido</li></ul></div><div class="space-y-space-xs bg-surface-container p-space-md rounded-xl border border-outline-variant/30"><div class="flex items-center gap-space-xs text-primary"><span class="material-symbols-outlined text-[22px]">chat</span><span class="font-headline-sm text-headline-sm">Pedidos 100% por WhatsApp</span></div><p class="font-body-md text-body-md text-on-surface-variant">Arma tu lista en la web y el resumen se envía directo al chat. Sin crear cuentas, sin contraseñas ni comisiones extra por app.</p><div class="mt-space-xs pt-space-xs border-t border-outline-variant/20 flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">verified</span>Atención directa con el tendero de barrio</div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><p>© 2024 Dulce Hogar Minimarket. Catálogo diseñado para PYMEs por ReuKev.</p><p class="text-center sm:text-right">Pedidos directos sin comisiones intermediarias</p></div></div></footer></body></html>
