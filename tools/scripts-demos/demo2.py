@@ -104,11 +104,44 @@ ICONO_CIRC = (
 )
 ICONO_CHECKS = ICONO_CHECK.replace("w-[18px] h-[18px]", "w-6 h-6")
 
+BANDA_HTML = """
+<!-- Banda informativa: urgencias y horario (fuera del nav) -->
+<div class="w-full bg-surface-container-low border-b border-outline-variant">
+<div class="max-w-[1200px] mx-auto px-margin py-2.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-space-lg font-label-sm text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3H5z"/><path d="M12 2v2"/><path d="M4.5 8.5 3 10"/><path d="m19.5 8.5 1.5 1.5"/></svg>
+<span><span class="font-semibold text-on-surface">Urgencias 24/7:</span> <a class="font-semibold text-primary hover:underline" href="#" data-wa="Hola Kevin, vi la demo de la clínica dental y quiero consultar por atención de urgencias.">+593 99 137 1570</a></span>
+</div>
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span><span class="font-semibold text-on-surface">Horario:</span> Lun a sáb · 08:30 - 18:30</span>
+</div>
+</div>
+</div>
+"""
+
+BANDA_JS = """(function () {
+  /* La banda de urgencias y horario es el primer bloque de <main>, justo bajo el
+     header fijo: se iguala el padding superior de <main> a la altura real del
+     header (cambia entre móvil y escritorio porque la barra de demo se reordena). */
+  var header = document.querySelector('header');
+  var main = document.querySelector('main');
+  if (!header || !main) return;
+  function ajustar() {
+    main.style.paddingTop = header.getBoundingClientRect().height + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', ajustar);
+})();"""
+
 cfg = {
     "src": "demo_2_cl_nica_dental_con_agenda_de_citas_prosonrisa",
     "dst": "sitio-web/demos/demo2-clinica-dental/index.html",
     "slug": "demo2-clinica-dental",
     "js": "sitio-web/assets/js/demo2.js",
+    "tema": "azul",
+    "theme_color": "#2563EB",
     "titulo": "Demo · ProSonrisa: clínica dental con agenda de citas | ReuKev",
     "desc": "Demo funcional de ReuKev: agenda de citas para clínica dental con selección de tratamiento, profesional, fecha y hora, más confirmación por WhatsApp. Negocio ficticio.",
     "msg_barra": "Hola Kevin, vi la demo de la clínica dental con agenda de citas y quiero una así para mi negocio.",
@@ -148,7 +181,7 @@ cfg = {
         ),
     ],
     "ctas": [],
-    "js_extra": "",
+    "js_extra": "\n" + BANDA_JS,
 }
 
 transform(cfg)
@@ -156,6 +189,27 @@ transform(cfg)
 # --- HTML: anclas reales para la navegación y CTA con WhatsApp ---
 p = BASE + "sitio-web/demos/demo2-clinica-dental/index.html"
 h = open(p, encoding="utf-8").read()
+
+# Urgencias y horario salen del header (bloque de escritorio) y pasan a una banda
+# de ancho completo justo debajo del header, visible también en móvil.
+h, n = re.subn(
+    r'<div class="hidden lg:flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm">.*?</div></div></div><nav',
+    "<nav",
+    h,
+    count=1,
+    flags=re.S,
+)
+assert n == 1, "bloque de urgencias/horario del header no encontrado"
+
+
+def _con_banda(m):
+    # el header fijo es más alto que pt-20 (barra de demo + nav): se reserva el
+    # espacio justo y el JS lo ajusta a la altura real en cada viewport
+    return m.group(0).replace("pt-20", "pt-[7.5rem]") + "\n" + BANDA_HTML.strip()
+
+
+h, n = re.subn(r"<main[^>]*>", _con_banda, h, count=1)
+assert n == 1, "apertura de <main> no encontrada"
 
 secciones = [
     (

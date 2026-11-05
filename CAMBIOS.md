@@ -73,3 +73,29 @@ se genera desde `sitio-web/` con las herramientas de `tools/`.
   de Stitch (`icons.py`, `build_demos.py`, `demo1.py`, `demo2.py`, `demo3.py`).
 - `LEEME-como-publicar-y-editar.md`: cómo publicar en Netlify, cómo editar precios y textos,
   y los pendientes conocidos.
+
+## F7 — Reorientación y paleta por demo (esta sesión)
+- **Servicio reorientado a desarrollo web general** (sin nichos): `title`, `description`, Open
+  Graph, JSON-LD, badge/H1/subtítulo del hero, introducción y tarjetas de Servicios, bloque de
+  Demos, entregable del plan Básico, FAQ ("¿Sirve para un negocio pequeño o un rubro poco
+  común?"), título y texto del formulario y tagline del pie. Los mensajes de WhatsApp de la
+  portada ya no hablan de "sistemas".
+- **Acento por demo** con variables CSS en `src/tailwind.css` y `data-tema` en `<body>`:
+  `:root` verde (#059669, portada y demo1), `[data-tema="azul"]` (#2563EB, demo2) y
+  `[data-tema="grafito"]` (#334155, demo3). `tailwind.config.js` consume
+  `rgb(var(--token-rgb) / <alpha-value>)`; superficies y textos siguen fijos.
+  Corregidas las llaves dobles de `@layer base` (la capa base no se emitía) y añadidos
+  `::selection`, `:focus-visible`, `.field:focus` y las clases del gráfico de demo3
+  (`.chart-bar-primary`, `.chart-bar-secondary`, `.chart-line`).
+- **demo2**: acento azul y `theme-color` #2563EB. Urgencias y Horario salieron del header
+  (bloque `hidden lg:flex`) y pasan a una banda de ancho completo como primer bloque de
+  `<main>`, visible en móvil y escritorio, con el WhatsApp único en "Urgencias 24/7".
+  El header fijo mide más que el `pt-20` original, así que `main` reserva `pt-[7.5rem]` y
+  `demo2.js` ajusta el padding a la altura real del header (`BANDA_JS`).
+- **demo3**: acento grafito (los hex verdes del export pasan a tokens del tema; el ámbar de
+  las alertas de stock se conserva porque es semántico) y `theme-color` #334155.
+- `tools/verify.mjs` suma comprobaciones de `data-tema`, color de acento calculado y de la
+  banda de demo2 (hija de `<main>`, fuera del nav, bajo el header y visible a 390 y 1440 px).
+  Resultado: **todo OK**.
+- Dos iconos `chat` sin reemplazar de la portada ahora son SVG de burbuja de WhatsApp.
+

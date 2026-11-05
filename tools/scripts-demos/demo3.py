@@ -129,6 +129,8 @@ cfg = {
     "dst": "sitio-web/demos/demo3-inventario-reportes/index.html",
     "slug": "demo3-inventario-reportes",
     "js": "sitio-web/assets/js/demo3.js",
+    "tema": "grafito",
+    "theme_color": "#334155",
     "titulo": "Demo · Kardex Pro: inventario y reportes para PYMEs | ReuKev",
     "desc": "Demo funcional de ReuKev: control de inventario (kardex) con movimientos, alertas de stock y reportes semanales para ferreterías y bodegas. Negocio ficticio.",
     "msg_barra": "Hola Kevin, vi la demo del sistema de inventario y reportes para PYMEs y quiero una así para mi negocio.",
@@ -185,6 +187,25 @@ transform(cfg)
 # --- HTML: anclas reales para la navegación (el JS además abre el modal y filtra) ---
 p = BASE + "sitio-web/demos/demo3-inventario-reportes/index.html"
 h = open(p, encoding="utf-8").read()
+
+# Acento grafito: los hex verdes del export pasan a los tokens del tema. El ámbar
+# de las alertas de stock se conserva porque es semántico.
+for viejo, nuevo in [
+    ("bg-[#059669]", "bg-primary"),
+    ("bg-[#047857]", "bg-primary-hover"),
+    ("text-[#059669]", "text-primary"),
+    ("bg-[#ECE5DD]", "bg-surface-container"),
+    ("text-[#111827]", "text-on-surface"),
+    ("hover:bg-[#FFFBEB]", "hover:bg-surface-container"),
+    ('fill="#006948"', 'class="chart-bar-primary"'),
+    ('fill="#d2d9f4"', 'class="chart-bar-secondary"'),
+    ('stroke="#eaedff"', 'class="chart-line"'),
+]:
+    n = h.count(viejo)
+    assert n >= 1, "color no encontrado en demo3: %r" % viejo
+    h = h.replace(viejo, nuevo)
+assert "#059669" not in h and "#047857" not in h and "#006948" not in h
+
 anclas = [
     (
         '<section class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">',

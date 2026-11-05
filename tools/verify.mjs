@@ -249,6 +249,64 @@ async function fnDemo3Extra(browser, base) {
   await ctx.close();
 }
 
+/* ---------------- tema por demo y banda de demo2 ---------------- */
+
+const TEMAS = [
+  { url: "/demos/demo2-clinica-dental/", nombre: "demo2", tema: "azul", acento: "rgb(37, 99, 235)" },
+  { url: "/demos/demo3-inventario-reportes/", nombre: "demo3", tema: "grafito", acento: "rgb(51, 65, 85)" },
+];
+
+async function fnTemas(browser, base) {
+  for (const t of TEMAS) {
+    for (const ancho of PUERTOS) {
+      const { ctx, page } = await abrir(browser, base + t.url, ancho);
+      const dato = await page.evaluate(() => document.body.getAttribute("data-tema"));
+      if (dato !== t.tema) falla(t.nombre + "@" + ancho, "data-tema=" + dato + " (se esperaba " + t.tema + ")");
+      const color = await page.evaluate(() => {
+        const el = document.querySelector(".text-primary");
+        return el ? getComputedStyle(el).color : null;
+      });
+      if (color !== t.acento) falla(t.nombre + "@" + ancho, "acento " + color + " (se esperaba " + t.acento + ")");
+      await ctx.close();
+    }
+  }
+}
+
+/* La banda de urgencias y horario de demo2: hija de <main>, bajo el header fijo
+   y fuera del nav, visible en móvil y escritorio. */
+async function fnDemo2Banda(browser, base) {
+  for (const ancho of PUERTOS) {
+    const { ctx, page } = await abrir(browser, base + "/demos/demo2-clinica-dental/", ancho);
+    const r = await page.evaluate(() => {
+      const header = document.querySelector("header");
+      const main = document.querySelector("main");
+      const banda = [...main.children].find((c) => c.textContent.includes("Urgencias"));
+      const cs = banda ? getComputedStyle(banda) : null;
+      const caja = banda ? banda.getBoundingClientRect() : null;
+      const pie = header ? header.getBoundingClientRect().bottom : 0;
+      return {
+        esHijoDeMain: !!banda,
+        enHeader: !!header && header.innerText.includes("Urgencias"),
+        enNav: !!header && header.querySelector("nav") && header.querySelector("nav").innerText.includes("Urgencias"),
+        visible: !!cs && cs.display !== "none" && caja.width > 200 && caja.height > 20,
+        bajoHeader: !!caja && caja.top >= pie - 1,
+        ancho: caja ? Math.round(caja.width) : 0,
+        texto: banda ? banda.innerText.slice(0, 120) : "",
+        wa: !!banda && !!banda.querySelector("a[data-wa]"),
+        numero: !!banda && banda.innerText.includes("+593 99 137 1570"),
+      };
+    });
+    if (!r.esHijoDeMain) falla("demo2@" + ancho, "la banda de urgencias/horario no está en <main>");
+    else {
+      if (r.enHeader || r.enNav) falla("demo2@" + ancho, "urgencias/horario siguen en el header");
+      if (!r.visible) falla("demo2@" + ancho, "la banda no se ve (" + r.ancho + " px de ancho)");
+      if (!r.bajoHeader) falla("demo2@" + ancho, "la banda queda tapada por el header fijo");
+      if (!r.wa || !r.numero) falla("demo2@" + ancho, "la banda no enlaza al WhatsApp único");
+    }
+    await ctx.close();
+  }
+}
+
 async function fnComunes(browser, base) {
   for (const p of PAGINAS) {
     const { ctx, page } = await abrir(browser, base + p.url, 1440);
@@ -287,6 +345,8 @@ async function fnComunes(browser, base) {
 
     console.log("\n== Funcional ==");
     await fnComunes(browser, base);
+    await fnTemas(browser, base);
+    await fnDemo2Banda(browser, base);
     await fnHome(browser, base);
     await fnDemo1(browser, base);
     await fnDemo1Extra(browser, base);

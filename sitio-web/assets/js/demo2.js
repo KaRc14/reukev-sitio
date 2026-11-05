@@ -162,6 +162,20 @@ function confirmAppointment() {
     });
   
 
+(function () {
+  /* La banda de urgencias y horario es el primer bloque de <main>, justo bajo el
+     header fijo: se iguala el padding superior de <main> a la altura real del
+     header (cambia entre móvil y escritorio porque la barra de demo se reordena). */
+  var header = document.querySelector('header');
+  var main = document.querySelector('main');
+  if (!header || !main) return;
+  function ajustar() {
+    main.style.paddingTop = header.getBoundingClientRect().height + 'px';
+  }
+  ajustar();
+  window.addEventListener('resize', ajustar);
+  window.addEventListener('orientationchange', ajustar);
+})();
 
 /* Eventos del diseño original (onclick, onsubmit...): el HTML los lleva como
    data-on-click="funcion('arg')" y aquí se re-adjuntan, sin 'unsafe-inline'. */

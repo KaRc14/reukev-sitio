@@ -46,7 +46,7 @@ HEAD_PLANTILLA = """<!DOCTYPE html>
 <meta name="description" content="%(desc)s"/>
 <link rel="canonical" href="[DOMINIO]/demos/%(slug)s/"/>
 <meta name="robots" content="index, follow"/>
-<meta name="theme-color" content="#FFFFFF"/>
+<meta name="theme-color" content="%(theme_color)s"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="es_EC"/>
 <meta property="og:site_name" content="ReuKev"/>
@@ -135,10 +135,13 @@ def transform(cfg):
     h = open(BASE + SRC % cfg["src"], encoding="utf-8").read()
 
     # 1. cabecera propia (sin CDN ni Google Fonts)
-    i = h.index("<body")
     plantilla = dict(cfg)
     plantilla["src_js"] = cfg["js"].replace("sitio-web/", "")
+    plantilla["theme_color"] = cfg.get("theme_color", "#FFFFFF")
+    i = h.index("<body")
     h = HEAD_PLANTILLA % plantilla + "\n" + h[i:]
+    if cfg.get("tema"):
+        h = h.replace("<body", '<body data-tema="%s"' % cfg["tema"], 1)
 
     # 2. Material Symbols -> SVG inline
     def repl(m):

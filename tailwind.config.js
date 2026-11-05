@@ -1,8 +1,11 @@
 /**
  * ReuKev — configuración de Tailwind (tema claro, un solo acento).
- * Tokens mapeados desde el diseño de Stitch (sober_craft/DESIGN.md) a la
- * paleta definitiva: #FFFFFF / #F8FAFC / #059669 (hover #047857) / #0F172A / #475569 / #E2E8F0.
- * Sin modo oscuro y sin colores de apoyo además del verde.
+ * Superficies y textos son fijos: #FFFFFF / #F8FAFC / #0F172A / #475569 / #E2E8F0.
+ * El acento se define con variables CSS en src/tailwind.css:
+ *   :root            -> verde (portada y demo1)
+ *   [data-tema=azul]     -> demo2
+ *   [data-tema=grafito]  -> demo3
+ * Sin modo oscuro y sin colores de apoyo además del acento.
  */
 module.exports = {
   content: [
@@ -31,20 +34,20 @@ module.exports = {
         "surface-variant": "#F1F5F9",
         background: "#FFFFFF",
 
-        /* ---- Acento único: verde ---- */
-        primary: "#059669",
-        "primary-hover": "#047857",
-        "primary-container": "#ECFDF5",
-        "primary-fixed": "#6EE7B7",
-        "primary-fixed-dim": "#34D399",
+        /* ---- Acento variable por tema (ver src/tailwind.css) ---- */
+        primary: "rgb(var(--primary-rgb) / <alpha-value>)",
+        "primary-hover": "rgb(var(--primary-hover-rgb) / <alpha-value>)",
+        "primary-container": "rgb(var(--primary-container-rgb) / <alpha-value>)",
+        "primary-fixed": "rgb(var(--primary-fixed-rgb) / <alpha-value>)",
+        "primary-fixed-dim": "rgb(var(--primary-fixed-dim-rgb) / <alpha-value>)",
         "on-primary": "#FFFFFF",
-        "on-primary-container": "#047857",
-        "on-primary-fixed": "#064E3B",
+        "on-primary-container": "rgb(var(--on-primary-container-rgb) / <alpha-value>)",
+        "on-primary-fixed": "rgb(var(--on-primary-fixed-rgb) / <alpha-value>)",
 
-        secondary: "#047857",
-        "secondary-container": "#ECFDF5",
+        secondary: "rgb(var(--secondary-rgb) / <alpha-value>)",
+        "secondary-container": "rgb(var(--secondary-container-rgb) / <alpha-value>)",
         "on-secondary": "#FFFFFF",
-        "on-secondary-container": "#047857",
+        "on-secondary-container": "rgb(var(--on-secondary-container-rgb) / <alpha-value>)",
 
         tertiary: "#475569",
         "tertiary-container": "#E2E8F0",
@@ -66,7 +69,7 @@ module.exports = {
         inverse: "#0F172A",
         "inverse-surface": "#0F172A",
         "inverse-on-surface": "#F8FAFC",
-        "inverse-primary": "#6EE7B7",
+        "inverse-primary": "rgb(var(--inverse-primary-rgb) / <alpha-value>)",
 
         /* ---- Bordes ---- */
         outline: "#CBD5E1",

@@ -17,54 +17,103 @@
 @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/inter-700-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
 @font-face{font-family:'Inter';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/inter-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
 
-@layer base {{
-  html {{ -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }}
-  body {{
+/* --- Acento por tema (los tokens de color de Tailwind leen estos RGB) ---- */
+:root {
+  --primary-rgb: 5 150 105;
+  --primary-hover-rgb: 4 120 87;
+  --primary-container-rgb: 236 253 245;
+  --primary-fixed-rgb: 110 231 183;
+  --primary-fixed-dim-rgb: 52 211 153;
+  --on-primary-container-rgb: 4 120 87;
+  --on-primary-fixed-rgb: 6 78 59;
+  --secondary-rgb: 4 120 87;
+  --secondary-container-rgb: 236 253 245;
+  --on-secondary-container-rgb: 4 120 87;
+  --inverse-primary-rgb: 110 231 183;
+}
+
+/* Demo 2: clínica dental */
+[data-tema="azul"] {
+  --primary-rgb: 37 99 235;
+  --primary-hover-rgb: 29 78 216;
+  --primary-container-rgb: 219 234 254;
+  --primary-fixed-rgb: 147 197 253;
+  --primary-fixed-dim-rgb: 96 165 250;
+  --on-primary-container-rgb: 30 64 175;
+  --on-primary-fixed-rgb: 23 37 84;
+  --secondary-rgb: 29 78 216;
+  --secondary-container-rgb: 219 234 254;
+  --on-secondary-container-rgb: 30 64 175;
+  --inverse-primary-rgb: 147 197 253;
+}
+
+/* Demo 3: inventario con acento grafito */
+[data-tema="grafito"] {
+  --primary-rgb: 51 65 85;
+  --primary-hover-rgb: 30 41 59;
+  --primary-container-rgb: 226 232 240;
+  --primary-fixed-rgb: 148 163 184;
+  --primary-fixed-dim-rgb: 100 116 139;
+  --on-primary-container-rgb: 30 41 59;
+  --on-primary-fixed-rgb: 15 23 42;
+  --secondary-rgb: 30 41 59;
+  --secondary-container-rgb: 226 232 240;
+  --on-secondary-container-rgb: 30 41 59;
+  --inverse-primary-rgb: 148 163 184;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
     font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-size: 16px;
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-  }}
-  h1, h2, h3, h4 {{ font-weight: 700; letter-spacing: -0.02em; }}
-  ::selection {{ background: #D1FAE5; color: #064E3B; }}
-  :focus-visible {{ outline: 2px solid #059669; outline-offset: 2px; }}
-  img {{ max-width: 100%; height: auto; }}
-}}
+  }
+  h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; }
+  ::selection { background: rgb(var(--primary-container-rgb)); color: rgb(var(--on-primary-fixed-rgb)); }
+  :focus-visible { outline: 2px solid rgb(var(--primary-rgb)); outline-offset: 2px; }
+  img { max-width: 100%; height: auto; }
+}
 
-@layer components {{
-  /* Botón principal (verde único) */
-  .btn-primary {{
+@layer components {
+  /* Botón principal (acento del tema) */
+  .btn-primary {
     @apply inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary
            font-label-md text-label-md px-5 py-2.5 rounded transition-colors shadow-sm;
-  }}
+  }
   /* Botón secundario (borde) */
-  .btn-secondary {{
+  .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container-low text-on-surface
            font-label-md text-label-md px-5 py-2.5 rounded border border-outline-variant transition-colors;
-  }}
+  }
   /* Tarjeta base */
-  .card {{
+  .card {
     @apply bg-surface-container-lowest border border-outline-variant rounded-lg p-6;
     box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.05);
-  }}
+  }
   /* Campos de formulario */
-  .field {{
+  .field {
     @apply w-full h-11 px-3 rounded border border-outline-variant bg-surface text-body-md text-on-surface
            placeholder:text-[#94A3B8] focus:border-primary focus:outline-none;
-    box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.0);
-  }}
-  .field:focus {{ box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.15); }}
+    box-shadow: 0 0 0 3px rgb(var(--primary-rgb) / 0);
+  }
+  .field:focus { box-shadow: 0 0 0 3px rgb(var(--primary-rgb) / 0.15); }
   /* Etiquetas de sección */
-  .eyebrow {{
+  .eyebrow {
     @apply inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container
            font-label-sm text-label-sm border border-primary/20;
-  }}
+  }
   /* Contenedor de contenido */
-  .wrap {{ @apply max-w-[1200px] mx-auto px-gutter; }}
-}}
+  .wrap { @apply max-w-[1200px] mx-auto px-gutter; }
+  /* Gráfico de barras de demo3 (SVG sin estilos inline por CSP) */
+  .chart-bar-primary { fill: rgb(var(--primary-rgb)); }
+  .chart-bar-secondary { fill: rgb(var(--primary-container-rgb)); }
+  .chart-line { stroke: #E2E8F0; }
+}
 
 /* Utilidad: oculta el scroll horizontal manteniendo el vertical */
-@layer utilities {{
-  .no-bar ::-webkit-scrollbar {{ display: none; }}
-}}
+@layer utilities {
+  .no-bar ::-webkit-scrollbar { display: none; }
+}

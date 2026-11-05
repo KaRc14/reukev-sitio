@@ -43,6 +43,11 @@ imágenes y JS propios. Nada se carga desde CDN ni de Google.
   `python3 tools/scripts-demos/demo1.py` (y `demo2.py`, `demo3.py`) — pero **esas
   regeneraciones pisan la edición manual**: haz los cambios puntuales dentro de esos
   scripts o en el HTML final.
+- **Color de acento**: se define por página en `src/tailwind.css` con variables CSS. El verde
+  por defecto vive en `:root` (portada y demo1); la demo2 usa `[data-tema="azul"]` y la demo3
+  `[data-tema="grafito"]`, que se activan con `data-tema="..."` en el `<body>`
+  (lo escribe `demo2.py`/`demo3.py` vía `cfg["tema"]`). Superficies y textos son fijos; para
+  cambiar el acento toca las variables, no `tailwind.config.js`, y luego `npm run build:css`.
 - **Número de WhatsApp**: existe en un único lugar, la constante `WHATSAPP` de
   `sitio-web/assets/js/wa.js`. Los botones usan `data-wa="mensaje"` y el archivo arma el
   enlace al cargar. El número visible (+593 99 137 1570) está escrito a mano en la portada
