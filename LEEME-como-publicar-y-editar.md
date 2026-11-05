@@ -10,9 +10,20 @@ imágenes y JS propios. Nada se carga desde CDN ni de Google.
      `sitio-web/demos/*/index.html` (canonical, `og:url`, `og:image`),
    - `sitio-web/robots.txt` y `sitio-web/sitemap.xml`.
    `grep -rn "\[DOMINIO\]" sitio-web` los lista todos.
-2. Sube el repositorio a GitHub y conecta Netlify al repo: toma `netlify.toml`
-   (directorio publicado: `sitio-web`) y añade las cabeceras de seguridad (CSP incluida).
-   No hace falta build en Netlify.
+   Con el dominio en la mano, el reemplazo es una línea (incluye la barra final,
+   que es lo que esperan canonical y sitemap):
+
+   ```
+   grep -rl "\[DOMINIO\]" sitio-web | xargs sed -i 's|\[DOMINIO\]|https://TU-DOMINIO|g'
+   ```
+
+   Si será un subdominio gratis de Vercel o Netlify (p. ej. `reukev.vercel.app`),
+   el mismo comando sirve: `TU-DOMINIO` = `https://reukev.vercel.app`.
+2. Sube el repositorio a GitHub y conecta el hosting al repo:
+   - **Netlify**: detecta `netlify.toml`, que ya fija el directorio publicado
+     (`sitio-web`) y las cabeceras de seguridad (CSP incluida). Sin build.
+   - **Vercel**: marca `sitio-web` como directorio de salida y traslada las cabeceras
+     de `netlify.toml` a un `vercel.json` equivalente (misma CSP).
 3. Verificación rápida antes de publicar: `node tools/verify.mjs` (ve más abajo).
 
 > La CSP publicada es estricta (`script-src 'self'`, sin `'unsafe-inline'`). Si añades
@@ -55,10 +66,12 @@ móvil, el formulario, el carrito de demo1, la agenda de demo2 y el kardex de de
 
 ## Pendientes conocidos
 
-- **2 fotos de demo3** (varilla y breaker) sin generar por límite de créditos de la API de
-  imágenes; quedan cuadros con icono en su lugar. Cuando se restablezca el acceso
-  (aprox. 2026-11-06), genera las fotos como `sitio-web/assets/img/demos/demo3/varilla.webp`
-  y `breaker.webp` (700×700, ≤40 KB) y quita el bloque `PLACEHOLDER_FOTO` de
-  `tools/scripts-demos/demo3.py` antes de regenerar.
-- Dominio real para canonical/robots/sitemap.
+- **2 fotos de demo3** (varilla y breaker): la API de imágenes no tiene créditos, así que
+  se decidió dejar los cuadros con icono (funcionales y honestos) en la tabla. Si en el
+  futuro se añaden créditos, genera las fotos como
+  `sitio-web/assets/img/demos/demo3/varilla.webp` y `breaker.webp` (700×700, ≤40 KB) y
+  quita el bloque `PLACEHOLDER_FOTO` de `tools/scripts-demos/demo3.py` antes de regenerar.
+- **Dominio real** (canonical/robots/sitemap): se definirá al publicar; se espera un
+  subdominio gratis de Vercel o Netlify. Mientras tanto los `[DOMINIO]` quedan como
+  marcadores y `node tools/verify.mjs` los avisa (no falla).
 - Revisar si se quiere página de "créditos" de las demos (se eliminó en el reinicio F0).
