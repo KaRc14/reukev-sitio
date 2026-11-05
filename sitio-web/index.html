@@ -964,43 +964,7 @@ Con 30 días de garantía incluidos, sin costo. Si después quieres que siga pen
 </div>
 </section>
 </div>
-<script>
-  // Un solo numero de WhatsApp en todo el sitio (visible como +593 99 137 1570).
-  var WHATSAPP = "593991371570";
-
-  // --- Menu movil ---
-  var boton = document.getElementById("boton-menu");
-  var menu = document.getElementById("menu-movil");
-  if (boton && menu) {
-    boton.addEventListener("click", function () {
-      var abierto = menu.classList.toggle("hidden") === false;
-      boton.setAttribute("aria-expanded", String(abierto));
-      boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-      boton.innerHTML = abierto
-        ? '<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'
-        : '<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
-    });
-    menu.querySelectorAll("a").forEach(function (enlace) {
-      enlace.addEventListener("click", function () {
-        menu.classList.add("hidden");
-        boton.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
-
-  // --- Formulario: solo arma el mensaje de WhatsApp (no hay servidor) ---
-  var form = document.getElementById("contact-form");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var nombre = (document.getElementById("client-name") || {}).value || "";
-      var negocio = (document.getElementById("client-business") || {}).value || "";
-      var necesidad = (document.getElementById("client-need") || {}).value || "";
-      var texto = "Hola Kevin, soy " + nombre.trim() + ' de "' + negocio.trim() + '". Necesito: ' + necesidad.trim();
-      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
-    });
-  }
-</script></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant">
+<script src="assets/js/home.js" defer></script></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant">
 <div class="max-w-[1200px] mx-auto px-gutter py-space-xl">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg mb-space-lg">
 <div class="md:col-span-5 flex flex-col items-start gap-space-sm">
