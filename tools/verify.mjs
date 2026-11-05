@@ -130,7 +130,7 @@ async function fnDemo3(browser, base) {
   await page.keyboard.press("Space");
   await page.keyboard.press("Backspace");
   const visibles = await page.evaluate(() =>
-    [...document.querySelectorAll(".item-row")].filter((r) => r.style.display !== "none").length
+    [...document.querySelectorAll("tr.item-row")].filter((r) => r.style.display !== "none").length
   );
   if (visibles !== 1) falla("demo3", "el buscador no filtra la tabla (visibles=" + visibles + ")");
 
@@ -139,7 +139,7 @@ async function fnDemo3(browser, base) {
   await page.keyboard.press("Backspace");
   await page.click('[data-on-click="filterCategory(\'Construcción\')"]');
   const porCat = await page.evaluate(() =>
-    [...document.querySelectorAll(".item-row")].filter((r) => r.style.display !== "none").length
+    [...document.querySelectorAll("tr.item-row")].filter((r) => r.style.display !== "none").length
   );
   if (porCat < 1) falla("demo3", "el filtro por categoría no deja filas visibles");
 
@@ -156,6 +156,25 @@ async function fnDemo3(browser, base) {
   await page.waitForTimeout(400);
   const y = await page.evaluate(() => window.scrollY);
   if (y < 100) falla("demo3", "la navegación a Reportes no desplaza la página");
+
+  // vista de tarjetas
+  await page.click('[data-on-click="cambiarVista()"]');
+  const estado = await page.evaluate(() => ({
+    tarjetas: !document.getElementById("vista-tarjetas").classList.contains("hidden"),
+    tabla: !document.getElementById("tarjeta-tabla").classList.contains("hidden"),
+    nTarjetas: document.querySelectorAll("#vista-tarjetas .item-row").length,
+    nFilas: document.querySelectorAll("tr.item-row").length,
+  }));
+  if (!estado.tarjetas || estado.tabla) falla("demo3", "la vista de tarjetas no alterna con la tabla");
+  if (estado.nTarjetas !== estado.nFilas) falla("demo3", "las tarjetas no cubren todas las filas (" + estado.nTarjetas + "/" + estado.nFilas + ")");
+  await page.fill("#kardexSearch", "pintura");
+  await page.evaluate(() =>
+    document.getElementById("kardexSearch").dispatchEvent(new KeyboardEvent("keyup", { bubbles: true }))
+  );
+  const enTarjetas = await page.evaluate(() =>
+    [...document.querySelectorAll("#vista-tarjetas .item-row")].filter((r) => r.style.display !== "none").length
+  );
+  if (enTarjetas !== 1) falla("demo3", "el buscador no filtra en vista de tarjetas");
   await ctx.close();
 }
 

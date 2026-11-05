@@ -40,6 +40,9 @@ se genera desde `sitio-web/` con las herramientas de `tools/`.
 - Script inline de la portada movido a `sitio-web/assets/js/home.js` (usa `waLink()` de `wa.js`).
 - Único `style=` inline eliminado (barra de envío gratis de demo1).
 - Números falsos reemplazados por el número real (+593 99 137 1570) o por texto de ejemplo.
+- **Vista de tarjetas funcional** en demo3: el botón "Cambiar vista" del encabezado (antes
+  decorativo) alterna la tabla por tarjetas con los mismos datos, estados y acciones
+  (incluidos los botones `admin-only`); buscador y filtros funcionan en ambas vistas.
 
 ## F5 — Legal y publicación (esta sesión)
 - `sitio-web/privacidad.html` (sin cookies ni rastreadores; demos con localStorage;

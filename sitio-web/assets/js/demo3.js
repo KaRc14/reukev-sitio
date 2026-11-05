@@ -117,6 +117,57 @@ let currentRole = 'admin';
     }
   
 
+/* Vista alternativa: tarjetas en lugar de la tabla (botón "Cambiar vista"). */
+(function () {
+  var tabla = document.getElementById("tarjeta-tabla");
+  var tarjetas = document.getElementById("vista-tarjetas");
+  if (!tabla || !tarjetas) return;
+
+  function texto(nodo) {
+    return nodo.innerText.split("\n").map(function (t) { return t.trim(); }).filter(Boolean);
+  }
+
+  function construir() {
+    var html = "";
+    document.querySelectorAll("tr.item-row").forEach(function (fila) {
+      var td = fila.querySelectorAll("td");
+      if (td.length < 7) return;
+      var nombre = texto(td[1])[0] || "";
+      var marca = texto(td[1])[1] || "";
+      var sku = texto(td[0])[0] || "";
+      var pildora = td[5].querySelector("span");
+      var botones = "";
+      td[7].querySelectorAll("button").forEach(function (b) {
+        botones += b.outerHTML;
+      });
+      html +=
+        '<div class="item-row flex items-center justify-between gap-space-sm px-space-md py-space-sm border-t border-outline-variant/40" ' +
+        'data-category="' + fila.getAttribute("data-category") + '" ' +
+        'data-stock-status="' + fila.getAttribute("data-stock-status") + '">' +
+        '<div class="min-w-0">' +
+        '<p class="font-label-md text-label-md text-on-surface truncate">' + nombre + '</p>' +
+        '<p class="font-label-sm text-label-sm text-on-surface-variant">' + sku + '</p>' +
+        '<p class="font-label-sm text-label-sm text-on-surface-variant">' + texto(td[2])[0] + ' · stock ' + texto(td[3])[0] + ' (mín. ' + texto(td[4])[0] + ')' + (marca ? ' · ' + marca : '') + '</p>' +
+        '</div>' +
+        '<div class="flex items-center gap-space-sm shrink-0">' +
+        (pildora ? pildora.outerHTML : '') +
+        '<span class="font-label-md text-label-md text-on-surface">' + texto(td[6])[0] + '</span>' +
+        botones +
+        '</div></div>';
+    });
+    tarjetas.innerHTML = html;
+  }
+
+  window.cambiarVista = function () {
+    var quiereTarjetas = tarjetas.classList.contains("hidden");
+    if (quiereTarjetas) construir();
+    tarjetas.classList.toggle("hidden", !quiereTarjetas);
+    tabla.classList.toggle("hidden", quiereTarjetas);
+  };
+
+  construir();
+})();
+
 
 /* Eventos del diseño original (onclick, onsubmit...): el HTML los lleva como
    data-on-click="funcion('arg')" y aquí se re-adjuntan, sin 'unsafe-inline'. */

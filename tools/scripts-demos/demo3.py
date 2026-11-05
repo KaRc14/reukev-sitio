@@ -5,6 +5,7 @@
 import re, sys
 
 import os
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_demos import transform, BASE
 
@@ -65,6 +66,59 @@ NAV_JS = r"""
 })();
 """
 
+VISTA_JS = r"""
+/* Vista alternativa: tarjetas en lugar de la tabla (botón "Cambiar vista"). */
+(function () {
+  var tabla = document.getElementById("tarjeta-tabla");
+  var tarjetas = document.getElementById("vista-tarjetas");
+  if (!tabla || !tarjetas) return;
+
+  function texto(nodo) {
+    return nodo.innerText.split("\n").map(function (t) { return t.trim(); }).filter(Boolean);
+  }
+
+  function construir() {
+    var html = "";
+    document.querySelectorAll("tr.item-row").forEach(function (fila) {
+      var td = fila.querySelectorAll("td");
+      if (td.length < 7) return;
+      var nombre = texto(td[1])[0] || "";
+      var marca = texto(td[1])[1] || "";
+      var sku = texto(td[0])[0] || "";
+      var pildora = td[5].querySelector("span");
+      var botones = "";
+      td[7].querySelectorAll("button").forEach(function (b) {
+        botones += b.outerHTML;
+      });
+      html +=
+        '<div class="item-row flex items-center justify-between gap-space-sm px-space-md py-space-sm border-t border-outline-variant/40" ' +
+        'data-category="' + fila.getAttribute("data-category") + '" ' +
+        'data-stock-status="' + fila.getAttribute("data-stock-status") + '">' +
+        '<div class="min-w-0">' +
+        '<p class="font-label-md text-label-md text-on-surface truncate">' + nombre + '</p>' +
+        '<p class="font-label-sm text-label-sm text-on-surface-variant">' + sku + '</p>' +
+        '<p class="font-label-sm text-label-sm text-on-surface-variant">' + texto(td[2])[0] + ' · stock ' + texto(td[3])[0] + ' (mín. ' + texto(td[4])[0] + ')' + (marca ? ' · ' + marca : '') + '</p>' +
+        '</div>' +
+        '<div class="flex items-center gap-space-sm shrink-0">' +
+        (pildora ? pildora.outerHTML : '') +
+        '<span class="font-label-md text-label-md text-on-surface">' + texto(td[6])[0] + '</span>' +
+        botones +
+        '</div></div>';
+    });
+    tarjetas.innerHTML = html;
+  }
+
+  window.cambiarVista = function () {
+    var quiereTarjetas = tarjetas.classList.contains("hidden");
+    if (quiereTarjetas) construir();
+    tarjetas.classList.toggle("hidden", !quiereTarjetas);
+    tabla.classList.toggle("hidden", quiereTarjetas);
+  };
+
+  construir();
+})();
+"""
+
 cfg = {
     "src": "demo_3_inventario_y_reportes_para_pymes_kardex_pro",
     "dst": "sitio-web/demos/demo3-inventario-reportes/index.html",
@@ -118,7 +172,7 @@ cfg = {
         ),
     ],
     "ctas": [],
-    "js_extra": "",
+    "js_extra": VISTA_JS,
 }
 
 transform(cfg)
@@ -135,6 +189,32 @@ h = h.replace(
     + "</footer>",
     1,
 )
+
+# --- HTML: botón "Cambiar vista" y contenedor de la vista de tarjetas ---
+viejo_boton = (
+    '<button class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg '
+    "bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors "
+    'text-label-sm font-label-sm" type="button">'
+)
+assert viejo_boton in h, "botón 'Cambiar vista' no encontrado"
+h = h.replace(
+    viejo_boton,
+    viejo_boton[:-1] + ' data-on-click="cambiarVista()">',
+    1,
+)
+viejo_wrap = '<div class="overflow-x-auto rounded-lg">'
+assert h.count(viejo_wrap) == 1, "envoltorio de la tabla no único"
+h = h.replace(
+    viejo_wrap, '<div class="overflow-x-auto rounded-lg" id="tarjeta-tabla">', 1
+)
+marca_pie = "<!-- Table Footer / Quick Summary Stats -->"
+assert marca_pie in h, "marca del pie de tabla no encontrada"
+h = h.replace(
+    marca_pie,
+    '<div id="vista-tarjetas" class="hidden"></div>\n' + marca_pie,
+    1,
+)
+open(p, "w", encoding="utf-8").write(h)
 
 # --- HTML: las 2 fotos sin generar quedan como cuadro con icono ---
 h, n = re.subn(
