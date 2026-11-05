@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Demo · Kardex Pro: inventario y reportes para PYMEs | ReuKev</title>
+<meta name="description" content="Demo funcional de ReuKev: control de inventario (kardex) con movimientos, alertas de stock y reportes semanales para ferreterías y bodegas. Negocio ficticio."/>
+<link rel="canonical" href="[DOMINIO]/demos/demo3-inventario-reportes/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#FFFFFF"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_EC"/>
+<meta property="og:site_name" content="ReuKev"/>
+<meta property="og:title" content="Demo · Kardex Pro: inventario y reportes para PYMEs | ReuKev"/>
+<meta property="og:description" content="Demo funcional de ReuKev: control de inventario (kardex) con movimientos, alertas de stock y reportes semanales para ferreterías y bodegas. Negocio ficticio."/>
+<meta property="og:image" content="[DOMINIO]/assets/img/capturas/demo3-inventario-reportes.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="../../assets/img/favicon-192.png"/>
+<link rel="stylesheet" href="../../assets/css/site.css"/>
+<script src="../../assets/js/wa.js" defer></script>
+<script src="../../assets/js/demo3.js" defer></script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="bg-primary text-on-primary py-space-xs px-gutter flex items-center justify-between text-label-sm font-label-sm"><div class="flex items-center gap-space-sm mx-auto md:mx-0 flex-wrap justify-center"><span>Demo de ReuKev</span><span class="opacity-40">·</span><a class="underline underline-offset-2 hover:text-primary-fixed transition-colors" href="../../index.html">Volver al sitio</a><span class="opacity-40">·</span><a class="font-label-md hover:text-primary-fixed transition-colors" href="#" data-wa="Hola Kevin, vi la demo del sistema de inventario y reportes para PYMEs y quiero una así para mi negocio.">Quiero un sistema de inventario y reportes ($1.150 o $490)</a></div><div class="hidden md:flex items-center gap-space-xs text-secondary-container"><svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg><span class="text-label-sm">Datos simulados</span></div></div><div class="h-20 bg-surface/90 backdrop-blur-xl"><div class="max-w-[1200px] h-full mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><div class="flex flex-col"><span class="text-headline-sm font-headline-sm text-primary tracking-tight">Kardex Pro</span><span class="text-label-sm font-label-sm text-on-surface-variant">Distribuidora Morales (Demo)</span></div><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container rounded-lg"><a aria-current="page" class="px-space-md py-space-xs font-label-md transition-colors bg-primary-container text-on-primary-container rounded-lg" data-path="inventario" href="#">Inventario</a><a class="px-space-md py-space-xs text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="movimientos" href="#">Movimientos</a><a class="px-space-md py-space-xs text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="reportes-semanales" href="#">Reportes Semanales</a><a class="px-space-md py-space-xs text-label-md font-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="alertas-de-stock" href="#">Alertas de Stock</a></nav></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-full"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg><select class="bg-transparent text-label-sm font-label-sm text-on-surface focus:outline-none cursor-pointer pr-space-xs"><option selected="" value="admin">Administrador</option><option value="vendedor">Vendedor</option></select></div><button class="hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors text-label-sm font-label-sm" type="button"><svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg>Cambiar vista</button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-on-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Dynamic Operational Dashboard Container -->
+<div class="max-w-[1200px] w-full mx-auto px-gutter py-space-lg flex flex-col gap-space-lg">
+<!-- Header Block with Role Switch & Global Actions -->
+<header class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded text-label-sm font-label-sm bg-primary-fixed text-on-primary-fixed uppercase tracking-wider font-semibold">Kardex PyME v3.2</span>
+<span class="text-label-sm font-label-sm text-outline">Sucursal Matriz · negocio ficticio</span>
+</div>
+<h1 class="text-headline-md font-headline-md text-on-surface">Control de Inventario y Reportes Operativos</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Gestión en tiempo real de entradas, salidas y alertas automáticas de reposición para ferreterías, bodegas y distribuidores.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<!-- Interactive Role Toggle -->
+<div class="flex bg-surface-container-low p-1 rounded-lg self-start sm:self-auto" id="roleSelector">
+<button class="flex items-center gap-1.5 px-space-sm py-1.5 rounded text-label-sm font-label-md bg-surface-container-lowest text-primary shadow-sm transition-all" id="roleAdminBtn" data-on-click="setRole('admin')" type="button">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><circle cx="12" cy="12" r="3"/></svg>
+<span>Admin (Total)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-sm py-1.5 rounded text-label-sm font-label-md text-on-surface-variant hover:text-on-surface transition-all" id="roleVendedorBtn" data-on-click="setRole('vendedor')" type="button">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="8" x2="8" y1="14" y2="14"/><line x1="12" x2="12" y1="14" y2="14"/><line x1="16" x2="16" y2="18"/><line x1="8" x2="8" y1="18" y2="18"/><line x1="12" x2="16" y1="18" y2="18"/></svg>
+<span>Vendedor</span>
+</button>
+</div>
+<!-- Global Action Group -->
+<div class="flex items-center gap-space-xs flex-wrap sm:flex-nowrap">
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-md font-label-md transition-colors shadow-sm" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></svg>
+<span class="hidden md:inline">Bodega:</span> Quito Norte
+          </button>
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-label-md font-label-md transition-colors shadow-sm" data-on-click="scrollToSection('reporte-preview')" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+<span>Reporte Semanal</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-primary hover:bg-primary-hover text-on-primary text-label-md font-label-md transition-all shadow-sm" data-on-click="openQuickMovementModal()" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+<span>+ Movimiento</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Operational KPI Metrics (4 Bento Cards) -->
+<section aria-label="Indicadores Clave" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm hover:translate-y-[-2px] transition-transform">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Ventas del Período</span>
+<span class="text-headline-md font-headline-md text-on-surface mt-1">$3,842.50 <span class="text-label-sm font-label-sm text-outline font-normal">USD</span></span>
+</div>
+<div class="p-2 rounded-lg bg-secondary-container text-on-secondary-container">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm">
+<span class="text-primary font-semibold flex items-center">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg> +14%
+          </span>
+<span class="text-on-surface-variant">vs semana previa (128 trans.)</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm hover:translate-y-[-2px] transition-transform">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Stock Por Agotarse</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-headline-md font-headline-md text-tertiary">4 productos</span>
+</div>
+</div>
+<div class="p-2 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-tertiary font-semibold">2 productos bajo el mínimo</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm hover:translate-y-[-2px] transition-transform">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Valor en Bodega</span>
+<span class="text-headline-md font-headline-md text-on-surface mt-1">$28,450.00 <span class="text-label-sm font-label-sm text-outline font-normal">USD</span></span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-high text-on-surface">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h14a1 1 0 0 1 1 1v3h-4a2 2 0 0 0 0 4h4a1 1 0 0 1-1 1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M3 9v8"/></svg>
+</div>
+</div>
+<div class="flex items-center text-label-sm font-label-sm text-on-surface-variant">
+<svg class="inline-block shrink-0 w-[16px] h-[16px] text-outline mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="8" x2="8" y1="14" y2="14"/><line x1="12" x2="12" y1="14" y2="14"/><line x1="16" x2="16" y2="18"/><line x1="8" x2="8" y1="18" y2="18"/><line x1="12" x2="16" y1="18" y2="18"/></svg>
+<span>Costo Promedio Ponderado</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between gap-space-sm hover:translate-y-[-2px] transition-transform">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-wider">Líder en Ventas</span>
+<span class="text-label-md font-headline-sm text-on-surface mt-1 truncate max-w-[160px]" title="Cemento Selvalegre 50kg">Cemento Selvalegre</span>
+</div>
+<div class="p-2 rounded-lg bg-primary-fixed text-on-primary-fixed">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+</div>
+</div>
+<div class="flex items-center text-label-sm font-label-sm text-on-surface-variant">
+<span class="text-primary font-semibold mr-1">340 fundas</span>
+<span>despachadas en el mes</span>
+</div>
+</div>
+</section>
+<!-- Stock Security Alert Banner -->
+<aside class="bg-[#FEF3C7] rounded-xl p-space-md shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md" role="alert">
+<div class="flex items-start gap-space-sm">
+<div class="p-2 rounded-lg bg-[#FDE68A] text-[#92400E] shrink-0 mt-0.5 md:mt-0">
+<svg class="inline-block shrink-0 w-[24px] h-[24px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="text-label-md font-label-md text-[#92400E]">Atención de Stock Requerida</span>
+<span class="bg-[#F59E0B] text-on-primary text-label-sm font-bold px-1.5 py-0.5 rounded uppercase">2 Alertas</span>
+</div>
+<p class="text-body-md font-body-md text-[#78350F] mt-0.5">
+            2 ítems alcanzaron el stock de seguridad crítico (Varilla 12mm y Cable Gemelo). Se generó la sugerencia de compra automática con precios negociados para despacho inmediato.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-stretch md:self-auto shrink-0 flex-wrap sm:flex-nowrap">
+<button class="flex-1 sm:flex-none px-space-md py-2 rounded-lg bg-surface-container-lowest text-[#78350F] hover:bg-[#FFFBEB] text-label-sm font-label-md transition-colors shadow-sm flex items-center justify-center gap-1.5" data-on-click="filterCriticalStockOnly()" type="button">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+<span>Ver ítems críticos</span>
+</button>
+<button class="flex-1 sm:flex-none px-space-md py-2 rounded-lg bg-[#059669] hover:bg-[#047857] text-on-primary text-label-sm font-label-md transition-all shadow-sm flex items-center justify-center gap-1.5" data-on-click="sendSupplierWhatsAppOrder()" type="button">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span>Pedir por WhatsApp</span>
+</button>
+</div>
+</aside>
+<!-- Main Inventory Section (Kardex Simplificado) -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Search, Filter & Quick Options Toolbar -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-space-sm">
+<!-- Search bar -->
+<div class="relative flex-1 max-w-md">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] absolute left-3 top-1/2 -translate-y-1/2 text-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="kardexSearch" data-on-keyup="filterInventoryTable()" placeholder="Buscar por SKU, producto o categoría..." type="text"/>
+</div>
+<!-- Filter Tags & Stock Toggle -->
+<div class="flex items-center gap-space-sm flex-wrap lg:flex-nowrap">
+<div class="flex items-center bg-surface-container-low p-1 rounded-lg overflow-x-auto text-label-sm font-label-sm max-w-full">
+<button class="category-btn px-3 py-1 rounded bg-surface-container-lowest text-primary font-semibold shadow-sm" data-on-click="filterCategory('Todos')" type="button">Todos</button>
+<button class="category-btn px-3 py-1 rounded text-on-surface-variant hover:text-on-surface" data-on-click="filterCategory('Construcción')" type="button">Construcción</button>
+<button class="category-btn px-3 py-1 rounded text-on-surface-variant hover:text-on-surface" data-on-click="filterCategory('Herramientas')" type="button">Herramientas</button>
+<button class="category-btn px-3 py-1 rounded text-on-surface-variant hover:text-on-surface" data-on-click="filterCategory('Pinturas')" type="button">Pinturas</button>
+<button class="category-btn px-3 py-1 rounded text-on-surface-variant hover:text-on-surface" data-on-click="filterCategory('Electricidad')" type="button">Electricidad</button>
+</div>
+<!-- Low stock switch -->
+<label class="flex items-center gap-2 cursor-pointer bg-surface-container-low px-3 py-2 rounded-lg select-none">
+<input class="w-4 h-4 accent-primary rounded cursor-pointer" id="toggleLowStock" data-on-change="toggleLowStockFilter()" type="checkbox"/>
+<span class="text-label-sm font-label-md text-on-surface-variant whitespace-nowrap">Solo stock bajo</span>
+</label>
+</div>
+</div>
+<!-- Data Table Responsive Wrapper -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse" id="inventoryTable">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant text-label-sm font-label-md uppercase tracking-wider">
+<th class="py-3 px-4">SKU / Cód.</th>
+<th class="py-3 px-4 min-w-[240px]">Producto & Marca</th>
+<th class="py-3 px-4">Categoría</th>
+<th class="py-3 px-4 text-center">Stock Actual</th>
+<th class="py-3 px-4 text-center">Mínimo</th>
+<th class="py-3 px-4">Estado</th>
+<th class="py-3 px-4 text-right">P. Venta</th>
+<th class="py-3 px-4 text-center action-col">Acciones</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md text-on-surface divide-y divide-surface-container">
+<!-- Row 1: Cemento Selvalegre -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row" data-category="Construcción" data-stock-status="normal">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">CEM-001-SL</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img decoding="async" loading="lazy" alt="Saco de cemento de 50 kg (producto de ejemplo)" class="w-10 h-10 rounded-lg object-cover bg-surface-container shrink-0" src="../../assets/img/demos/demo3/cemento.webp"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Cemento Selvalegre 50kg</span>
+<span class="text-label-sm text-outline">Holcim Ecuador · Tipo Portland</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Construcción</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-on-surface">148</span>
+<span class="text-label-sm text-outline block -mt-1">fundas</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">40</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Normal
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$8.75</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('CEM-001-SL', 'Cemento Selvalegre 50kg')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('CEM-001-SL')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Varilla de Acero -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row bg-error-container/10" data-category="Construcción" data-stock-status="critico">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">VAR-012-AC</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline shrink-0" role="img" aria-label="Foto de producto pendiente"><svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Varilla de Acero 12mm x 12m</span>
+<span class="text-label-sm text-outline">Adelca Corrugada ASTM A706</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Construcción</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-error font-bold">1</span>
+<span class="text-label-sm text-error block -mt-1 font-semibold">varilla</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">35</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-error-container text-on-error-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Crítico (1 unidad)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$12.40</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('VAR-012-AC', 'Varilla Acero 12mm')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('VAR-012-AC')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Pintura Látex Cóndor -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row" data-category="Pinturas" data-stock-status="normal">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">PIN-004-CD</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img decoding="async" loading="lazy" alt="Balde de pintura de un galón (producto de ejemplo)" class="w-10 h-10 rounded-lg object-cover bg-surface-container shrink-0" src="../../assets/img/demos/demo3/pintura.webp"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Pintura Látex Blanco Galón</span>
+<span class="text-label-sm text-outline">Cóndor Viniltex Satinado</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Pinturas</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-on-surface">26</span>
+<span class="text-label-sm text-outline block -mt-1">galones</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">10</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Normal
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$16.80</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('PIN-004-CD', 'Pintura Látex Blanco')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('PIN-004-CD')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Taladro Percutor DeWalt -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row" data-category="Herramientas" data-stock-status="bajo">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">TAL-650-DW</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img decoding="async" loading="lazy" alt="Taladro percutor de 650 W (producto de ejemplo)" class="w-10 h-10 rounded-lg object-cover bg-surface-container shrink-0" src="../../assets/img/demos/demo3/taladro.webp"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Taladro Percutor 650W</span>
+<span class="text-label-sm text-outline">DeWalt DWD024 Mandril 1/2"</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Herramientas</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-tertiary">3</span>
+<span class="text-label-sm text-outline block -mt-1">unidades</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">5</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-[#FEF3C7] text-[#92400E] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span> Stock Bajo
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$89.50</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('TAL-650-DW', 'Taladro Percutor DeWalt')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('TAL-650-DW')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Cable Gemelo Indeco -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row bg-error-container/10" data-category="Electricidad" data-stock-status="critico">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">CAB-14G-IN</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img decoding="async" loading="lazy" alt="Rollo de cable eléctrico gemelo (producto de ejemplo)" class="w-10 h-10 rounded-lg object-cover bg-surface-container shrink-0" src="../../assets/img/demos/demo3/cable.webp"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Cable Gemelo #14 AWG 100m</span>
+<span class="text-label-sm text-outline">Indeco Cobre Electrolítico</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Electricidad</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-error font-bold">2</span>
+<span class="text-label-sm text-error block -mt-1 font-semibold">rollos</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">8</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-error-container text-on-error-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Crítico (2 rollos)
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$44.00</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('CAB-14G-IN', 'Cable Gemelo #14 100m')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('CAB-14G-IN')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: Disco de Corte Norton -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row" data-category="Herramientas" data-stock-status="normal">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">DIS-045-NO</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<img decoding="async" loading="lazy" alt="Disco de corte para amoladora (producto de ejemplo)" class="w-10 h-10 rounded-lg object-cover bg-surface-container shrink-0" src="../../assets/img/demos/demo3/discos.webp"/>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Disco de Corte 4 1/2" Metal</span>
+<span class="text-label-sm text-outline">Norton BFH Extra Fino 1.0mm</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Herramientas</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-on-surface">185</span>
+<span class="text-label-sm text-outline block -mt-1">unidades</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">50</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Normal
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$1.25</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('DIS-045-NO', 'Disco de Corte Norton')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('DIS-045-NO')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Breaker 20A -->
+<tr class="hover:bg-surface-container-low/50 transition-colors item-row" data-category="Electricidad" data-stock-status="bajo">
+<td class="py-3.5 px-4 font-mono text-label-sm text-outline">BRK-020-SQ</td>
+<td class="py-3.5 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline shrink-0" role="img" aria-label="Foto de producto pendiente"><svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface text-label-md">Disyuntor Breaker 1P 20A</span>
+<span class="text-label-sm text-outline">Square D Tipo Enchufable QO</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface text-label-sm">Electricidad</span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<span class="text-headline-sm font-headline-sm text-tertiary">4</span>
+<span class="text-label-sm text-outline block -mt-1">piezas</span>
+</td>
+<td class="py-3.5 px-4 text-center text-label-md text-outline">12</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-label-sm font-label-md bg-[#FEF3C7] text-[#92400E] font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-[#F59E0B]"></span> Stock Bajo
+                </span>
+</td>
+<td class="py-3.5 px-4 text-right font-semibold text-on-surface">$5.50</td>
+<td class="py-3.5 px-4 text-center action-col">
+<div class="flex items-center justify-center gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" data-on-click="quickStockOut('BRK-020-SQ', 'Breaker 20A Square D')" title="Salida Rápida" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>
+</button>
+<button class="p-1.5 rounded hover:bg-surface-container text-on-surface-variant transition-colors" data-on-click="viewKardexItem('BRK-020-SQ')" title="Ver Historial Kardex" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/></svg>
+</button>
+<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Quick Summary Stats -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs text-label-sm font-label-sm text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span>Mostrando <strong>7</strong> de 142 referencias registradas</span>
+<span class="hidden md:inline text-outline">·</span>
+<span class="hidden md:inline text-primary font-medium">Método Valuación: Promedio Ponderado (SRI Ecuador)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors disabled:opacity-50" type="button">Anterior</button>
+<span class="px-2 py-1 bg-primary text-on-primary rounded font-semibold text-label-sm">Pág 1 de 21</span>
+<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" type="button">Siguiente</button>
+</div>
+</div>
+</section>
+<!-- Bottom Split Section: Weekly Executive Report & WhatsApp Automation Preview -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md" id="reporte-preview">
+<!-- Weekly Flow & Executive Card (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<svg class="inline-block shrink-0 w-[22px] h-[22px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Resumen Ejecutivo Semanal</h2>
+</div>
+<span class="text-label-sm font-label-sm bg-surface-container-low px-2.5 py-1 rounded-full text-on-surface-variant">Semana 42 · Octubre</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Flujo de bodega de los últimos 6 días operativos: Entradas de mercadería recibida vs Despachos facturados.</p>
+</div>
+<!-- Inline SVG Chart: Weekly Flow In / Out -->
+<div class="bg-surface-container-low/60 p-space-md rounded-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="text-on-surface font-semibold">Balance de Mercadería (Unidades Movilizadas)</span>
+<div class="flex items-center gap-space-md text-label-sm">
+<span class="flex items-center gap-1 text-on-surface"><span class="w-3 h-3 rounded bg-primary inline-block"></span> Despachos (Salidas)</span>
+<span class="flex items-center gap-1 text-on-surface"><span class="w-3 h-3 rounded bg-surface-dim inline-block"></span> Compras (Entradas)</span>
+</div>
+</div>
+<!-- Lightweight SVG Bar Chart -->
+<div class="w-full h-44 flex items-end">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 500 160">
+<!-- Grid lines -->
+<line stroke="#eaedff" stroke-dasharray="4" stroke-width="1" x1="0" x2="500" y1="40" y2="40"></line>
+<line stroke="#eaedff" stroke-dasharray="4" stroke-width="1" x1="0" x2="500" y1="90" y2="90"></line>
+<line stroke="#eaedff" stroke-width="1" x1="0" x2="500" y1="140" y2="140"></line>
+<!-- Day 1: Lunes -->
+<rect fill="#d2d9f4" height="80" rx="3" width="18" x="25" y="60"></rect>
+<rect fill="#006948" height="105" rx="3" width="18" x="47" y="35"></rect>
+<!-- Day 2: Martes -->
+<rect fill="#d2d9f4" height="60" rx="3" width="18" x="105" y="80"></rect>
+<rect fill="#006948" height="90" rx="3" width="18" x="127" y="50"></rect>
+<!-- Day 3: Miércoles -->
+<rect fill="#d2d9f4" height="110" rx="3" width="18" x="185" y="30"></rect>
+<rect fill="#006948" height="95" rx="3" width="18" x="207" y="45"></rect>
+<!-- Day 4: Jueves -->
+<rect fill="#d2d9f4" height="70" rx="3" width="18" x="265" y="70"></rect>
+<rect fill="#006948" height="110" rx="3" width="18" x="287" y="30"></rect>
+<!-- Day 5: Viernes -->
+<rect fill="#d2d9f4" height="100" rx="3" width="18" x="345" y="40"></rect>
+<rect fill="#006948" height="120" rx="3" width="18" x="367" y="20"></rect>
+<!-- Day 6: Sábado -->
+<rect fill="#d2d9f4" height="50" rx="3" width="18" x="425" y="90"></rect>
+<rect fill="#006948" height="85" rx="3" width="18" x="447" y="55"></rect>
+</svg>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-outline px-4">
+<span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+</div>
+</div>
+<!-- Export Buttons -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-2">
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Cierre contable preliminar verificado</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-sm font-label-md transition-colors flex items-center gap-1.5 shadow-sm" data-on-click="exportPDF()" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+<span>Exportar PDF Oficial</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-sm font-label-md transition-colors flex items-center gap-1.5 shadow-sm" data-on-click="exportExcel()" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg>
+<span>Excel (.xlsx)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- WhatsApp Direct Automation Card (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[22px] h-[22px] text-[#059669]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">WhatsApp del Dueño</h2>
+</div>
+<span class="text-label-sm font-semibold text-secondary-container bg-primary px-2 py-0.5 rounded">Envío Automático</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Mensaje sintetizado que el sistema despacha todos los domingos a las 19:00 al número del propietario o administrador.</p>
+</div>
+<!-- WhatsApp Preview Bubble -->
+<div class="bg-[#ECE5DD] p-space-md rounded-xl flex flex-col gap-space-xs shadow-inner">
+<div class="flex items-center justify-between border-b border-black/5 pb-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Kardex Bot Morales</span>
+</div>
+<span class="text-label-sm text-on-surface-variant">Domingo 19:00</span>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg text-body-md font-body-md text-[#111827] shadow-sm flex flex-col gap-2 font-mono text-label-sm leading-relaxed">
+<p class="font-bold text-primary">📊 Reporte Semanal Distribuidora Morales</p>
+<p>✅ <strong>Ventas cerradas:</strong> $3,842.50 USD (+14% vs anterior)</p>
+<p>📦 <strong>Top Ventas:</strong> Cemento Selvalegre (340 fundas)</p>
+<p>⚠️ <strong>Stock Crítico Actual:</strong> 2 productos bajo mínimo (Varilla 12mm y Cable Indeco #14).</p>
+<p>🛒 <strong>Orden de Compra:</strong> Proveedores notificados con sugerencia automática.</p>
+<p>💰 <strong>Valor en Bodega:</strong> $28,450.00 USD (Costo ponderado).</p>
+<p class="text-outline text-label-sm pt-1 border-t border-surface-container">Enviado por Kardex Pro (simulado) · negocio ficticio</p>
+</div>
+</div>
+<!-- One-click test button -->
+<div class="flex items-center justify-between gap-space-xs pt-1">
+<span class="text-label-sm font-label-sm text-outline">Destinatario: propietario de la distribuidora (simulado)</span>
+<button class="px-space-md py-2.5 rounded-lg bg-[#059669] hover:bg-[#047857] text-on-primary text-label-md font-label-md transition-all shadow-sm flex items-center gap-1.5" data-on-click="triggerManualWhatsAppNotification()" type="button">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+<span>Enviar Prueba Ahora</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Commercial Conversion Band (ReuKev Systems) -->
+<section class="bg-gradient-to-r from-surface-container-lowest to-surface-container-low rounded-xl p-space-lg md:p-space-xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl text-center lg:text-left">
+<div class="inline-flex items-center justify-center lg:justify-start gap-2">
+<svg class="inline-block shrink-0 w-[24px] h-[24px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+<span class="text-label-md font-label-md text-primary tracking-wide uppercase">Software para PYMEs sin mensualidades abusivas</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">¿Necesitas un sistema de inventario y reportes sin pagar mensualidades costosas?</h2>
+<p class="text-body-md font-body-md text-on-surface-variant">
+          Por <strong>$490 USD</strong> (Plan Estándar para 1 local) o <strong>$1.150 USD</strong> (Plan Avanzado con multi-sucursal y conexión de facturación SRI), te armo este sistema a la medida exacta de tu bodega o ferretería. <strong>Cero cobros recurrentes obligatorios.</strong> Tú eres dueño de tus datos.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-center gap-space-xs shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto text-center px-space-xl py-3.5 rounded-lg bg-primary hover:bg-primary-hover text-on-primary text-label-md font-label-md transition-all shadow-md flex items-center justify-center gap-2" href="#" data-wa="Hola Kevin, vi la demo del sistema de inventario y reportes para PYMEs y quiero una así para mi negocio." rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span>Cotizar este sistema con ReuKev ($490 / $1.150)</span>
+</a>
+<span class="text-label-sm font-label-sm text-outline text-center">Incluye inducción a tu personal y carga inicial de tu inventario en Excel</span>
+</div>
+</section>
+</div>
+<!-- Interactive Quick Movement Modal (Hidden by Default) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-space-md" id="quickMovementModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-container pb-space-sm">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[24px] h-[24px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="m21 8-4-4-4 4"/><path d="M17 4v16"/></svg>
+<h3 class="text-headline-sm font-headline-sm text-on-surface" id="modalTitle">Registrar Movimiento de Inventario</h3>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg" data-on-click="closeQuickMovementModal()" type="button">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" id="movementForm" data-on-submit="handleMovementSubmit(event)">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-md text-on-surface">Tipo de Operación</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer border-2 border-transparent has-[:checked]:border-primary has-[:checked]:bg-secondary-container/20">
+<input checked="" class="accent-primary" name="movType" type="radio" value="SALIDA"/>
+<span class="text-label-md font-label-md text-on-surface">Salida (Venta / Despacho)</span>
+</label>
+<label class="flex items-center justify-center gap-2 p-2.5 rounded-lg bg-surface-container-low cursor-pointer border-2 border-transparent has-[:checked]:border-primary has-[:checked]:bg-secondary-container/20">
+<input class="accent-primary" name="movType" type="radio" value="ENTRADA"/>
+<span class="text-label-md font-label-md text-on-surface">Entrada (Compra / Proveedor)</span>
+</label>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-md text-on-surface">Producto Seleccionado</label>
+<select class="w-full px-3 py-2.5 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest" id="modalProductSelect">
+<option value="CEM-001-SL">CEM-001-SL · Cemento Selvalegre 50kg (Stock: 148)</option>
+<option value="VAR-012-AC">VAR-012-AC · Varilla de Acero 12mm x 12m (Stock: 1 - Crítico)</option>
+<option value="PIN-004-CD">PIN-004-CD · Pintura Látex Blanco Galón (Stock: 26)</option>
+<option value="TAL-650-DW">TAL-650-DW · Taladro Percutor 650W DeWalt (Stock: 3)</option>
+<option value="CAB-14G-IN">CAB-14G-IN · Cable Gemelo #14 Indeco (Stock: 2 - Crítico)</option>
+<option value="DIS-045-NO">DIS-045-NO · Disco de Corte 4 1/2" Norton (Stock: 185)</option>
+<option value="BRK-020-SQ">BRK-020-SQ · Disyuntor Breaker 1P 20A (Stock: 4)</option>
+</select>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-md text-on-surface">Cantidad</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:outline-none" id="modalQty" min="1" required="" type="number" value="1"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-md text-on-surface">N° Factura / Nota</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:outline-none" placeholder="FAC-001-094" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm font-label-md text-on-surface">Motivo / Observación</label>
+<input class="w-full px-3 py-2 bg-surface-container-low rounded-lg text-body-md font-body-md text-on-surface focus:outline-none" placeholder="Despacho mostrador cliente final..." type="text"/>
+</div>
+<div class="flex items-center justify-end gap-space-xs pt-space-xs mt-2">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-md font-label-md transition-colors" data-on-click="closeQuickMovementModal()" type="button">Cancelar</button>
+<button class="px-space-lg py-2 rounded-lg bg-primary hover:bg-primary-hover text-on-primary text-label-md font-label-md transition-all shadow-sm" type="submit">Confirmar en Kardex</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Client-side Interactive Logic -->
+
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1200px] mx-auto px-gutter py-space-xl flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant text-label-sm font-label-sm"><div class="flex flex-col sm:flex-row items-center gap-space-sm text-center sm:text-left"><span>© 2026 Kardex Pro · Distribuidora Morales (negocio ficticio). Todos los derechos reservados.</span></div><div class="flex items-center gap-space-xs font-label-md"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></svg><span>Desarrollado y respaldado por ReuKev Systems</span></div>
+<p class="max-w-[1200px] mx-auto px-gutter pb-space-xl font-label-sm text-label-sm text-on-surface-variant">Alcance de los planes: el Estándar ($490) cubre un local con los módulos de esta demo; el Avanzado ($1.150) agrega multi-sucursal y conciliación. La inducción del personal, la carga inicial del inventario y la conexión con la facturación electrónica del SRI se cotizan como extras.</p></footer></body></html>

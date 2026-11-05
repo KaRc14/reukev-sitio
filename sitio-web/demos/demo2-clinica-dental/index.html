@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Demo · ProSonrisa: clínica dental con agenda de citas | ReuKev</title>
+<meta name="description" content="Demo funcional de ReuKev: agenda de citas para clínica dental con selección de tratamiento, profesional, fecha y hora, más confirmación por WhatsApp. Negocio ficticio."/>
+<link rel="canonical" href="[DOMINIO]/demos/demo2-clinica-dental/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#FFFFFF"/>
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_EC"/>
+<meta property="og:site_name" content="ReuKev"/>
+<meta property="og:title" content="Demo · ProSonrisa: clínica dental con agenda de citas | ReuKev"/>
+<meta property="og:description" content="Demo funcional de ReuKev: agenda de citas para clínica dental con selección de tratamiento, profesional, fecha y hora, más confirmación por WhatsApp. Negocio ficticio."/>
+<meta property="og:image" content="[DOMINIO]/assets/img/capturas/demo2-clinica-dental.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="../../assets/img/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="../../assets/img/favicon-192.png"/>
+<link rel="stylesheet" href="../../assets/css/site.css"/>
+<script src="../../assets/js/wa.js" defer></script>
+<script src="../../assets/js/demo2.js" defer></script>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 w-full z-50"><div class="bg-on-surface text-surface-bright py-2 px-margin text-center flex flex-wrap items-center justify-center gap-space-sm font-label-sm text-label-sm shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-fixed"></span>Demo de ReuKev</span><span class="text-outline-variant">·</span><a class="text-surface-bright hover:underline transition-all" href="../../index.html">Volver al sitio</a><span class="text-outline-variant">·</span><a class="inline-flex items-center gap-1 font-semibold text-primary-fixed hover:underline" href="#" data-wa="Hola Kevin, vi la demo de la clínica dental con agenda de citas y quiero una así para mi negocio.">Quiero un sistema de citas así ($490) <svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div><div class="h-20 bg-surface/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1200px] h-full mx-auto px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary"><svg class="inline-block shrink-0 w-[28px] h-[28px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v6"/><path d="M9 11h6"/></svg></div><div><span class="font-headline-sm text-headline-sm text-on-surface block leading-tight tracking-tight">Sonrisas & Salud</span><span class="font-label-sm text-label-sm text-on-surface-variant block font-medium">Clínica Dental Especializada</span></div></div><div class="hidden lg:flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-2"><svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3H5z"/><path d="M12 2v2"/><path d="M4.5 8.5 3 10"/><path d="m19.5 8.5 1.5 1.5"/></svg><div><span class="block text-outline text-label-sm font-semibold uppercase tracking-wider">Urgencias 24/7</span><span class="font-semibold text-on-surface">+593 99 137 1570</span></div></div><div class="flex items-center gap-2"><svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><span class="block text-outline text-label-sm font-semibold uppercase tracking-wider">Horario de Atención</span><span class="font-medium text-on-surface">Lun a sáb: 08:30 - 18:30</span></div></div></div><nav class="hidden md:flex items-center gap-space-md" data-active-classes="text-primary font-semibold"><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="inicio" href="#">Inicio</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="especialidades" href="#">Especialidades</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="equipo-medico" href="#">Equipo Médico</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="preguntas-frecuentes" href="#">Preguntas</a></nav><div class="flex items-center gap-space-sm"><a class="inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded-lg transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]" data-path="agendar-cita" href="#">Agendar Cita</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-on-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- BANNER DEMO SUPERIOR (Interactiva & Transparente) -->
+<aside class="w-full bg-surface-container-high py-space-xs px-margin shadow-sm">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+          Demo de ReuKev
+        </span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Clínica dental con agenda de citas</span>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<span class="font-body-md text-label-sm text-on-surface-variant">Sistema llave en mano por <strong class="text-primary font-semibold">$490 USD</strong> (Plan Estándar ReuKev)</span>
+</div>
+<div class="flex items-center gap-space-xs w-full md:w-auto justify-end">
+<a class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-all shadow-sm" href="../../index.html">
+          Volver al sitio
+        </a>
+<a class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-sm transition-all shadow-sm flex items-center gap-1" href="#">
+<span>Quiero este sistema para mi consultorio ($490)</span>
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+</div>
+</aside>
+<!-- HERO / CABECERA DEL CONSULTORIO -->
+<section class="w-full py-space-xl px-margin bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 space-y-space-sm">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+<span>Atención odontológica garantizada · Negocio ficticio de demostración</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight">
+            Clínica Dental ProSonrisa • <span class="text-primary">Odontología Integral</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Atención personalizada. Agenda tu cita en 60 segundos sin llamadas telefónicas, mensajes perdidos ni esperas innecesarias.
+          </p>
+<!-- Badges de confianza -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm shadow-sm">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span class="font-medium">Sin registro previo</span>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm shadow-sm">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span class="font-medium">Confirmación inmediata por WhatsApp</span>
+</div>
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm shadow-sm">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M22 8c0-2.3-2.3-4-6-4-3.5 0-6 1.7-6 4"/><path d="M18 8a4 4 0 0 0-8 0c0 4-1.5 5-2.5 6.5A2 2 0 0 0 9 17h9a2 2 0 0 0 1.5-2.5C18 13 18 10 18 8"/></svg>
+<span class="font-medium">Recordatorio automático 24h antes</span>
+</div>
+</div>
+</div>
+<!-- Metric visual card -->
+<div class="lg:col-span-4 bg-surface-container-low p-space-lg rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center">
+<svg class="inline-block shrink-0 w-[28px] h-[28px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">100% Digital</span>
+</div>
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">< 1 min</span>
+<p class="font-label-md text-label-md text-on-surface-variant font-medium">Tiempo promedio de agendamiento</p>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg flex items-center gap-3 shadow-sm">
+<svg class="inline-block shrink-0 w-[22px] h-[22px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+<div class="text-left">
+<span class="block font-label-sm text-label-sm text-on-surface font-semibold">Sincronización al instante</span>
+<span class="block font-label-sm text-label-sm text-outline">Bloqueo en agenda de Google Calendar</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 1: CATÁLOGO DE TRATAMIENTOS Y PRECIOS TRANSPARENTES -->
+<section class="w-full py-space-xl px-margin bg-background">
+<div class="max-w-[1200px] mx-auto space-y-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-sm">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider font-semibold">Paso 1 de 3</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Catálogo de Tratamientos y Precios Transparentes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Sin sorpresas en recepción. Elige el procedimiento para asignar el tiempo clínico correspondiente.</p>
+</div>
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          Valores en dólares de EE.UU. (USD)
+        </div>
+</div>
+<!-- Cuadrícula con 4 tratamientos clave -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" id="treatment-grid">
+<!-- Tratamiento A: Seleccionado Activo -->
+<div class="treatment-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-md transition-all relative flex flex-col justify-between h-full bg-primary/5" id="card-treatment-1" data-on-click="selectTreatment('Limpieza Dental Profunda & Profilaxis', '45 min', '35.00', this)">
+<div class="space-y-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Doctora de la clínica de ejemplo (negocio ficticio)" decoding="async" loading="lazy" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/doctora.webp"/>
+<span class="absolute top-2 right-2 px-2 py-0.5 rounded bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<svg class="inline-block shrink-0 w-[14px] h-[14px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Activo
+              </span>
+</div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 45 min
+                </span>
+<span class="font-semibold text-primary font-headline-sm text-headline-sm">$35 USD</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Limpieza Dental Profunda & Profilaxis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-label-sm mt-1">Incluye eliminación de sarro con ultrasonido suave y pulido dental profiláctico con flúor remineralizante.</p>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm">
+<button class="w-full py-2 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1 shadow-sm">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+              Seleccionado
+            </button>
+</div>
+</div>
+<!-- Tratamiento B -->
+<div class="treatment-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between h-full" id="card-treatment-2" data-on-click="selectTreatment('Evaluación Diagnóstica & Radiografía Periapical', '30 min', '20.00', this)">
+<div class="space-y-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Doctor de la clínica de ejemplo (negocio ficticio)" decoding="async" loading="lazy" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/doctor.webp"/>
+</div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="flex items-center gap-1 text-outline font-medium">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 30 min
+                </span>
+<span class="font-semibold text-on-surface font-headline-sm text-headline-sm">$20 USD</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Evaluación Diagnóstica & Radiografía</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-label-sm mt-1">Diagnóstico clínico integral, cámara intraoral y plan de tratamiento detallado sin compromiso alguno.</p>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1 transition-all">
+<span>Seleccionar</span>
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+</button>
+</div>
+</div>
+<!-- Tratamiento C -->
+<div class="treatment-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between h-full" id="card-treatment-3" data-on-click="selectTreatment('Curación con Resina Estética (Calza dental)', '50 min', '30.00', this)">
+<div class="space-y-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img decoding="async" loading="lazy" alt="Sala de atención de la clínica de ejemplo" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/resina.webp"/>
+</div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="flex items-center gap-1 text-outline font-medium">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 50 min
+                </span>
+<span class="font-semibold text-on-surface font-headline-sm text-headline-sm">$30 USD</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Curación con Resina Estética</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-label-sm mt-1">Restauración de alta resistencia bio-compatible con fotocurado exactamente del mismo color de tu esmalte.</p>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1 transition-all">
+<span>Seleccionar</span>
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+</button>
+</div>
+</div>
+<!-- Tratamiento D -->
+<div class="treatment-card cursor-pointer bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-all relative flex flex-col justify-between h-full" id="card-treatment-4" data-on-click="selectTreatment('Blanqueamiento Dental LED en Consultorio', '60 min', '90.00', this)">
+<div class="space-y-space-sm">
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img decoding="async" loading="lazy" alt="Equipo de la clínica de ejemplo" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/blanqueamiento.webp"/>
+</div>
+<div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span class="flex items-center gap-1 text-outline font-medium">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 min
+                </span>
+<span class="font-semibold text-on-surface font-headline-sm text-headline-sm">$90 USD</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">Blanqueamiento LED en Consultorio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-label-sm mt-1">Aclarado progresivo de hasta 3 tonos en una sola sesión clínica segura y con barrera gingival protectora.</p>
+</div>
+</div>
+<div class="pt-space-sm mt-space-sm">
+<button class="w-full py-2 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-1 transition-all">
+<span>Seleccionar</span>
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 2: EQUIPO MÉDICO (Rotulado explícitamente como "Equipo de ejemplo") -->
+<section class="w-full py-space-lg px-margin bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider font-semibold">Paso 2 de 3</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm font-semibold">
+              Equipo de ejemplo
+            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Selecciona el Odontólogo Responsable</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Puedes cambiar de especialista en cualquier momento</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Dra. Valeria Paredes (Seleccionada) -->
+<div class="doctor-card cursor-pointer p-space-md rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-all flex items-start gap-space-md bg-primary/5" id="doctor-1" data-on-click="selectDoctor('Dra. Valeria Paredes', this)">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img decoding="async" loading="lazy" alt="Doctora de la clínica de ejemplo (negocio ficticio)" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/doctora.webp"/>
+</div>
+<div class="space-y-1 flex-1">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Disponible hoy
+              </span>
+<svg class="inline-block shrink-0 w-[24px] h-[24px] doctor-check text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dra. Valeria Paredes</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Odontóloga General & Estética Dental</p>
+<p class="font-label-sm text-label-sm text-outline font-medium">Reg. Senescyt 1005-23-4412</p>
+</div>
+</div>
+<!-- Dr. Esteban Andrade -->
+<div class="doctor-card cursor-pointer p-space-md rounded-xl bg-surface-container-low shadow-sm hover:shadow-md transition-all flex items-start gap-space-md" id="doctor-2" data-on-click="selectDoctor('Dr. Esteban Andrade', this)">
+<div class="w-20 h-20 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img decoding="async" loading="lazy" alt="Doctor de la clínica de ejemplo (negocio ficticio)" class="w-full h-full object-cover" src="../../assets/img/demos/demo2/doctor.webp"/>
+</div>
+<div class="space-y-1 flex-1">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                Disponible mañana
+              </span>
+<svg class="inline-block shrink-0 w-[24px] h-[24px] doctor-check text-surface-dim" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Dr. Esteban Andrade</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Especialista en Rehabilitación Oral & Prótesis</p>
+<p class="font-label-sm text-label-sm text-outline font-medium">Reg. Senescyt 1008-19-8921</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN 3: AGENDA EN TIEMPO REAL Y SELECTOR DE TURNO (Módulo interactivo a dos columnas) -->
+<section class="w-full py-space-xl px-margin bg-background">
+<div class="max-w-[1200px] mx-auto space-y-space-md">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider font-semibold">Paso 3 de 3</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Agenda en Tiempo Real y Selector de Turno</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Elige tu horario y completa tus datos básicos. Se generará automáticamente tu comprobante para WhatsApp.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Columna Izquierda: Selectores y formulario -->
+<div class="lg:col-span-7 space-y-space-lg">
+<!-- Selector de Fecha / Semana Actual -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[22px] h-[22px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+<span class="font-label-md text-label-md text-on-surface font-bold">Octubre 2025 • Semana en curso</span>
+</div>
+<span class="text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+                Horarios en vivo
+              </span>
+</div>
+<div class="grid grid-cols-5 gap-2 pt-space-xs" id="days-selector">
+<button class="date-btn p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-center transition-all flex flex-col items-center" data-on-click="selectDate('Lunes 14 de Octubre', this)" type="button">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Lun</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">14</span>
+<span class="text-label-sm text-primary font-medium mt-1">4 cupos</span>
+</button>
+<button class="date-btn p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-center transition-all flex flex-col items-center" data-on-click="selectDate('Martes 15 de Octubre', this)" type="button">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Mar</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">15</span>
+<span class="text-label-sm text-primary font-medium mt-1">2 cupos</span>
+</button>
+<!-- Seleccionado Mié 16 -->
+<button class="date-btn p-3 rounded-lg bg-primary text-on-primary text-center transition-all flex flex-col items-center shadow-sm" data-on-click="selectDate('Miércoles 16 de Octubre', this)" type="button">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase font-semibold">Mié</span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">16</span>
+<span class="text-label-sm text-primary-fixed font-semibold mt-1">¡Elegido!</span>
+</button>
+<button class="date-btn p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-center transition-all flex flex-col items-center" data-on-click="selectDate('Jueves 17 de Octubre', this)" type="button">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Jue</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">17</span>
+<span class="text-label-sm text-primary font-medium mt-1">5 cupos</span>
+</button>
+<button class="date-btn p-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-center transition-all flex flex-col items-center" data-on-click="selectDate('Viernes 18 de Octubre', this)" type="button">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Vie</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">18</span>
+<span class="text-label-sm text-primary font-medium mt-1">3 cupos</span>
+</button>
+</div>
+</div>
+<!-- Selector de Horas Disponibles -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<!-- Turno Mañana -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold flex items-center gap-1.5">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+                Turno Mañana
+              </span>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+<button class="time-btn py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-medium text-center transition-all" data-on-click="selectTime('09:00 (Mañana)', this)" type="button">
+                  09:00
+                </button>
+<button class="time-btn py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-medium text-center transition-all" data-on-click="selectTime('10:00 (Mañana)', this)" type="button">
+                  10:00
+                </button>
+<button class="time-btn py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-medium text-center transition-all" data-on-click="selectTime('11:30 (Mañana)', this)" type="button">
+                  11:30
+                </button>
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high opacity-60 font-label-md text-label-md text-outline cursor-not-allowed text-center flex items-center justify-center gap-1">
+<span>12:30</span>
+<span class="text-label-sm px-1 py-0.5 rounded bg-surface-dim text-on-surface-variant font-bold">Ocupado</span>
+</div>
+</div>
+</div>
+<!-- Turno Tarde -->
+<div class="space-y-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold flex items-center gap-1.5">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                Turno Tarde
+              </span>
+<div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+<button class="time-btn py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-medium text-center transition-all" data-on-click="selectTime('14:30 (Tarde)', this)" type="button">
+                  14:30
+                </button>
+<!-- 15:30 Seleccionado -->
+<button class="time-btn py-2.5 px-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-bold text-center transition-all shadow-sm flex items-center justify-center gap-1" data-on-click="selectTime('15:30 (Tarde)', this)" type="button">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                  15:30
+                </button>
+<button class="time-btn py-2.5 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container font-label-md text-label-md text-on-surface font-medium text-center transition-all" data-on-click="selectTime('16:30 (Tarde)', this)" type="button">
+                  16:30
+                </button>
+<div class="py-2.5 px-3 rounded-lg bg-surface-container-high opacity-60 font-label-md text-label-md text-outline cursor-not-allowed text-center flex items-center justify-center gap-1">
+<span>17:30</span>
+<span class="text-label-sm px-1 py-0.5 rounded bg-surface-dim text-on-surface-variant font-bold">Ocupado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Formulario de datos rápidos del paciente -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[22px] h-[22px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Datos para tu Notificación</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium block">Nombre y Apellido *</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary shadow-sm transition-all" id="patient-name" data-on-input="updateSummary()" placeholder="Ej. Carlos Mendoza" type="text" value="Carlos Mendoza"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface font-medium block">Celular WhatsApp *</label>
+<input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary shadow-sm transition-all" id="patient-phone" data-on-input="updateSummary()" placeholder="+593 99..." type="tel" value="+593 99 824 1092"/>
+</div>
+</div>
+<div class="space-y-2 pt-space-xs">
+<label class="font-label-md text-label-md text-on-surface font-medium block">¿Es tu primera consulta con nosotros?</label>
+<div class="flex items-center gap-space-md">
+<label class="flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface">
+<input checked="" class="w-4 h-4 accent-primary" name="first_visit" type="radio"/>
+<span>Sí, es mi primera vez</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer font-label-md text-label-md text-on-surface-variant">
+<input class="w-4 h-4 accent-primary" name="first_visit" type="radio"/>
+<span>Ya soy paciente regular</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Columna Derecha: TARJETA "RESUMEN DE TU CITA" -->
+<div class="lg:col-span-5 space-y-space-md sticky top-28">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<svg class="inline-block shrink-0 w-[22px] h-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Tu Cita Reservada</h3>
+<span class="text-outline font-label-sm text-label-sm">Comprobante preliminar</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Listo</span>
+</div>
+<!-- Datos estructurados del resumen -->
+<div class="space-y-space-sm bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-start gap-3">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5c-1.5-1.5-4-2-6-1.5C3.5 4.5 3 7 3.5 9c.5 2 1 3.5 1.5 5.5.5 2 .5 4 1.5 4s1.5-2 2-4c.5-2 .5-4 1.5-4s1 2 1.5 4c.5 2 1 4 2 4s1-2 1.5-4c.5-2 1-3.5 1.5-5.5.5-2 0-4.5-2.5-5-2-.5-4.5 0-6 1.5z"/></svg>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-outline block">Tratamiento</span>
+<span class="font-label-md text-label-md text-on-surface font-bold block" id="summary-treatment">Limpieza Dental Profunda & Profilaxis</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium" id="summary-duration">(45 min)</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-outline block">Profesional a cargo</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="summary-doctor">Dra. Valeria Paredes</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-outline block">Fecha y Hora</span>
+<span class="font-label-md text-label-md text-on-surface font-bold" id="summary-datetime">Miércoles 16 de Octubre • 15:30 (Tarde)</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-outline block">Ubicación</span>
+<span class="font-label-md text-label-md text-on-surface font-medium">Av. República y Eloy Alfaro, Edif. Ágora, Piso 3, Consultorio 304, Quito</span>
+</div>
+</div>
+<div class="flex items-start gap-3 pt-space-xs">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-outline block">Valor estimado</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold block" id="summary-price">$35.00 USD</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Se cancela en consultorio: Efectivo, DeUna o Tarjeta</span>
+</div>
+</div>
+</div>
+<!-- Botón de acción primario -->
+<button class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-primary-hover text-on-primary font-label-md text-headline-sm font-semibold transition-all shadow-md flex items-center justify-center gap-2" data-on-click="confirmAppointment()" type="button">
+<svg class="inline-block shrink-0 w-[24px] h-[24px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+              Confirmar Cita por WhatsApp
+            </button>
+<!-- CAJA DE VISTA PREVIA DEL MENSAJE AUTOMÁTICO DE WHATSAPP -->
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold flex items-center gap-1">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+                  Previsualización del mensaje automático
+                </span>
+<span class="text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-medium">WhatsApp Sync</span>
+</div>
+<div class="p- space-md p-4 rounded-xl bg-surface-container-high text-on-surface font-mono text-label-sm leading-relaxed shadow-inner space-y-1 overflow-x-auto select-all" id="whatsapp-preview">
+<p class="font-bold text-primary">📅 *NUEVA RESERVA DE CITA - CLÍNICA PROSONRISA*</p>
+<p class="text-outline">--------------------------------------</p>
+<p>• *Paciente:* <span id="wa-patient">Carlos Mendoza (+593 99 824 1092)</span></p>
+<p>• *Tratamiento:* <span id="wa-treatment">Limpieza Dental Profunda ($35)</span></p>
+<p>• *Doctora:* <span id="wa-doctor">Dra. Valeria Paredes</span></p>
+<p>• *Fecha:* <span id="wa-date">Miércoles 16 de Octubre - 15:30</span></p>
+<p>• *Sede:* Edif. Ágora Piso 3, Quito</p>
+<p class="text-outline">--------------------------------------</p>
+<p class="text-on-surface-variant">• *Estado:* Turno pre-reservado. Se enviará recordatorio 24h antes por WhatsApp.</p>
+<p class="font-semibold text-primary">¿Confirmas tu asistencia para apartar el sillón dental?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BANNER INFERIOR DE LLAMADA A LA ACCIÓN (PARA DOCTORES Y CLÍNICAS) -->
+<section class="w-full py-space-xl px-margin bg-surface-container-high">
+<div class="max-w-[1200px] mx-auto bg-surface-container-lowest p-space-xl rounded-2xl shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 space-y-space-xs">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+<span>Para médicos, odontólogos y administradores de clínica</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
+            ¿Tienes un consultorio o centro médico? Deja de perder tiempo respondiendo manualmente disponibilidad en WhatsApp.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Este sistema de citas con confirmación automática y bloqueo de horarios cuesta <strong>$490 USD pago único</strong> (Plan Estándar de ReuKev). Sin mensualidades obligatorias. Listo e implementado en tu negocio en 7 a 10 días.
+          </p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs text-on-surface font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Sincronizado a Google Calendar</span>
+<span class="flex items-center gap-1"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Recordatorios automatizados</span>
+<span class="flex items-center gap-1"><svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Dominio y hosting por 1 año</span>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col items-start lg:items-end justify-center gap-space-sm">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-space-xl py-4 rounded-xl bg-primary hover:bg-primary-hover text-on-primary font-headline-sm text-headline-sm font-bold shadow-md transition-all text-center" href="#">
+<span>Pedir mi sistema de citas ($490 USD)</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+<span class="font-label-sm text-label-sm text-outline">Garantía de funcionamiento y entrega en 7-10 días</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SCRIPT INTERACTIVO CLIENTE -->
+
+</div><!-- ============ PASO SIMULADO: CONFIRMACION Y RECORDATORIO POR WHATSAPP ============ -->
+<section id="confirmacion" class="w-full bg-surface-container-lowest py-space-xl border-t border-outline-variant/30">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="bg-surface rounded-xl shadow-sm border border-outline-variant/60 p-space-lg grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-center">
+<div>
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold">
+<svg class="inline-block shrink-0 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+Paso simulado
+</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-2">Confirmación y recordatorio por WhatsApp</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Así se ve el paso final en una clínica real: al reservar, el sistema arma el mensaje de confirmación y deja listo el recordatorio. Tú solo eliges a quién enviarlo.</p>
+<ul class="flex flex-col gap-2 mt-space-sm font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="text-primary font-bold">1.</span><span>El paciente reserva y ve su resumen en pantalla.</span></li>
+<li class="flex items-start gap-2"><span class="text-primary font-bold">2.</span><span>Se prepara el mensaje de confirmación con fecha, hora y profesional.</span></li>
+<li class="flex items-start gap-2"><span class="text-primary font-bold">3.</span><span>El recordatorio se arma con un botón, listo para enviar el día anterior.</span></li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-xl p-space-md">
+<span class="font-label-md text-label-md text-on-surface">Mensaje preparado</span>
+<pre id="mensaje-recordatorio" class="mt-2 whitespace-pre-wrap font-label-sm text-label-sm text-on-surface-variant bg-surface rounded-lg p-space-sm border border-outline-variant/60">Aún no has reservado. Elige tratamiento, profesional, fecha y hora, y confirma tu cita para ver el mensaje.</pre>
+<div class="flex flex-col sm:flex-row gap-space-sm mt-space-sm">
+<a id="btn-enviar-confirmacion" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded transition-colors" href="#" rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span>Abrir en WhatsApp</span>
+</a>
+<button id="btn-preparar-recordatorio" type="button" class="inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md px-space-md py-2.5 rounded border border-outline-variant transition-colors">
+<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span>Preparar recordatorio</span>
+</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-2">Demo: nada se envía solo. El envío automático con la API oficial de WhatsApp se cotiza aparte.</p>
+</div>
+</div>
+</div>
+</section>
+</main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="max-w-[1200px] mx-auto px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg mb-space-lg"><div class="space-y-space-xs"><div class="flex items-center gap-2"><svg class="inline-block shrink-0 w-[24px] h-[24px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg><span class="font-headline-sm text-headline-sm text-on-surface font-bold">Sonrisas & Salud</span></div><p class="font-body-md text-body-md text-on-surface-variant">Atención odontológica integral y especializada con estándares clínicos modernos y trato humano.</p></div><div class="space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold">Ubicación Principal</h4><div class="flex items-start gap-2 text-on-surface-variant font-body-md text-body-md"><svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg><p>Av. Amazonas y Dirección de ejemplo · negocio ficticio</p></div><div class="flex items-center gap-2 text-on-surface-variant font-body-md text-body-md mt-2"><svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><p>PBX: (02) 299-8000</p></div></div><div class="space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold">Horarios de Consulta</h4><p class="font-body-md text-body-md text-on-surface-variant">Lunes a Sábado:<br/><span class="font-semibold text-on-surface">08:30 a 18:30</span></p><p class="font-body-md text-body-md text-on-surface-variant">Atención de emergencias dentales disponible las 24 horas.</p></div><div class="space-y-space-xs"><h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider font-semibold">Formas de Pago</h4><p class="font-body-md text-body-md text-on-surface-variant">Aceptamos todas las tarjetas de crédito y débito, transferencias y convenios con seguros médicos privados.</p><div class="flex flex-wrap gap-2 pt-1"><span class="px-2.5 py-1 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant font-medium">Visa / Mastercard</span><span class="px-2.5 py-1 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant font-medium">Transferencia</span><span class="px-2.5 py-1 bg-surface-container rounded font-label-sm text-label-sm text-on-surface-variant font-medium">Seguros Privados</span></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-on-surface-variant"><p>© 2025 Clínica Dental Sonrisas & Salud. Todos los derechos reservados.</p><div class="flex items-center gap-1"><span class="text-outline">Desarrollado y respaldado por</span><a class="font-semibold text-primary hover:underline" href="#">ReuKev Systems</a></div></div></div></footer></body></html>
