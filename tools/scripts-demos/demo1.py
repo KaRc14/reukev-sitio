@@ -5,6 +5,7 @@
 import re, sys
 
 import os
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_demos import transform, BASE
 
@@ -176,6 +177,33 @@ cfg = {
         (
             "Abierto hoy hasta las 20:00 · Envíos en moto Quito/Guayaquil",
             "Abierto hoy hasta las 20:00 · Envíos a domicilio",
+        ),
+        # --- navegación: anclas reales en vez de href="#" ---
+        (
+            'data-path="catalogo-de-productos" href="#"',
+            'data-path="catalogo-de-productos" href="#catalog-title"',
+        ),
+        (
+            '<aside class="lg:col-span-4 sticky top-28 space-y-space-md">',
+            '<aside class="lg:col-span-4 sticky top-28 space-y-space-md" id="resumen-del-pedido">',
+        ),
+        (
+            'data-path="resumen-del-pedido" href="#"',
+            'data-path="resumen-del-pedido" href="#resumen-del-pedido"',
+        ),
+        # el nav apuntaba a una sección que no existe: se quita el enlace
+        (
+            '<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors py-space-xs px-space-sm rounded" data-path="ofertas-y-combos" href="#">Combos del Día</a>',
+            "",
+        ),
+        # --- CTA sin destino -> data-wa (número único vía wa.js) ---
+        (
+            '<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-semibold hover:bg-primary-hover transition-colors shadow-sm flex items-center gap-1" href="#">',
+            '<a class="px-space-sm py-1 bg-primary text-on-primary rounded font-semibold hover:bg-primary-hover transition-colors shadow-sm flex items-center gap-1" href="#" data-wa="Hola Kevin, vi la demo del catálogo con pedidos por WhatsApp y quiero el Plan Básico de $250 para mi negocio.">',
+        ),
+        (
+            '<a class="px-space-md py-space-xs bg-inverse-surface text-inverse-on-surface rounded-lg font-label-md text-label-md hover:bg-on-surface transition-all whitespace-nowrap shadow-sm" href="#">',
+            '<a class="px-space-md py-space-xs bg-inverse-surface text-inverse-on-surface rounded-lg font-label-md text-label-md hover:bg-on-surface transition-all whitespace-nowrap shadow-sm" href="#" data-wa="Hola Kevin, vi la demo del catálogo con pedidos por WhatsApp y quiero el Plan Básico de $250 para mi negocio.">',
         ),
         (
             "Entregas directas en moto en Quito Norte, La Carolina, Mariana de Jesús y Valles.",

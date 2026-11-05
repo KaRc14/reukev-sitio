@@ -58,7 +58,7 @@ NAV_JS = r"""
         if (typeof filterCriticalStockOnly === "function") filterCriticalStockOnly();
         return;
       }
-      var id = path === "reportes-semanales" ? "reporte-preview" : "inventoryTable";
+      var id = path === "reportes-semanales" ? "reportes-semanales" : "inventario";
       var el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -72,6 +72,11 @@ VISTA_JS = r"""
   var tabla = document.getElementById("tarjeta-tabla");
   var tarjetas = document.getElementById("vista-tarjetas");
   if (!tabla || !tarjetas) return;
+
+  /* Paginación decorativa del diseño: se explica su alcance en la demo. */
+  window.demoPaginar = function () {
+    alert("Demo: en el sistema real aquí se paginan las 142 referencias registradas. En esta demo están cargadas las 7 primeras.");
+  };
 
   function texto(nodo) {
     return nodo.innerText.split("\n").map(function (t) { return t.trim(); }).filter(Boolean);
@@ -176,6 +181,54 @@ cfg = {
 }
 
 transform(cfg)
+
+# --- HTML: anclas reales para la navegación (el JS además abre el modal y filtra) ---
+p = BASE + "sitio-web/demos/demo3-inventario-reportes/index.html"
+h = open(p, encoding="utf-8").read()
+anclas = [
+    (
+        '<section class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">',
+        '<section id="inventario" class="bg-surface-container-lowest rounded-xl p-space-md sm:p-space-lg shadow-sm flex flex-col gap-space-md">',
+    ),
+    (
+        '<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md" id="reporte-preview">',
+        '<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-md" id="reportes-semanales"><div id="reporte-preview"></div>',
+    ),
+    ('data-path="inventario" href="#"', 'data-path="inventario" href="#inventario"'),
+    ('data-path="movimientos" href="#"', 'data-path="movimientos" href="#inventario"'),
+    (
+        'data-path="reportes-semanales" href="#"',
+        'data-path="reportes-semanales" href="#reportes-semanales"',
+    ),
+    (
+        'data-path="alertas-de-stock" href="#"',
+        'data-path="alertas-de-stock" href="#inventario"',
+    ),
+    # "Ajuste de Stock" (solo admin) abre el modal de movimientos
+    (
+        '<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button">',
+        '<button class="admin-only p-1.5 rounded hover:bg-surface-container text-outline transition-colors" title="Ajuste de Stock" type="button" data-on-click="openQuickMovementModal()">',
+    ),
+    # paginación del diseño: explica su alcance en la demo
+    (
+        '<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors disabled:opacity-50" type="button">',
+        '<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors disabled:opacity-50" type="button" data-on-click="demoPaginar()">',
+    ),
+    (
+        '<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" type="button">',
+        '<button class="px-3 py-1 rounded bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors" type="button" data-on-click="demoPaginar()">',
+    ),
+    # botón "Reporte Semanal" del encabezado: lleva al resumen semanal
+    (
+        '<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-md font-label-md transition-colors shadow-sm" type="button">',
+        '<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface text-label-md font-label-md transition-colors shadow-sm" type="button" data-on-click="scrollToSection(\'reportes-semanales\')">',
+    ),
+]
+for viejo, nuevo in anclas:
+    n = h.count(viejo)
+    assert n >= 1, "no encontrado en demo3: %r" % viejo[:70]
+    h = h.replace(viejo, nuevo)
+open(p, "w", encoding="utf-8").write(h)
 
 # --- HTML: nota de alcance en el pie ---
 p = BASE + "sitio-web/demos/demo3-inventario-reportes/index.html"

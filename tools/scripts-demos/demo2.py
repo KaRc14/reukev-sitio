@@ -5,6 +5,7 @@
 import re, sys
 
 import os
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_demos import transform, BASE
 
@@ -151,6 +152,58 @@ cfg = {
 }
 
 transform(cfg)
+
+# --- HTML: anclas reales para la navegación y CTA con WhatsApp ---
+p = BASE + "sitio-web/demos/demo2-clinica-dental/index.html"
+h = open(p, encoding="utf-8").read()
+
+secciones = [
+    (
+        '<section class="w-full py-space-xl px-margin bg-surface-container-lowest">',
+        '<section id="inicio" class="w-full py-space-xl px-margin bg-surface-container-lowest">',
+    ),
+    (
+        '<section class="w-full py-space-xl px-margin bg-background">',
+        '<section id="especialidades" class="w-full py-space-xl px-margin bg-background">',
+    ),
+    (
+        '<section class="w-full py-space-lg px-margin bg-surface-container-lowest">',
+        '<section id="equipo-medico" class="w-full py-space-lg px-margin bg-surface-container-lowest">',
+    ),
+    (
+        '<section class="w-full py-space-xl px-margin bg-background">',
+        '<section id="agendar-cita" class="w-full py-space-xl px-margin bg-background">',
+    ),
+]
+for viejo, nuevo in secciones:
+    assert viejo in h, "sección no encontrada en demo2: %r" % viejo[:60]
+    h = h.replace(viejo, nuevo, 1)
+
+for path in ["inicio", "especialidades", "equipo-medico", "agendar-cita"]:
+    viejo = 'data-path="%s" href="#"' % path
+    assert viejo in h, "enlace no encontrado en demo2: %s" % viejo
+    h = h.replace(viejo, 'data-path="%s" href="#%s"' % (path, path))
+
+# el nav apuntaba a una sección que no existe: se quita el enlace
+preguntas = '<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="preguntas-frecuentes" href="#">Preguntas</a>'
+assert preguntas in h, "enlace 'Preguntas' no encontrado"
+h = h.replace(preguntas, "")
+
+# CTA de precios: mensaje único de WhatsApp (wa.js arma el enlace)
+msg = "Hola Kevin, vi la demo de la clínica dental con agenda de citas y quiero un sistema así para mi negocio."
+for viejo in [
+    '<a class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-sm transition-all shadow-sm flex items-center gap-1" href="#">',
+    '<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-space-xl py-4 rounded-xl bg-primary hover:bg-primary-hover text-on-primary font-headline-sm text-headline-sm font-bold shadow-md transition-all text-center" href="#">',
+]:
+    assert viejo in h, "CTA no encontrada en demo2: %r" % viejo[:60]
+    h = h.replace(viejo, viejo[:-1] + ' data-wa="%s">' % msg, 1)
+
+# el pie enlazaba a "#": queda como texto (no hay sitio de ReuKev al que apuntar)
+h = h.replace(
+    '<a class="font-semibold text-primary hover:underline" href="#">ReuKev Systems</a>',
+    '<span class="font-semibold text-primary">ReuKev Systems</span>',
+)
+open(p, "w", encoding="utf-8").write(h)
 
 # --- HTML: CTA de la barra con icono SVG -> data-wa ---
 p = BASE + "sitio-web/demos/demo2-clinica-dental/index.html"

@@ -44,6 +44,18 @@ se genera desde `sitio-web/` con las herramientas de `tools/`.
   decorativo) alterna la tabla por tarjetas con los mismos datos, estados y acciones
   (incluidos los botones `admin-only`); buscador y filtros funcionan en ambas vistas.
 
+### Controles que no hacían nada (ahora funcionales)
+
+- **demo1**: nav "Catálogo" → ancla real; "Mi Pedido" → ancla del resumen; se quitó
+  "Combos del Día" (no existía esa sección); CTA "Cotizar sistema $250" y "Pedir el mío hoy"
+  → `data-wa` (número único).
+- **demo2**: nav con anclas reales a las secciones (Inicio, Especialidades, Equipo Médico,
+  Agendar Cita); se quitó "Preguntas" (no había sección de preguntas); las 2 CTA de $490 →
+  `data-wa`; el pie ya no enlaza "ReuKev Systems" a `#`.
+- **demo3**: nav con anclas reales + `id` en las secciones; botón "Ajuste de Stock" abre el
+  modal de movimientos; "Reporte Semanal" del encabezado lleva al resumen; la paginación
+  explica su alcance (demo con 7 de 142 referencias).
+
 ## F5 — Legal y publicación (esta sesión)
 - `sitio-web/privacidad.html` (sin cookies ni rastreadores; demos con localStorage;
   enlaces a WhatsApp son de terceros), `sitio-web/404.html` amable.

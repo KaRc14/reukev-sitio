@@ -123,6 +123,11 @@ let currentRole = 'admin';
   var tarjetas = document.getElementById("vista-tarjetas");
   if (!tabla || !tarjetas) return;
 
+  /* Paginación decorativa del diseño: se explica su alcance en la demo. */
+  window.demoPaginar = function () {
+    alert("Demo: en el sistema real aquí se paginan las 142 referencias registradas. En esta demo están cargadas las 7 primeras.");
+  };
+
   function texto(nodo) {
     return nodo.innerText.split("\n").map(function (t) { return t.trim(); }).filter(Boolean);
   }
@@ -260,7 +265,7 @@ let currentRole = 'admin';
         if (typeof filterCriticalStockOnly === "function") filterCriticalStockOnly();
         return;
       }
-      var id = path === "reportes-semanales" ? "reporte-preview" : "inventoryTable";
+      var id = path === "reportes-semanales" ? "reportes-semanales" : "inventario";
       var el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     });

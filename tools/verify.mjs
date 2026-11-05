@@ -46,6 +46,12 @@ async function abrir(browser, url, ancho) {
   return { ctx, page, errores };
 }
 
+/* Clic directo sobre el elemento: evita que el header fijo intercepte el puntero. */
+async function clickJs(page, selector) {
+  await page.waitForSelector(selector);
+  await page.$eval(selector, (el) => el.click());
+}
+
 async function revisar(browser, url, nombre, ancho) {
   const { ctx, page, errores } = await abrir(browser, url, ancho);
 
@@ -94,6 +100,39 @@ async function fnHome(browser, base) {
 
   const faq = await page.evaluate(() => document.querySelectorAll("details").length);
   if (faq < 8) falla("home", "el FAQ no tiene sus 8 preguntas");
+  await ctx.close();
+}
+
+async function fnDemo1Extra(browser, base) {
+  const { ctx, page } = await abrir(browser, base + "/demos/demo1-catalogo-pedidos/", 1440);
+  await clickJs(page, 'a[href="#catalog-title"]');
+  let hash = await page.evaluate(() => location.hash);
+  if (hash !== "#catalog-title") falla("demo1", "el nav 'Catálogo' no lleva al catálogo");
+  await clickJs(page, 'a[href="#resumen-del-pedido"]');
+  hash = await page.evaluate(() => location.hash);
+  if (hash !== "#resumen-del-pedido") falla("demo1", "'Mi Pedido' no lleva al resumen del pedido");
+  // los enlaces data-wa los arma wa.js al cargar: se comprueba el href resultante
+  const hrefCta = await page.evaluate(() =>
+    [...document.querySelectorAll("a[data-wa]")].map((a) => a.getAttribute("href")).find((h) => h.includes("250"))
+  );
+  if (!hrefCta || !hrefCta.includes("wa.me/593991371570")) falla("demo1", "la CTA 'Cotizar sistema $250' no abre WhatsApp");
+  await ctx.close();
+}
+
+async function fnDemo2Extra(browser, base) {
+  const { ctx, page } = await abrir(browser, base + "/demos/demo2-clinica-dental/", 1440);
+  await clickJs(page, 'a[href="#agendar-cita"]');
+  const hash = await page.evaluate(() => location.hash);
+  if (hash !== "#agendar-cita") falla("demo2", "'Agendar Cita' no lleva al formulario");
+  const hrefCta2 = await page.evaluate(() =>
+    [...document.querySelectorAll("a[data-wa]")].map((a) => a.getAttribute("href"))
+      .find((h) => decodeURIComponent(h).includes("agenda de citas"))
+  );
+  if (!hrefCta2 || !hrefCta2.includes("wa.me/593991371570")) falla("demo2", "la CTA de $490 no abre WhatsApp");
+  const enlace = await page.evaluate(() =>
+    [...document.querySelectorAll("a")].some((a) => a.textContent.includes("ReuKev Systems"))
+  );
+  if (enlace) falla("demo2", "el pie aún enlaza 'ReuKev Systems' a #");
   await ctx.close();
 }
 
@@ -178,6 +217,38 @@ async function fnDemo3(browser, base) {
   await ctx.close();
 }
 
+async function fnDemo3Extra(browser, base) {
+  const { ctx, page } = await abrir(browser, base + "/demos/demo3-inventario-reportes/", 1440);
+
+  // paginación honesta
+  await clickJs(page, 'button:has-text("Siguiente")');
+  let alertas = await page.evaluate(() => window.__alertas);
+  if (!alertas.some((a) => a.includes("142 referencias"))) falla("demo3", "la paginación no explica su alcance");
+
+  // "Ajuste de Stock" (admin) abre el modal de movimientos
+  await clickJs(page, 'button[title="Ajuste de Stock"]');
+  const modal = await page.evaluate(() => !document.getElementById("quickMovementModal").classList.contains("hidden"));
+  if (!modal) falla("demo3", "'Ajuste de Stock' no abre el modal");
+  await clickJs(page, 'button:has-text("Cancelar")');
+
+  // botón "Reporte Semanal" del encabezado lleva al resumen
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await clickJs(page, '[data-on-click="scrollToSection(\'reportes-semanales\')"]');
+  await page.waitForTimeout(500);
+  const y = await page.evaluate(() => window.scrollY);
+  if (y < 100) falla("demo3", "el botón 'Reporte Semanal' no desplaza al resumen");
+
+  // anclas reales del nav
+  const anclas = await page.evaluate(() => ({
+    inventario: !!document.getElementById("inventario"),
+    reportes: !!document.getElementById("reportes-semanales"),
+    hrefInventario: document.querySelector('[data-path="inventario"]').getAttribute("href"),
+  }));
+  if (!anclas.inventario || !anclas.reportes) falla("demo3", "faltan los anclas del nav");
+  if (anclas.hrefInventario !== "#inventario") falla("demo3", "el nav 'Inventario' no apunta a su ancla");
+  await ctx.close();
+}
+
 async function fnComunes(browser, base) {
   for (const p of PAGINAS) {
     const { ctx, page } = await abrir(browser, base + p.url, 1440);
@@ -218,8 +289,11 @@ async function fnComunes(browser, base) {
     await fnComunes(browser, base);
     await fnHome(browser, base);
     await fnDemo1(browser, base);
+    await fnDemo1Extra(browser, base);
     await fnDemo2(browser, base);
+    await fnDemo2Extra(browser, base);
     await fnDemo3(browser, base);
+    await fnDemo3Extra(browser, base);
     console.log("pruebas funcionales completadas");
   } finally {
     if (browser) await browser.close();
