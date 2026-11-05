@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ReuKev · Sistemas de pedidos, inventario, citas y reportes para negocios en Ecuador</title>
+<meta name="description" content="Desarrollo sistemas simples para negocios en Ecuador: catálogo con pedidos por WhatsApp, agenda de citas, inventario y reportes. Precios publicados, entrega en días y trato directo por WhatsApp."/>
+<link rel="canonical" href="[DOMINIO]/"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#FFFFFF"/>
+
+<!-- Redes sociales -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="es_EC"/>
+<meta property="og:site_name" content="ReuKev"/>
+<meta property="og:title" content="ReuKev · Sistemas simples para negocios en Ecuador"/>
+<meta property="og:description" content="Pedidos por WhatsApp, agenda de citas, inventario y reportes. Precios publicados, entrega en días, trato directo. Mira las 3 demos funcionando."/>
+<meta property="og:image" content="[DOMINIO]/assets/img/capturas/home-hero.webp"/>
+<meta property="og:url" content="[DOMINIO]/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+<!-- Favicon -->
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"/>
+<link rel="icon" href="assets/img/favicon.ico" sizes="any"/>
+<link rel="apple-touch-icon" href="assets/img/favicon-192.png"/>
+<link rel="manifest" href="site.webmanifest"/>
+
+<!-- CSS y JS propios (sin CDN ni recursos externos) -->
+<link rel="stylesheet" href="assets/css/site.css"/>
+<script src="assets/js/wa.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "ReuKev",
+  "description": "Desarrollo de sistemas simples para negocios en Ecuador: pedidos por WhatsApp, agenda de citas, inventario y reportes.",
+  "url": "[DOMINIO]/",
+  "telephone": "+593991371570",
+  "priceRange": "USD 250 - USD 1.150 + IVA",
+  "areaServed": { "@type": "Country", "name": "Ecuador" },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+593991371570",
+    "contactType": "Ventas",
+    "availableLanguage": ["es"]
+  }
+}
+</script>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-bar">
+<div class="h-20 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-sm">
+<a class="flex items-center gap-space-sm" href="#inicio">
+<img alt="Logo de ReuKev" class="h-8 w-auto object-contain" src="assets/img/logo-reukev.svg" width="32" height="32"/>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ReuKev</span>
+</a>
+<nav class="hidden md:flex items-center gap-space-xs" aria-label="Secciones del sitio">
+<a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#servicios">Servicios</a>
+<a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#demos-section">Demos</a>
+<a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#precios-section">Precios</a>
+<a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#proceso">Cómo trabajo</a>
+<a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#faq-section">Preguntas</a>
+</nav>
+<div class="flex items-center gap-space-xs">
+<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded transition-colors shadow-card" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20tengo%20una%20consulta%20sobre%20tus%20servicios%20para%20mi%20negocio." rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">chat</svg>
+<span>Escríbeme</span>
+</a>
+<button id="boton-menu" type="button" class="md:hidden w-11 h-11 rounded-lg border border-outline-variant bg-surface text-on-surface flex items-center justify-center hover:bg-surface-container-low transition-colors" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+</button>
+</div>
+</div>
+<div id="menu-movil" class="hidden md:hidden border-t border-outline-variant bg-surface">
+<nav class="max-w-[1200px] mx-auto px-gutter py-space-sm flex flex-col" aria-label="Menú móvil">
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#demos-section">Demos</a>
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#precios-section">Precios</a>
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#proceso">Cómo trabajo</a>
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#faq-section">Preguntas</a>
+<a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#contacto-section">Contacto</a>
+<a class="mt-space-xs inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-3 rounded transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20quiero%20cotizar%20un%20sistema%20para%20mi%20negocio%20desde%20el%20men%C3%BA%20del%20sitio." rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">chat</svg>
+<span>Escríbeme por WhatsApp</span>
+</a>
+</nav>
+</div>
+</header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- ==========================================
+       BLOQUE 2: HERO SECTION
+  =========================================== -->
+<section id="inicio" class="w-full bg-surface-container-lowest py-space-xl lg:py-20">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<!-- Text & Action Column -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/50 w-fit">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary">Software ágil para PYMEs en Ecuador</span>
+</div>
+<h1 class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight">
+            Deja de perder pedidos en WhatsApp. Te armo un sistema simple, con precio fijo.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Pedidos, citas, inventario y reportes para negocios de Ecuador. Entrega en días, el código es tuyo.
+          </p>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-6 py-3.5 rounded-[10px] shadow-sm transition-all duration-200 hover:shadow-md" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20cotizar%20un%20sistema%20para%20mi%20negocio" rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span>Escríbeme por WhatsApp</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container-low text-on-surface font-label-md text-label-md px-6 py-3.5 rounded-[10px] shadow-sm transition-all duration-200" href="#demos-section">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/></svg>
+<span>Ver demos</span>
+</a>
+</div>
+<!-- Trust Badges Line -->
+<div class="pt-space-md mt-space-xs flex flex-col sm:flex-row sm:items-center gap-y-3 gap-x-6 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+<span>Precio fijo antes de empezar</span>
+</div>
+<span class="hidden sm:inline text-outline-variant font-bold">·</span>
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/></svg>
+<span>Código y accesos a tu nombre</span>
+</div>
+<span class="hidden sm:inline text-outline-variant font-bold">·</span>
+<div class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+<span>30 días de garantía</span>
+</div>
+</div>
+</div>
+<!-- System Mockup Column -->
+<div class="lg:col-span-6 relative">
+<div class="relative bg-surface rounded-xl shadow-xl overflow-hidden">
+<!-- Browser Header Minimal -->
+<div class="bg-surface-container px-4 py-3 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-outline-variant/60 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-outline-variant/60 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-outline-variant/60 inline-block"></span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded-md text-label-sm font-label-sm text-on-surface-variant shadow-sm w-3/5 justify-center">
+<svg class="inline-block shrink-0 w-[14px] h-[14px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<span class="tracking-tight truncate">app.dulcehogar.ec/pedidos</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+</div>
+</div>
+<!-- Mockup Interface Canvas -->
+<div class="p-5 bg-surface-container-lowest flex flex-col gap-4">
+<div class="flex items-center justify-between pb-3"><span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm font-semibold">Vista de ejemplo</span></div><div class="flex items-center justify-between pb-3">
+<div>
+<span class="font-label-md text-label-md text-on-surface">Panel de Despacho · Hoy</span>
+<p class="text-label-sm text-on-surface-variant">14 pedidos activos · 4 pendientes de entrega</p>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-container/60 text-primary font-label-sm text-label-sm font-semibold">En vivo</span>
+</div>
+<!-- Mini cards simulating system -->
+<div class="grid grid-cols-3 gap-2.5 text-left">
+<div class="p-3 bg-surface-container-low rounded-lg shadow-sm">
+<span class="text-label-sm text-on-surface-variant">Ventas hoy</span>
+<div class="font-headline-sm text-headline-sm text-on-surface mt-0.5">$384.50</div>
+<span class="text-label-sm text-primary font-medium">+18% vs ayer</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg shadow-sm">
+<span class="text-label-sm text-on-surface-variant">Por WhatsApp</span>
+<div class="font-headline-sm text-headline-sm text-on-surface mt-0.5">26 chats</div>
+<span class="text-label-sm text-on-surface-variant font-medium">92% convertidos</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg shadow-sm">
+<span class="text-label-sm text-on-surface-variant">Inventario crítico</span>
+<div class="font-headline-sm text-headline-sm text-tertiary mt-0.5">2 ítems</div>
+<span class="text-label-sm text-tertiary font-medium">Alerta enviada</span>
+</div>
+</div>
+<!-- Order Flow List -->
+<div class="bg-surface rounded-lg p-3 shadow-sm flex flex-col gap-2">
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant pb-1">
+<span class="font-semibold text-on-surface">Últimos Pedidos Confirmados</span>
+<span>ID · WhatsApp</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest shadow-sm ">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">#DH-1082 · Mariela Q.</span>
+<span class="text-label-sm text-on-surface-variant">(zona norte)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-bold text-on-surface">$24.00</span>
+<span class="px-2 py-0.5 rounded text-label-sm bg-secondary-container/70 text-primary font-semibold">Listo despacho</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest shadow-sm ">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-semibold text-on-surface">#DH-1083 · Carlos E.</span>
+<span class="text-label-sm text-on-surface-variant">(zona sur)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-bold text-on-surface">$45.50</span>
+<span class="px-2 py-0.5 rounded text-label-sm bg-secondary-container/70 text-primary font-semibold">En ruta</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-lowest shadow-sm ">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span class="font-semibold text-on-surface">#DH-1084 · Sandra P.</span>
+<span class="text-label-sm text-on-surface-variant">(centro)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-bold text-on-surface">$18.00</span>
+<span class="px-2 py-0.5 rounded text-label-sm bg-surface-container-high text-on-surface-variant font-semibold">Confirmando</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+     BLOQUE 2b: SERVICIOS
+=========================================== -->
+<section id="servicios" class="w-full bg-surface-container-lowest py-space-xl lg:py-20">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Servicios</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">Lo que puedo construir para tu negocio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Cuatro sistemas simples, cada uno resuelve un problema concreto. Si necesitas otro, me lo cuentas y lo cotizo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="bg-surface rounded-xl p-space-lg shadow-card hover:shadow-pop transition-shadow duration-200 flex flex-col gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary mb-space-xs">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Catálogo con pedidos por WhatsApp</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Tus clientes ven tus productos, arman su pedido y te llega un mensaje de WhatsApp ordenado con el total, la dirección y la forma de pago. Sin comisiones por venta.</p>
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="demos/demo1-catalogo-pedidos/index.html">Ver la demo funcionando
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+<div class="bg-surface rounded-xl p-space-lg shadow-card hover:shadow-pop transition-shadow duration-200 flex flex-col gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary mb-space-xs">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Agenda de citas para tu consultorio o local</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">La persona reserva según tu disponibilidad real y no se enciman las citas. Incluye el botón que prepara el mensaje de recordatorio por WhatsApp.</p>
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="demos/demo2-clinica-dental/index.html">Ver la demo funcionando
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+<div class="bg-surface rounded-xl p-space-lg shadow-card hover:shadow-pop transition-shadow duration-200 flex flex-col gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary mb-space-xs">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Inventario y reportes para tu bodega</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Control de entradas y salidas, alertas cuando el stock baja y un reporte en PDF listo para revisar o compartir con tu contador.</p>
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="demos/demo3-inventario-reportes/index.html">Ver la demo funcionando
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+<div class="bg-surface rounded-xl p-space-lg shadow-card hover:shadow-pop transition-shadow duration-200 flex flex-col gap-space-xs">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-primary mb-space-xs">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Automatizaciones y conexiones a tu medida</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Avisos, registros y tareas repetidas resueltas solas. En el plan Avanzado incluye la conexión con tu facturador por API; el SRI directo se cotiza como extra aparte.</p>
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20necesito%20una%20automatizaci%C3%B3n%20para%20mi%20negocio%20y%20quiero%20que%20me%20la%20cotes." rel="noopener noreferrer" target="_blank">Cuéntame tu caso
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       BLOQUE 3: EL DÍA A DÍA
+  =========================================== -->
+<section class="w-full bg-surface-container-low py-space-xl lg:py-20">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">El día a día</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">
+          La realidad de manejar un negocio con libretas y chats dispersos
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">
+          Cuando tu negocio empieza a vender más, la mezcla de WhatsApp, hojas de cálculo y memoria humana deja de funcionar y empieza a costar dinero.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Tarjeta 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-error-container/40 flex items-center justify-center text-error mb-space-md">
+<svg class="inline-block shrink-0 w-[28px] h-[28px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 10h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Pedidos que se pierden</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              El pedido entra por WhatsApp, se anota en un cuaderno y nadie sabe cuáles quedaron pendientes ni a quién le correspondía despachar.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 text-error font-label-sm text-label-sm">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+<span>Clientes molestos por demoras</span>
+</div>
+</div>
+<!-- Tarjeta 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-on-surface-variant mb-space-md">
+<svg class="inline-block shrink-0 w-[28px] h-[28px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Inventario a ojo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Se vende lo que ya no hay en stock físico, falta sincronización entre los vendedores y se pierde dinero haciendo devoluciones apresuradas.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+<span>Rotura de stock no detectada</span>
+</div>
+</div>
+<!-- Tarjeta 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary mb-space-md">
+<svg class="inline-block shrink-0 w-[28px] h-[28px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Reportes a mano</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Alguien del equipo se queda hasta tarde los domingos copiando datos en Excel o libretas para cuadrar las ventas de la semana y calcular ganancias.
+            </p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-2 text-tertiary font-label-sm text-label-sm">
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span>Horas perdidas en administración</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       BLOQUE 4: MÍRALO FUNCIONANDO
+  =========================================== -->
+<section class="w-full bg-surface-container-lowest py-space-xl lg:py-20" id="demos-section">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-4">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Demostraciones en vivo</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">
+            Míralo funcionando: sistemas reales y fáciles de usar
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-2xl">
+            Herramientas digitales creadas para ser aprendidas en menos de 10 minutos. Cero configuraciones enredadas.
+          </p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline self-start md:self-auto" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20probar%20las%20demos%20en%20vivo" rel="noopener noreferrer" target="_blank">
+<span>Solicitar demo guiada</span>
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Demo 1 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col">
+<!-- Preview Visual Simulated -->
+<div class="h-44 bg-surface-container relative p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">tienda.ec/catalogo</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-bold">WhatsApp Sync</span>
+</div>
+<!-- Mini grid preview -->
+<div class="grid grid-cols-3 gap-2 mt-2">
+<div class="bg-surface-container-lowest p-2 rounded shadow-sm text-center">
+<div class="w-8 h-8 rounded bg-surface-container-high mx-auto mb-1"></div>
+<div class="text-label-sm font-semibold text-on-surface">Combo 1</div>
+<div class="text-label-sm text-primary font-bold">$12.00</div>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded shadow-sm text-center">
+<div class="w-8 h-8 rounded bg-surface-container-high mx-auto mb-1"></div>
+<div class="text-label-sm font-semibold text-on-surface">Combo 2</div>
+<div class="text-label-sm text-primary font-bold">$18.50</div>
+</div>
+<div class="bg-surface-container-lowest p-2 rounded shadow-sm text-center">
+<div class="w-8 h-8 rounded bg-surface-container-high mx-auto mb-1"></div>
+<div class="text-label-sm font-semibold text-on-surface">Combo 3</div>
+<div class="text-label-sm text-primary font-bold">$25.00</div>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 bg-primary text-on-primary rounded text-label-sm font-semibold">Envía pedido estructurado</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="text-label-sm font-semibold uppercase tracking-wider text-primary mb-1">Ideal para: tiendas y emprendedores</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Catálogo con pedidos por WhatsApp</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Tus clientes eligen productos, arman el carrito y te llega un mensaje listo con el desglose exacto, dirección y método de pago.
+              </p>
+<ul class="flex flex-col gap-2 mb-6 text-on-surface-variant font-label-sm">
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Catálogo rápido mobile-first</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Sin comisiones por transacción</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Panel propio para editar precios</span>
+</li>
+</ul>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-2.5 rounded-[10px] shadow-sm transition-colors" href="demos/demo1-catalogo-pedidos/index.html" rel="noopener noreferrer" target="_blank">
+<span>Abrir demo</span>
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/></svg>
+</a>
+</div>
+</div>
+<!-- Demo 2 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col">
+<!-- Preview Visual Simulated -->
+<div class="h-44 bg-surface-container relative p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">clinica.ec/agenda</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-primary font-bold">Confirmación por WhatsApp</span>
+</div>
+<!-- Calendar Preview -->
+<div class="bg-surface-container-lowest p-2.5 rounded shadow-sm flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-label-sm font-bold text-on-surface">
+<span>Octubre 2026</span>
+<span class="text-primary">4 turnos libres</span>
+</div>
+<div class="grid grid-cols-4 gap-1 text-label-sm text-center font-medium">
+<div class="bg-primary text-on-primary py-1 rounded">09:00 AM</div>
+<div class="bg-surface-container-high py-1 rounded text-on-surface-variant">10:30 AM</div>
+<div class="bg-primary text-on-primary py-1 rounded">02:00 PM</div>
+<div class="bg-surface-container-high py-1 rounded text-on-surface-variant">04:30 PM</div>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 bg-surface-container-lowest text-on-surface rounded text-label-sm font-semibold">Recordatorio por WhatsApp (mensaje preparado)</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="text-label-sm font-semibold uppercase tracking-wider text-primary mb-1">Ideal para: consultorios y servicios con cita</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Clínica con agenda de citas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                El paciente reserva su propio turno según tu disponibilidad real. Reduce inasistencias con avisos directos.
+              </p>
+<ul class="flex flex-col gap-2 mb-6 text-on-surface-variant font-label-sm">
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Bloqueo inteligente de horarios</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Tu disponibilidad real, sin citas encimadas</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Historial de pacientes centralizado</span>
+</li>
+</ul>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-2.5 rounded-[10px] shadow-sm transition-colors" href="demos/demo2-clinica-dental/index.html" rel="noopener noreferrer" target="_blank">
+<span>Abrir demo</span>
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/></svg>
+</a>
+</div>
+</div>
+<!-- Demo 3 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col">
+<!-- Preview Visual Simulated -->
+<div class="h-44 bg-surface-container relative p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between text-label-sm text-on-surface-variant">
+<span class="font-semibold text-on-surface">bodega.ec/reportes</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface font-bold">Kardex Diario</span>
+</div>
+<!-- Inventory Bar Preview -->
+<div class="bg-surface-container-lowest p-2.5 rounded shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-center text-label-sm">
+<span class="font-semibold text-on-surface">Stock Central: 420 unid.</span>
+<span class="text-primary font-bold">98% disponible</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-4/5 rounded-full"></div>
+</div>
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span>Salidas hoy: 38</span>
+<span>Entradas hoy: 120</span>
+</div>
+</div>
+<div class="text-right">
+<span class="inline-block px-2 py-0.5 bg-primary text-on-primary rounded text-label-sm font-semibold">Reporte en PDF listo para descargar</span>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between">
+<div>
+<div class="text-label-sm font-semibold uppercase tracking-wider text-primary mb-1">Ideal para: negocios con equipo</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Inventario con reportes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                Control de entradas, salidas y alertas de stock bajo. Reportes automáticos diarios directo a tu correo o teléfono.
+              </p>
+<ul class="flex flex-col gap-2 mb-6 text-on-surface-variant font-label-sm">
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Alertas automáticas de bajo stock</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Reporte en PDF listo para el contador</span>
+</li>
+<li class="flex items-center gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>
+<span>Control de múltiples bodegas/puntos</span>
+</li>
+</ul>
+</div>
+<a class="w-full inline-flex items-center justify-center gap-2 bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-2.5 rounded-[10px] shadow-sm transition-colors" href="demos/demo3-inventario-reportes/index.html" rel="noopener noreferrer" target="_blank">
+<span>Abrir demo</span>
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h6"/></svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Note -->
+<div class="mt-space-lg p-space-md rounded-xl bg-surface-container-low text-center">
+<p class="font-label-md text-label-md text-on-surface-variant">
+<span class="text-primary font-bold">•</span> Demos funcionales con datos de ejemplo. Pídela personalizada para tu negocio.
+        </p>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       BLOQUE 5: PRECIOS TRANSPARENTES
+  =========================================== -->
+<section class="w-full bg-surface-container-low py-space-xl lg:py-20" id="precios-section">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<!-- Headline & Conditions -->
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Tarifas Transparentes</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 tracking-tight">
+          Precios claros, sin letras pequeñas ni sorpresas
+        </h2>
+<div class="inline-flex items-center gap-2 mt-3 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm shadow-sm">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+<span>Precios en USD + IVA · 50 % al empezar y 50 % contra entrega</span>
+</div>
+</div>
+<!-- Founder Banner -->
+<div class="mb-space-xl p-space-md lg:p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+</div>
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Programa Fundadores</span>
+<p class="font-body-md text-body-md text-on-surface-variant ">
+              -20 % de descuento para los 3 primeros clientes, a cambio de publicar tu caso de estudio y un testimonio.
+            </p>
+</div>
+</div>
+<a class="whitespace-nowrap px-4 py-2 rounded-[10px] bg-secondary-container/70 text-primary font-label-md text-label-md hover:bg-secondary-container transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20postular%20al%20Programa%20Fundadores%20con%2020%25%20de%20descuento" rel="noopener noreferrer" target="_blank">
+          Aplicar al cupo (-20%)
+        </a>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- Básico -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Básico</span>
+<span class="text-label-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-semibold">Entrega 3-7 días</span>
+</div>
+<div class="mt-4 mb-6">
+<span class="text-4xl font-headline-lg text-on-surface font-bold">$250</span>
+<span class="text-on-surface-variant font-body-md "> USD + IVA</span>
+<p class="text-label-sm text-on-surface-variant mt-1">Pago: $125 al inicio y $125 al entregar</p>
+</div>
+<div class="font-label-md text-label-sm uppercase tracking-wider text-on-surface-variant mb-3">Incluye:</div>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>1 entregable (landing o catálogo con pedidos directos por WhatsApp)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>1 automatización puntual (notificación o registro básico)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Capacitación en video grabada para tu equipo</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>30 días de garantía y ajustes incluidos</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20el%20Plan%20Basico%20de%20250%20USD" rel="noopener noreferrer" target="_blank">
+              Elegir Básico
+            </a>
+</div>
+</div>
+<!-- Estándar (Destacado) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-md flex flex-col justify-between relative bg-gradient-to-b from-surface-container-lowest to-surface-container-lowest">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-3.5 py-0.5 rounded-full font-label-md text-label-sm tracking-wide uppercase shadow-sm">
+            Recomendado
+          </div>
+<div>
+<div class="flex justify-between items-center mb-2 pt-1">
+<span class="font-headline-sm text-headline-sm text-primary">Estándar</span>
+<span class="text-label-sm px-2.5 py-1 rounded bg-secondary-container/70 text-primary font-bold">Entrega 1-2 semanas</span>
+</div>
+<div class="mt-4 mb-6">
+<span class="text-4xl font-headline-lg text-on-surface font-bold">$490</span>
+<span class="text-on-surface-variant font-body-md "> USD + IVA</span>
+<p class="text-label-sm text-on-surface-variant mt-1">Pago: $245 al inicio y $245 al entregar</p>
+</div>
+<div class="font-label-md text-label-sm uppercase tracking-wider text-primary mb-3">Todo lo de Básico más:</div>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Hasta 3 piezas conectadas (agenda de citas, panel de pedidos, cotizador PDF)</span>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Recordatorio por WhatsApp: un botón que prepara el mensaje (el envío automático con la API oficial se cotiza aparte)</span>
+</li>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Hasta 3 automatizaciones ligeras (avisos por WhatsApp / emails)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>2 rondas de revisión y afinamiento de flujos</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>30 días de garantía total post-lanzamiento</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-all duration-200" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20el%20Plan%20Estandar%20de%20490%20USD" rel="noopener noreferrer" target="_blank">
+              Elegir plan Estándar
+            </a>
+</div>
+</div>
+<!-- Avanzado -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Avanzado</span>
+<span class="text-label-sm px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-semibold">Entrega 2-4 semanas</span>
+</div>
+<div class="mt-4 mb-6">
+<span class="text-4xl font-headline-lg text-on-surface font-bold">$1.150</span>
+<span class="text-on-surface-variant font-body-md "> USD + IVA</span>
+<p class="text-label-sm text-on-surface-variant mt-1">Pago: $575 al inicio y $575 al entregar</p>
+</div>
+<div class="font-label-md text-label-sm uppercase tracking-wider text-on-surface-variant mb-3">Incluye:</div>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface">
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Varios usuarios con roles y permisos específicos</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Reportes automáticos programados (semanales/mensuales)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Conexión con tu facturador por API (SRI directo se cotiza aparte)</span>
+</li>
+<li class="flex items-start gap-2">
+<svg class="inline-block shrink-0 w-[18px] h-[18px] text-primary mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+<span>Capacitación en vivo de 2 horas + 30 días de garantía</span>
+</li>
+</ul>
+</div>
+<div class="pt-8">
+<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20el%20Plan%20Avanzado%20de%201150%20USD" rel="noopener noreferrer" target="_blank">
+              Elegir Avanzado
+            </a>
+</div>
+</div>
+</div>
+<!-- Acordeón Extras y Mantenimiento -->
+<div class="mt-space-xl bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<details class="group">
+<summary class="flex justify-between items-center p-space-lg cursor-pointer select-none">
+<div class="flex items-center gap-3">
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11H19V7a2 2 0 0 0-2-2h-4V3.5a2.5 2.5 0 0 0-5 0V5H4a2 2 0 0 0-2 2v3.8h1.5a2.5 2.5 0 0 1 0 5H2V20a2 2 0 0 0 2 2h3.8v-1.5a2.5 2.5 0 0 1 5 0V22H17a2 2 0 0 0 2-2v-4h1.5a2.5 2.5 0 0 0 0-5Z"/></svg>
+<span class="font-headline-sm text-headline-sm text-on-surface">Extras y mantenimiento</span>
+</div>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-lg pb-space-lg pt-0 flex flex-col gap-space-md">
+<p class="font-body-md text-body-md text-on-surface-variant">Después de la entrega puedes seguir conmigo si quieres. El mantenimiento es opcional y se cancela cuando quieras.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">Básico</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">35 USD al mes</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Incluye 1 hora de ajustes al mes, copias de seguridad semanales y atención por WhatsApp.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">Estándar</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">60 USD al mes</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Incluye 3 horas de ajustes al mes, monitoreo del sistema y mejoras pequeñas continuas.</p>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low">
+<span class="font-label-md text-label-md text-on-surface-variant">Avanzado</span>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-1">110 USD al mes</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Incluye 6 horas de ajustes al mes, respaldo prioritario y reportes mensuales del sistema.</p>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-2">
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Fuera de alcance:</strong> 35 a 50 USD por hora, y solo se ejecuta con tu aprobación escrita antes de empezar.</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Dominio y hosting:</strong> los pagas tú y quedan a tu nombre. El dominio .ec ronda los 55 USD al año; el hosting depende del tamaño y te recomiendo la opción más simple que sirva.</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">SRI directo:</strong> si necesitas emitir comprobantes directamente al SRI y no solo conectar tu facturador, se cotiza como extra aparte.</p>
+<p class="font-body-md text-body-md text-on-surface-variant"><strong class="text-on-surface">Avisos automáticos de WhatsApp:</strong> el envío automático con la API oficial de WhatsApp se cotiza aparte. En los planes, el recordatorio es un botón que prepara el mensaje y tú lo envías.</p>
+</div>
+</div>
+</details>
+</div>
+<!-- Custom Project Prompt -->
+<div class="mt-space-lg text-center font-body-md text-body-md text-on-surface-variant">
+<span>¿Necesitas algo más grande? </span>
+<a class="text-primary font-semibold hover:underline inline-flex items-center gap-1" href="https://wa.me/593991371570?text=Hola%20Kevin,%20necesito%20un%20proyecto%20a%20medida" rel="noopener noreferrer" target="_blank">
+<span>Escríbeme.</span>
+<svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       BLOQUE 6: CÓMO TRABAJO Y QUIÉN SOY
+  =========================================== -->
+<section id="proceso" class="w-full bg-surface-container-lowest py-space-xl lg:py-20">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left: Cómo trabajo (4 pasos) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div>
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Metodología Clara</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 tracking-tight">Cómo trabajo</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+              Sin burocracia ni intermediarios. Cada etapa tiene objetivos claros y entregables visibles.
+            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-space-xs">
+<!-- Step 1 -->
+<div class="p-space-md bg-surface rounded-xl shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary font-bold flex items-center justify-center">1</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-outline-variant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Conversación gratis</h4>
+<p class="text-label-sm text-on-surface-variant">
+                Llamada de 30-45 minutos para entender tu flujo de venta, dónde se traba tu operación y qué necesitas resolver hoy.
+              </p>
+</div>
+<!-- Step 2 -->
+<div class="p-space-md bg-surface rounded-xl shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center">2</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-outline-variant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Alcance y precio cerrado</h4>
+<p class="text-label-sm text-on-surface-variant">
+                Te entrego un documento de 1 página con qué hace el sistema, fecha exacta de entrega y costo inamovible.
+              </p>
+</div>
+<!-- Step 3 -->
+<div class="p-space-md bg-surface rounded-xl shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center">3</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-outline-variant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Desarrollo con avances reales</h4>
+<p class="text-label-sm text-on-surface-variant">
+                Ves prototipos en un enlace privado desde los primeros días. Ajustamos sobre lo tangible, no sobre suposiciones.
+              </p>
+</div>
+<!-- Step 4 -->
+<div class="p-space-md bg-surface rounded-xl shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-center justify-between">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface font-bold flex items-center justify-center">4</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-outline-variant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Entrega y 30 días de garantía</h4>
+<p class="text-label-sm text-on-surface-variant">
+                Paso de claves a tu nombre, capacitación grabada a tu equipo y 30 días para resolver cualquier detalle sin costo adicional.
+              </p>
+</div>
+</div>
+</div>
+<!-- Right: Quién soy -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col items-center text-center">
+<div class="relative mb-space-md">
+<img alt="[TU FOTO] Kevin, desarrollador de ReuKev" class="w-28 h-28 rounded-full object-cover shadow-sm" src="assets/img/tu-foto.webp" width="112" height="112"/>
+
+</div>
+<span class="font-headline-sm text-headline-sm text-on-surface">Kevin · ReuKev</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold mb-space-sm">Desarrollador de software en Ecuador</span>
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm w-full text-left mb-space-md">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed ">
+              “Hablas directo conmigo. Yo defino, reviso y pruebo cada entrega, y uso herramientas de IA para construir rápido.”
+            </p>
+</div>
+<div class="w-full grid grid-cols-2 gap-2 text-left text-label-sm text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<svg class="inline-block shrink-0 w-[16px] h-[16px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+<span>Ecuador · Remoto</span>
+</div>
+<div class="flex items-center gap-1.5">
+<svg class="inline-block shrink-0 w-[16px] h-[16px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+<span>Respuesta rápida</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==========================================
+       BLOQUE 7: FAQ Y CONTACTO DIRECTO
+  =========================================== -->
+<section class="w-full bg-surface-container-low py-space-xl lg:py-20" id="faq-section">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<!-- FAQ Accordion -->
+<div class="max-w-3xl mx-auto mb-space-xl">
+<div class="text-center mb-space-lg">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Preguntas Frecuentes</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-1 tracking-tight">
+            Respuestas directas, sin rodeos
+          </h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Q1 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Cuánto cuesta?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Manejo tres paquetes fijos: Básico ($250), Estándar ($490) y Avanzado ($1.150) en USD + IVA. El precio se pacta antes de empezar mediante un documento simple y no sube durante el desarrollo.
+            </div>
+</details>
+<!-- Q2 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿En cuánto tiempo lo tengo?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Depende del alcance acordado: un catálogo básico toma de 3 a 7 días hábiles. Sistemas conectados estándar entre 1 y 2 semanas. Desarrollos a medida con facturador toman entre 2 y 4 semanas.
+            </div>
+</details>
+<!-- Q3 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿El código es mío?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Sí, 100%. No te ato a contratos forzosos. Todo queda registrado en cuentas a tu nombre (dominio, servidor y repositorio de código si aplica). Tienes control absoluto.
+            </div>
+</details>
+<!-- Q4 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Y si algo falla?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Todos los proyectos cuentan con 30 días de garantía sin costo adicional. Si detectas un error o algo no funciona como acordamos, lo corrijo de inmediato como prioridad.
+            </div>
+</details>
+<!-- Q5 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Por qué no uso Tiendanube, Shopify o un facturador genérico?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Las plataformas globales cobran mensualidades eternas, comisiones por venta y te obligan a adaptar tus procesos a sus plantillas rígidas. Yo te construyo una herramienta liviana que hace exactamente lo que tu negocio necesita en Ecuador, sin mensualidades obligadas.
+            </div>
+</details>
+<!-- Q6 -->
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Sirve para un negocio pequeño?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+              Especialmente para ellos. Si manejas entre 10 y 200 pedidos o citas por semana, un sistema simple te ordena el trabajo del día a día y te devuelve tiempo.
+            </div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Quién paga el dominio y el hosting?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+Tú, y quedan registrados a tu nombre: son tuyos, no míos. El dominio .ec ronda los 55 USD al año y el hosting depende del tamaño del sistema; te aconsejo la opción más simple que sirva y te ayudo a contratarlos.
+</div>
+</details>
+<details class="group bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-space-md cursor-pointer select-none font-headline-sm text-headline-sm text-base text-on-surface hover:text-primary transition-colors">
+<span>¿Cómo sigue después de la entrega?</span>
+<svg class="inline-block shrink-0 w-[20px] h-[20px] text-on-surface-variant transition-transform duration-200 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</summary>
+<div class="px-space-md pb-space-md pt-0 font-body-md text-on-surface-variant leading-relaxed">
+Con 30 días de garantía incluidos, sin costo. Si después quieres que siga pendiente del sistema, el mantenimiento mensual es de 35, 60 o 110 USD según el plan, con horas de ajustes ya incluidas. Lo que queda fuera de ese alcance se cobra de 35 a 50 USD por hora y solo se hace con tu aprobación escrita.
+</div>
+</details>
+</div>
+</div>
+<!-- Contact Block -->
+<div class="max-w-3xl mx-auto bg-surface-container-lowest rounded-2xl p-space-lg lg:p-space-xl shadow-md" id="contacto-section">
+<div class="text-center mb-space-lg">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Hablemos hoy</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">Cuéntame sobre tu negocio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Completa los datos y te enviará un mensaje directo a mi WhatsApp para coordinar la llamada de 30 minutos sin compromiso.
+          </p>
+</div>
+<form class="flex flex-col gap-space-md" id="contact-form">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="client-name">Tu nombre</label>
+<input class="h-11 px-3.5 rounded-[10px] bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm " id="client-name" placeholder="Ej. Juan Pérez" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="client-business">Nombre de tu negocio o rubro</label>
+<input class="h-11 px-3.5 rounded-[10px] bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm " id="client-business" placeholder="Ej. Pastelería San Carlos" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm text-on-surface" for="client-need">¿Qué problema necesitas resolver?</label>
+<textarea class="p-3.5 rounded-[10px] bg-surface text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm resize-none" id="client-need" placeholder="Ej. Recibo pedidos en WhatsApp y se me olvidan clientes; quiero un catálogo con pedidos automáticos." required="" rows="3"></textarea>
+</div>
+<button class="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md py-3.5 rounded-[10px] shadow-sm transition-all duration-200 mt-2" type="submit">
+<svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg>
+<span>Escribir por WhatsApp</span>
+</button>
+</form>
+<div class="mt-4 text-center">
+<p class="text-label-sm text-on-surface-variant flex items-center justify-center gap-1.5">
+<svg class="inline-block shrink-0 w-[14px] h-[14px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<span>Este formulario no envía ni guarda nada en ningún servidor: solo arma el mensaje de WhatsApp. </span><a class="text-primary hover:underline" href="privacidad.html">Lee la política de privacidad</a>
+</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Un solo numero de WhatsApp en todo el sitio (visible como +593 99 137 1570).
+  var WHATSAPP = "593991371570";
+
+  // --- Menu movil ---
+  var boton = document.getElementById("boton-menu");
+  var menu = document.getElementById("menu-movil");
+  if (boton && menu) {
+    boton.addEventListener("click", function () {
+      var abierto = menu.classList.toggle("hidden") === false;
+      boton.setAttribute("aria-expanded", String(abierto));
+      boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+      boton.innerHTML = abierto
+        ? '<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>'
+        : '<svg class="inline-block shrink-0 w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>';
+    });
+    menu.querySelectorAll("a").forEach(function (enlace) {
+      enlace.addEventListener("click", function () {
+        menu.classList.add("hidden");
+        boton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // --- Formulario: solo arma el mensaje de WhatsApp (no hay servidor) ---
+  var form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nombre = (document.getElementById("client-name") || {}).value || "";
+      var negocio = (document.getElementById("client-business") || {}).value || "";
+      var necesidad = (document.getElementById("client-need") || {}).value || "";
+      var texto = "Hola Kevin, soy " + nombre.trim() + ' de "' + negocio.trim() + '". Necesito: ' + necesidad.trim();
+      window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank", "noopener");
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl border-t border-outline-variant">
+<div class="max-w-[1200px] mx-auto px-gutter py-space-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg mb-space-lg">
+<div class="md:col-span-5 flex flex-col items-start gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<img alt="Logo de ReuKev" class="h-8 w-auto object-contain" src="assets/img/logo-reukev.svg" width="32" height="32"/>
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ReuKev</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Desarrollo freelance de sistemas simples para negocios en Ecuador: pedidos por WhatsApp, agenda de citas, inventario y reportes. Trato directo y precios publicados.</p>
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20te%20escribo%20desde%20el%20pie%20de%20tu%20sitio." rel="noopener noreferrer" target="_blank">
+<svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 18 0 1 0 4 16.1L2 22Z"/></svg><span>+593 99 137 1570</span>
+</a>
+</div>
+<div class="md:col-span-4 flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-xs">Navegación</span>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#servicios">Servicios</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#demos-section">Demos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#precios-section">Precios</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#proceso">Cómo trabajo</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="#faq-section">Preguntas frecuentes</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors py-1" href="privacidad.html">Privacidad</a>
+</div>
+<div class="md:col-span-3 flex flex-col gap-space-xs">
+<span class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-space-xs">Atención</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Ecuador · atención remota</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Respondo por WhatsApp</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Este sitio no usa cookies ni rastreadores</p>
+</div>
+</div>
+<div class="pt-space-md border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-space-xs">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 ReuKev. Todos los derechos reservados.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Hecho en Ecuador, sin depender de servicios externos.</p>
+</div>
+</div>
+</footer></body></html>
