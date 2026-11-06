@@ -2,8 +2,12 @@
 <!-- Dominio publicado: https://reukev.vercel.app -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://reukev.vercel.app/</loc><lastmod>2026-11-06</lastmod><priority>1.0</priority></url>
-<url><loc>https://reukev.vercel.app/demos/demo1-catalogo-pedidos/</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-<url><loc>https://reukev.vercel.app/demos/demo2-clinica-dental/</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
-<url><loc>https://reukev.vercel.app/demos/demo3-inventario-reportes/</loc><lastmod>2026-11-06</lastmod><priority>0.8</priority></url>
+<url><loc>https://reukev.vercel.app/servicios/</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://reukev.vercel.app/servicios/catalogo-whatsapp/</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://reukev.vercel.app/servicios/agenda-citas/</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://reukev.vercel.app/servicios/inventario-pymes/</loc><lastmod>2026-11-06</lastmod><priority>0.9</priority></url>
+<url><loc>https://reukev.vercel.app/demos/demo1-catalogo-pedidos/</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://reukev.vercel.app/demos/demo2-clinica-dental/</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
+<url><loc>https://reukev.vercel.app/demos/demo3-inventario-reportes/</loc><lastmod>2026-11-06</lastmod><priority>0.7</priority></url>
 <url><loc>https://reukev.vercel.app/privacidad.html</loc><lastmod>2026-11-06</lastmod><priority>0.3</priority></url>
 </urlset>

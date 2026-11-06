@@ -80,7 +80,6 @@ mismo `tools/og.py`. Debe ser **JPG/PNG**: WhatsApp y Facebook no pintan vistas 
 en WebP.
 
 ## Medir visitas y consultas
-
 - **Vercel Web Analytics** (activar una sola vez): proyecto `reukev-sitio` en Vercel →
   pestaña *Analytics* → *Enable*. Es first-party (mismo origen), sin cookies y no rompe la
   CSP. Lo carga `sitio-web/assets/js/insights.js`, que solo sondea en producción y no
@@ -89,6 +88,22 @@ en WebP.
   (`[Web · Precios]`, `[Web · Formulario]`, `[Demo 2 · Clínica]`…), así que en la bandeja de
   entrada se ve de qué sección o demo llegó cada cliente. Si añades un botón nuevo, pon la
   etiqueta al principio del `data-wa`.
+
+## Estructura SEO (para añadir o quitar servicios)
+
+- **Landing por servicio**: `sitio-web/servicios/<slug>/index.html`. Cada una lleva
+  title/description/H1 con keyword + Ecuador, `rel=canonical` propio, JSON-LD
+  (`ProfessionalService` + `Service` + `FAQPage` + `BreadcrumbList`) y og:image
+  propia en `assets/img/og/servicio-<slug>.jpg`.
+- Al crear una landing nueva hay que tocar 5 sitios: (1) crear el HTML,
+  (2) `tailwind.config.js` (glob de contenido, si no las clases nuevas no existen en
+  el CSS compilado), (3) `tools/estatico.mjs` y `tools/verify.mjs` (lista de
+  páginas verificadas), (4) `sitemap.xml` (URL + `lastmod`), (5) `tools/og.mjs`
+  (entrada en `VISTAS` para generar su imagen social).
+- **Las 3 landings viven en `/servicios/<slug>/`** y sus enlaces internos usan `../`
+  para volver al hub. La portada enlaza a cada servicio con texto descriptivo.
+- Las demos se mantienen indexables con titles "Demo gratis: …" para no competir con
+  las landings por la misma búsqueda.
 
 `tools/verify.mjs` revisa: recursos externos, scripts/estilos inline, iconos sin migrar,
 textos menores de 14 px, número de WhatsApp único, archivos referenciados que existan,

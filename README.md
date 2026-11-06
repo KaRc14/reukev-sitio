@@ -11,6 +11,10 @@ compilado, JS propio y WebP. Nada se carga desde CDN ni de Google.
 | Sección | Qué es |
 |---|---|
 | Portada | Servicios, 3 demos funcionando, precios base, metodología y FAQ |
+| `servicios/` | Hub de servicios con precios base y cómo elegir |
+| `servicios/catalogo-whatsapp/` | Catálogo digital con pedidos por WhatsApp en Ecuador |
+| `servicios/agenda-citas/` | Agenda de citas online para clínicas y consultorios |
+| `servicios/inventario-pymes/` | Sistema de inventario y reportes para PYMEs |
 | `demos/demo1-catalogo-pedidos/` | Dulce Hogar — minimarket con catálogo, carrito y pedido armado para WhatsApp |
 | `demos/demo2-clinica-dental/` | ProSonrisa — clínica dental con agenda de citas y confirmación/recordatorio |
 | `demos/demo3-inventario-reportes/` | Kardex Pro — inventario (kardex) con movimientos, alertas de stock y reportes |
@@ -41,7 +45,7 @@ empezar (ver [reukev.vercel.app/#precios-section](https://reukev.vercel.app/#pre
 npm run build:css      # recompila sitio-web/assets/css/site.css
 node tools/verify.mjs  # verificación completa (estática + Chromium 390/1440 px)
 node tools/capturas.mjs  # regenera las capturas WebP del sitio y las demos
-node tools/og.mjs      # regenera la imagen social og:image (1200x630 JPG)
+node tools/og.mjs      # regenera las imagenes sociales og:image (5 JPG de 1200x630)
 npm run serve          # servidor local en http://localhost:8080
 ```
 

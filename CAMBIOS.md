@@ -175,4 +175,32 @@ Sprint 1 del plan de atracción de visitas, con foco en **Ecuador primero**.
 funciona igual). Para las visitas orgánicas, siguiente paso: registrar el sitio en
 Google Search Console y Bing Webmaster Tools.
 
+## F13 — SEO por servicio: hub + 3 landings para tráfico orgánico (esta sesión)
+
+Objetivo: que el sitio deje de tener todo el SEO en una sola URL y pueda posicionar
+en búsquedas **de intención concreta** (no solo de marca), con foco en Ecuador.
+- **`sitio-web/servicios/`** (nuevo, 4 páginas): hub de servicios + 3 landings
+  (`catalogo-whatsapp`, `agenda-citas`, `inventario-pymes`). Cada landing tiene
+  title/description/H1 con keyword + Ecuador, `rel=canonical` propio, hero con CTA y
+  demo, "el problema", "qué incluye", "cómo funciona", "para quién es" (rubros y
+  ciudades), precios base, la demo funcionando, FAQ de 6 preguntas (abrible con
+  `<details>`, sin JavaScript) y CTA final.
+- **JSON-LD por landing**: `ProfessionalService` + `Service` + `FAQPage` (las 6
+  preguntas reales) + `BreadcrumbList`, y en el hub `ItemList` con los 3 servicios.
+- **og:image propias**: 4 JPG nuevos (1200×630) generados por `tools/og.mjs`
+  (`servicios-hub`, `servicio-catalogo-whatsapp`, `servicio-agenda-citas`,
+  `servicio-inventario-pymes`), así que al compartir cada servicio se ve su hero.
+- **Enlazado interno**: la portada añade "Ver el servicio … en detalle" en cada
+  tarjeta de Servicios y "Todos los servicios" en el pie; el menú de las landings y
+  las demos llevan al hub, y las landings se enlazan entre sí.
+- **Arreglos de metadatos heredados**: `twitter:image` de las 3 demos quedaba roto
+  desde F11 (se le pegó la descripción), se añadió `og:url` a las demos y sus titles
+  pasan a "Demo gratis: …" para no canibalizar las landings nuevas.
+- **`sitemap.xml`**: de 5 a 9 URLs (hub + 3 landings + demos), `lastmod` al día.
+- **Infra**: `tailwind.config.js` incluye `./sitio-web/servicios/**/*.html` (el CSS
+  está purgado) y `tools/estatico.mjs` / `tools/verify.mjs` verifican las 4 páginas
+  nuevas como las demás.
+- `node tools/verify.mjs` → **todo OK** (10 páginas, 9×2 responsive, funcional).
+
+
 
