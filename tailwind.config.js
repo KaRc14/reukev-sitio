@@ -13,6 +13,7 @@ module.exports = {
     "./sitio-web/privacidad.html",
     "./sitio-web/404.html",
     "./sitio-web/demos/**/*.html",
+    "./sitio-web/servicios/**/*.html",
   ],
   theme: {
     extend: {

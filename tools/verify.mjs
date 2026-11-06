@@ -11,6 +11,10 @@ const PUERTOS = [390, 1440];
 const PAGINAS = [
   { url: "/", nombre: "home" },
   { url: "/privacidad.html", nombre: "privacidad" },
+  { url: "/servicios/", nombre: "servicios" },
+  { url: "/servicios/catalogo-whatsapp/", nombre: "landing-catalogo" },
+  { url: "/servicios/agenda-citas/", nombre: "landing-agenda" },
+  { url: "/servicios/inventario-pymes/", nombre: "landing-inventario" },
   { url: "/demos/demo1-catalogo-pedidos/", nombre: "demo1" },
   { url: "/demos/demo2-clinica-dental/", nombre: "demo2" },
   { url: "/demos/demo3-inventario-reportes/", nombre: "demo3" },
