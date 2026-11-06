@@ -38,7 +38,7 @@ def svg(cls, name):
 
 
 HEAD_PLANTILLA = """<!DOCTYPE html>
-<html lang="es-EC">
+<html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -48,7 +48,7 @@ HEAD_PLANTILLA = """<!DOCTYPE html>
 <meta name="robots" content="index, follow"/>
 <meta name="theme-color" content="%(theme_color)s"/>
 <meta property="og:type" content="website"/>
-<meta property="og:locale" content="es_EC"/>
+<meta property="og:locale" content="es_LA"/>
 <meta property="og:site_name" content="ReuKev"/>
 <meta property="og:title" content="%(titulo)s"/>
 <meta property="og:description" content="%(desc)s"/>

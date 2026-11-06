@@ -53,6 +53,7 @@ export function comprobar(archivo) {
     if (m[1] !== NUMERO) errores.push("número de WhatsApp distinto: " + m[1]);
   }
   for (const m of h.matchAll(/<(?:script|link)[^>]*(?:src|href)="(https?:)?\/\/[^"]+"/g)) {
+    if (/rel="canonical"/.test(m[0])) continue; // canonical: URL absoluta obligatoria, no carga nada
     errores.push("recurso remoto incrustado: " + m[0].slice(0, 80));
   }
   const faltan = locales(h, archivo);
@@ -74,6 +75,7 @@ export function comprobarTodo() {
     ["robots.txt", "sitio-web/robots.txt"],
     ["sitemap.xml", "sitio-web/sitemap.xml"],
     ["netlify.toml", "netlify.toml"],
+    ["vercel.json", "vercel.json"],
   ];
   for (const [nombre, rutaRel] of extras) {
     if (!fs.existsSync(path.join(RAIZ, rutaRel)))

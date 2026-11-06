@@ -3,28 +3,36 @@
 Sitio estático de ReuKev. No hay base de datos ni backend: solo HTML, CSS compilado,
 imágenes y JS propios. Nada se carga desde CDN ni de Google.
 
-## Publicar (Netlify, configuración ya incluida)
+## Publicar (Vercel, configuración ya incluida)
 
-1. Reemplaza `[DOMINIO]` por tu dominio real en:
-   - `sitio-web/index.html`, `sitio-web/privacidad.html`,
-     `sitio-web/demos/*/index.html` (canonical, `og:url`, `og:image`),
-   - `sitio-web/robots.txt` y `sitio-web/sitemap.xml`.
-   `grep -rn "\[DOMINIO\]" sitio-web` los lista todos.
-   Con el dominio en la mano, el reemplazo es una línea (incluye la barra final,
-   que es lo que esperan canonical y sitemap):
+El dominio ya está definido y puesto en todo el sitio: **`https://reukev.vercel.app`**
+(index, privacidad, las 3 demos, `robots.txt` y `sitemap.xml`). Si algún día cambias a un
+dominio propio, se reemplaza en una línea (incluye la barra final, que es lo que esperan
+canonical y sitemap):
 
+```
+grep -rl "https://reukev.vercel.app" sitio-web | xargs sed -i 's|https://reukev.vercel.app|https://TU-NUEVO-DOMINIO|g'
+```
+
+### Pasos para publicar en Vercel
+
+1. **Crea el repositorio en GitHub** (no existe todavía) y sube el proyecto:
    ```
-   grep -rl "\[DOMINIO\]" sitio-web | xargs sed -i 's|\[DOMINIO\]|https://TU-DOMINIO|g'
+   git remote add origin https://github.com/TU-USUARIO/reukev-sitio.git
+   git push -u origin main
    ```
+   (En la web de GitHub: *New repository* → Nombre, p. ej. `reukev-sitio` → *Create repository*;
+   sin README ni `.gitignore` para no pisar los existentes.)
+2. **Importa el repo en Vercel**: [vercel.com/new](https://vercel.com/new) →
+   *Import Git Repository* → elige el repo.
+   - Framework: **Other** (no hace falta ninguno).
+   - **Build Command**: vacío. **Output Directory**: `sitio-web`
+     (lo detecta solo desde `vercel.json`, que ya fija `outputDirectory`).
+   - Instala solo en el primer deploy; los siguientes se publican solos con cada `git push`.
+3. Verificación antes de publicar: `node tools/verify.mjs` (ve más abajo).
 
-   Si será un subdominio gratis de Vercel o Netlify (p. ej. `reukev.vercel.app`),
-   el mismo comando sirve: `TU-DOMINIO` = `https://reukev.vercel.app`.
-2. Sube el repositorio a GitHub y conecta el hosting al repo:
-   - **Netlify**: detecta `netlify.toml`, que ya fija el directorio publicado
-     (`sitio-web`) y las cabeceras de seguridad (CSP incluida). Sin build.
-   - **Vercel**: marca `sitio-web` como directorio de salida y traslada las cabeceras
-     de `netlify.toml` a un `vercel.json` equivalente (misma CSP).
-3. Verificación rápida antes de publicar: `node tools/verify.mjs` (ve más abajo).
+`vercel.json` lleva las mismas cabeceras de seguridad que `netlify.toml` (CSP estricta
+incluida). `netlify.toml` se conserva por si algún día se publica también en Netlify.
 
 > La CSP publicada es estricta (`script-src 'self'`, sin `'unsafe-inline'`). Si añades
 > código nuevo, mantenlo en archivos `.js` dentro de `sitio-web/assets/js/` y usa
@@ -76,7 +84,7 @@ móvil, el formulario, el carrito de demo1, la agenda de demo2 y el kardex de de
   futuro se añaden créditos, genera las fotos como
   `sitio-web/assets/img/demos/demo3/varilla.webp` y `breaker.webp` (700×700, ≤40 KB) y
   quita el bloque `PLACEHOLDER_FOTO` de `tools/scripts-demos/demo3.py` antes de regenerar.
-- **Dominio real** (canonical/robots/sitemap): se definirá al publicar; se espera un
-  subdominio gratis de Vercel o Netlify. Mientras tanto los `[DOMINIO]` quedan como
-  marcadores y `node tools/verify.mjs` los avisa (no falla).
+- **Dominio real**: definido y aplicado (`https://reukev.vercel.app`). Si se compra un
+  dominio propio después, usa el `sed` de una línea del principio de este LEEME y
+  actualiza también `Sitemap:` de `robots.txt`.
 - Revisar si se quiere página de "créditos" de las demos (se eliminó en el reinicio F0).

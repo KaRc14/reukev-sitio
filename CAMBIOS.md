@@ -99,3 +99,44 @@ se genera desde `sitio-web/` con las herramientas de `tools/`.
   Resultado: **todo OK**.
 - Dos iconos `chat` sin reemplazar de la portada ahora son SVG de burbuja de WhatsApp.
 
+## F8 — Logo, marca de WhatsApp y alcance LatAm (esta sesión)
+- **Logo propio** (`sitio-web/assets/img/logo-reukev.svg`): cuadrado verde con monograma
+  "RK" en trazo blanco (sustituye a la burbuja genérica). Favicons regenerados desde la
+  misma marca: `favicon.svg`, `favicon-192.png`, `favicon-512.png` y `favicon.ico`
+  (rasterizados con Chromium vía script temporal; el `.ico` con PIL).
+- **Logo de WhatsApp** (path oficial de Simple Icons, incrustado e inline con
+  `fill="currentColor"`, ningún recurso externo) en los botones "Escríbeme"/"Escríbeme por
+  WhatsApp" de la portada (header, menú móvil, hero), en el botón del formulario y en el
+  enlace del número del pie. Las burbujas decorativas de las demos se mantienen.
+- **Sin marca de país**: `lang="es"` y `og:locale` `es_LA` en portada, privacidad, 404,
+  manifiesto y las 3 demos (template de `build_demos.py`); title/description/OG/JSON-LD,
+  badge y subtítulo del hero, tarjetas, FAQ, pie y privacidad pasan a "Latinoamérica"
+  / "atención remota"; `areaServed` ahora es `Place` "Latinoamérica"; los dominios de
+  ejemplo `.ec` pasan a `.com` (portada) y los dos textos con "Ecuador" dentro de demo3 se
+  neutralizan desde `demo3.py` para que la regeneración sea reproducible; el precio del
+  dominio deja de citar solo `.ec`.
+
+## F10 — Rediseño de marca y precios base (esta sesión)
+- **Logo nuevo**: `logo-reukev.svg` redibujado como monograma "RK" geométrico en blanco sobre
+  cuadrado redondeado `#059669`, con la pata de la R en zigzag (destello/rayo). Verificado
+  nítido a 32 px (header y favicon) y a 128 px. `favicon.svg` copia el logo; `favicon-192.png`,
+  `favicon-512.png` y `favicon.ico` regenerados desde render de Chromium + PIL.
+- **Previews de demos reales**: los 3 mockups de CSS de las tarjetas (que solo enseñaban un
+  fragmento inventado) se reemplazan por la **pantalla real de cada demo** en un marco de
+  navegador simulado (`aspect-[16/10] object-cover object-top` + overlay "Ver la demo completa").
+  Imágenes nuevas de 768×480: `assets/img/capturas/preview-{catalogo-pedidos,clinica-dental,
+  inventario-reportes}.webp` (22-28 KB), recortadas de las capturas 1440 con PIL.
+- **Precios como base**: sección `#precios-section` renombrada a "Tarifas de referencia",
+  con párrafo aclaratorio y banner avisando que el precio final se define en la cotización
+  a medida. Cada plan muestra "Desde · precio base" + `$X USD + IVA`; los CTA pasan a
+  "Cotizar plan …" con mensaje de WhatsApp pidiendo presupuesto; FAQ, pie y `priceRange`
+  del JSON-LD actualizados.
+- **"Cómo trabajo" sin foto personal**: `tu-foto.webp` (borrado) sustituido por el logo del
+  sitio a 128 px.
+- **Publicación en Vercel**: `[DOMINIO]` reemplazado por `https://reukev.vercel.app` en las
+  5 páginas, `robots.txt` y `sitemap.xml`; nuevo `vercel.json` (`outputDirectory: sitio-web`
+  + mismas cabeceras CSP/seguridad que `netlify.toml`, que se conserva). `tools/estatico.mjs`
+  ya no marca `rel="canonical"` absoluto como recurso remoto y comprueba `vercel.json`.
+- `npm run build:css` y `node tools/verify.mjs` → **todo OK** (sin avisos pendientes).
+
+

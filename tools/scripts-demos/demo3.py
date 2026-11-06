@@ -190,6 +190,17 @@ h = open(p, encoding="utf-8").read()
 
 # Acento grafito: los hex verdes del export pasan a los tokens del tema. El ámbar
 # de las alertas de stock se conserva porque es semántico.
+# Sin marca de país: la demo es de ejemplo y el servicio se ofrece en toda Latinoamérica
+for viejo, nuevo in [
+    ("Holcim Ecuador · Tipo Portland", "Cemento Tipo Portland · Marca de ejemplo"),
+    (
+        "Método Valuación: Promedio Ponderado (SRI Ecuador)",
+        "Método Valuación: Promedio Ponderado (SRI)",
+    ),
+]:
+    assert viejo in h, "texto no encontrado en demo3: %r" % viejo
+    h = h.replace(viejo, nuevo)
+
 for viejo, nuevo in [
     ("bg-[#059669]", "bg-primary"),
     ("bg-[#047857]", "bg-primary-hover"),
