@@ -7,6 +7,7 @@
     "build:css": "npx tailwindcss@3.4.17 -i src/tailwind.css -o sitio-web/assets/css/site.css --minify",
     "verify": "node tools/verify.mjs",
     "capturas": "node tools/capturas.mjs",
+    "og": "node tools/og.mjs",
     "serve": "python3 -m http.server 8080 --directory sitio-web"
   },
   "devDependencies": {

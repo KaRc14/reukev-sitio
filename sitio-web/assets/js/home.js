@@ -31,7 +31,7 @@ if (form) {
     var nombre = (document.getElementById("client-name") || {}).value || "";
     var negocio = (document.getElementById("client-business") || {}).value || "";
     var necesidad = (document.getElementById("client-need") || {}).value || "";
-    var texto = "Hola Kevin, soy " + nombre.trim() + ' de "' + negocio.trim() + '". Necesito: ' + necesidad.trim();
+    var texto = "[Web · Formulario] Hola Kevin, soy " + nombre.trim() + ' de "' + negocio.trim() + '". Necesito: ' + necesidad.trim();
     window.open(waLink(texto), "_blank", "noopener");
   });
 }

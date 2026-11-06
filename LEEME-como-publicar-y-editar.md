@@ -69,8 +69,26 @@ incluida). `netlify.toml` se conserva por si algún día se publica también en 
 npm run build:css     # recompila el CSS con Tailwind
 node tools/verify.mjs # verificación completa (estática + funcional en Chromium)
 node tools/capturas.mjs# regenera las capturas WebP
+node tools/og.mjs     # regenera la imagen social og:image (4 JPG de 1200x630)
 npm run serve         # servidor local en http://localhost:8080 (sitio-web/)
 ```
+
+`npm run og` corre `tools/og.mjs`, que captura el hero con Playwright y lo pasa por
+`tools/og.py` (PIL) para recortarlo a 1200×630 y guardarlo como JPEG en
+`sitio-web/assets/img/og/`. Los 3 JPG de las demos salen de las capturas existentes con el
+mismo `tools/og.py`. Debe ser **JPG/PNG**: WhatsApp y Facebook no pintan vistas previas
+en WebP.
+
+## Medir visitas y consultas
+
+- **Vercel Web Analytics** (activar una sola vez): proyecto `reukev-sitio` en Vercel →
+  pestaña *Analytics* → *Enable*. Es first-party (mismo origen), sin cookies y no rompe la
+  CSP. Lo carga `sitio-web/assets/js/insights.js`, que solo sondea en producción y no
+  inserta nada si la analítica está desactivada.
+- **Consultas de WhatsApp**: cada botón manda el origen dentro del mensaje
+  (`[Web · Precios]`, `[Web · Formulario]`, `[Demo 2 · Clínica]`…), así que en la bandeja de
+  entrada se ve de qué sección o demo llegó cada cliente. Si añades un botón nuevo, pon la
+  etiqueta al principio del `data-wa`.
 
 `tools/verify.mjs` revisa: recursos externos, scripts/estilos inline, iconos sin migrar,
 textos menores de 14 px, número de WhatsApp único, archivos referenciados que existan,

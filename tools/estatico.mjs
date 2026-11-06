@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const NUMERO = "593991371570";
-const HOY = "2026-11-04";
+const HOY = "2026-11-06";
 
 function paginas() {
   return [

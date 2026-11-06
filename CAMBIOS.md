@@ -139,4 +139,40 @@ se genera desde `sitio-web/` con las herramientas de `tools/`.
   ya no marca `rel="canonical"` absoluto como recurso remoto y comprueba `vercel.json`.
 - `npm run build:css` y `node tools/verify.mjs` → **todo OK** (sin avisos pendientes).
 
+## F11 — Captación: compartible, medible y posicionable (esta sesión)
+
+Sprint 1 del plan de atracción de visitas, con foco en **Ecuador primero**.
+
+- **Imagen social en formato que sí se ve**: nuevo `assets/img/og/` con 4 JPG de 1200×630
+  (`reukev-og.jpg` + uno por demo), generados por `tools/og.mjs` (captura del hero con
+  Playwright + recorte con PIL en `tools/og.py`). WhatsApp y Facebook no pintan vistas
+  previas en WebP, así que los `og:image` pasaron a JPG con `og:image:type/width/height/alt`,
+  `twitter:title/description/image` en las 5 páginas. Total ~250 KB.
+- **Copy de meta alineada al posicionamiento final**: `description` y `og:description` de la
+  portada ya no dicen "Precio fijo"; el H1 y el badge del hero tampoco
+  ("La construyo a tu medida, con precio claro" / "Precio base cerrado antes de empezar"),
+  que es lo que Google muestra al compartir.
+- **Datos estructurados reales**: el JSON-LD pasa a `@graph` con
+  `ProfessionalService` ampliado (`address` Pichincha/Quito, `areaServed` con Ecuador,
+  Quito, Guayaquil y Cuenca, `hasOfferCatalog` con los 3 planes desde \$250/\$490/\$1.150,
+  `sameAs` al repo, imagen y logo) **y un `FAQPage` con las 8 preguntas y respuestas
+  reales de la página**. Google puede mostrar el FAQ como resultado enriquecido.
+- **Medición**: `assets/js/insights.js` activa **Vercel Web Analytics** (script mismo
+  origen, sin cookies, compatible con la CSP estricta). Solo sondea en producción: en
+  local la ruta no existe y no ensucia la consola. Requiere activar *Analytics* en el
+  panel de Vercel; si no se activa, el sitio no se rompe.
+- **Origen de cada consulta**: los 11 CTA de WhatsApp de la portada, los 6 de las demos y
+  el formulario llevan el origen grabado en el texto del mensaje (`[Web · Precios]`,
+  `[Demo 2 · Clínica]`, `[Web · Formulario]`), así que cada mensaje que llegue dice de
+  dónde vino sin consultar ninguna herramienta.
+- **`README.md` del repo** (nuevo): portada del proyecto con enlace al sitio vivo, las 3
+  demos, precios base, stack, comandos y contacto. Mejora la carta de presentación en
+  GitHub y funciona como backlink.
+- **Higiene**: `sitemap.xml` con `lastmod` actualizado; `HOY` en `tools/estatico.mjs` al día.
+- `node tools/verify.mjs` → **todo OK**.
+
+**Nota:** si Vercel Analytics no se activa, `insights.js` no inserta nada (el sitio
+funciona igual). Para las visitas orgánicas, siguiente paso: registrar el sitio en
+Google Search Console y Bing Webmaster Tools.
+
 

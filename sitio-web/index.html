@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ReuKev · Desarrollo web a medida para negocios en Latinoamérica</title>
-<meta name="description" content="Desarrollo sitios y aplicaciones web a medida para negocios de Latinoamérica: webs informativas, catálogos, agendas, inventario y automatizaciones. Precio fijo, entrega en días y trato directo por WhatsApp."/>
+<meta name="description" content="Desarrollo sitios y aplicaciones web a medida para negocios de Latinoamérica: webs informativas, catálogos, agendas, inventario y automatizaciones. Precios base desde USD 250, cotización a medida, entrega en días y trato directo por WhatsApp."/>
 <link rel="canonical" href="https://reukev.vercel.app/"/>
 <meta name="robots" content="index, follow"/>
 <meta name="theme-color" content="#FFFFFF"/>
@@ -14,10 +14,18 @@
 <meta property="og:locale" content="es_LA"/>
 <meta property="og:site_name" content="ReuKev"/>
 <meta property="og:title" content="ReuKev · Desarrollo web a medida para negocios en Latinoamérica"/>
-<meta property="og:description" content="Webs informativas, catálogos, agendas, inventario y automatizaciones. Precio fijo, entrega en días, trato directo. Mira las 3 demos funcionando."/>
-<meta property="og:image" content="https://reukev.vercel.app/assets/img/capturas/home-hero.webp"/>
+<meta property="og:description" content="Webs informativas, catálogos, agendas, inventario y automatizaciones con precios base y cotización a medida. Entrega en días y trato directo. Mira las 3 demos funcionando."/>
+<meta property="og:image" content="https://reukev.vercel.app/assets/img/og/reukev-og.jpg"/>
+<meta property="og:image:secure_url" content="https://reukev.vercel.app/assets/img/og/reukev-og.jpg"/>
+<meta property="og:image:type" content="image/jpeg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="Panel de ReuKev con los últimos pedidos confirmados, ventas por WhatsApp y aviso de inventario crítico funcionando."/>
 <meta property="og:url" content="https://reukev.vercel.app/"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ReuKev · Desarrollo web a medida para negocios en Latinoamérica"/>
+<meta name="twitter:description" content="Precios base y cotización a medida. Entrega en días, trato directo por WhatsApp. Mira las 3 demos funcionando."/>
+<meta name="twitter:image" content="https://reukev.vercel.app/assets/img/og/reukev-og.jpg"/>
 
 <!-- Favicon -->
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml"/>
@@ -25,25 +33,146 @@
 <link rel="apple-touch-icon" href="assets/img/favicon-192.png"/>
 <link rel="manifest" href="site.webmanifest"/>
 
-<!-- CSS y JS propios (sin CDN ni recursos externos) -->
+<!-- CSS, JS propios y analítica first-party (todo mismo origen, sin CDN) -->
 <link rel="stylesheet" href="assets/css/site.css"/>
 <script src="assets/js/wa.js" defer></script>
+<script src="assets/js/insights.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "ReuKev",
-  "description": "Desarrollo web a medida para negocios de Latinoamérica: sitios informativos, catálogos, agendas, inventario y automatizaciones.",
-  "url": "https://reukev.vercel.app/",
-  "telephone": "+593991371570",
-  "priceRange": "Desde USD 250 + IVA (precios base, cotización a medida)",
-  "areaServed": { "@type": "Place", "name": "Latinoamérica" },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+593991371570",
-    "contactType": "Ventas",
-    "availableLanguage": ["es"]
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://reukev.vercel.app/#servicio",
+      "name": "ReuKev",
+      "description": "Desarrollo web a medida para negocios de Latinoamérica: sitios informativos, catálogos, agendas, inventario y automatizaciones con precios base y cotización a medida.",
+      "url": "https://reukev.vercel.app/",
+      "telephone": "+593991371570",
+      "image": "https://reukev.vercel.app/assets/img/og/reukev-og.jpg",
+      "logo": "https://reukev.vercel.app/assets/img/logo-reukev.svg",
+      "priceRange": "Desde USD 250 + IVA",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Transferencia bancaria, WhatsApp Business",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "EC",
+        "addressRegion": "Pichincha",
+        "addressLocality": "Quito"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Ecuador" },
+        { "@type": "City", "name": "Quito" },
+        { "@type": "City", "name": "Guayaquil" },
+        { "@type": "City", "name": "Cuenca" },
+        { "@type": "Place", "name": "Latinoamérica (atención remota)" }
+      ],
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://reukev.vercel.app/",
+        "servicePhone": { "@type": "ContactPoint", "telephone": "+593991371570", "contactType": "Ventas" },
+        "availableLanguage": ["es"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Planes base (precios base en USD + IVA, cotización a medida)",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Plan Básico",
+            "price": "250",
+            "priceCurrency": "USD",
+            "description": "1 web informativa o catálogo con pedidos directos por WhatsApp, 1 automatización puntual, capacitación en video y 30 días de garantía. Precio base: se cotiza a medida según el alcance."
+          },
+          {
+            "@type": "Offer",
+            "name": "Plan Estándar",
+            "price": "490",
+            "priceCurrency": "USD",
+            "description": "Hasta 3 piezas conectadas (agenda de citas, panel de pedidos, cotizador PDF), hasta 3 automatizaciones ligeras, 2 rondas de revisión y garantía de 30 días. Precio base: se cotiza a medida."
+          },
+          {
+            "@type": "Offer",
+            "name": "Plan Avanzado",
+            "price": "1150",
+            "priceCurrency": "USD",
+            "description": "Usuarios con roles y permisos, reportes automáticos programados, conexión con tu facturador por API y capacitación en vivo. Precio base: se cotiza a medida."
+          }
+        ]
+      },
+      "sameAs": ["https://github.com/KaRc14/reukev-sitio"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://reukev.vercel.app/#faq",
+      "isPartOf": { "@id": "https://reukev.vercel.app/#servicio" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tengo tres planes con precios base publicados: Básico (desde $250), Estándar (desde $490) y Avanzado (desde $1.150) en USD + IVA. Como cada negocio pide cosas distintas, tomo ese valor como punto de partida y te entrego una cotización a medida por escrito antes de empezar. Una vez acordado el alcance, el precio no sube durante el desarrollo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿En cuánto tiempo lo tengo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del alcance acordado: un catálogo básico toma de 3 a 7 días hábiles. Sistemas conectados estándar entre 1 y 2 semanas. Desarrollos a medida con facturador toman entre 2 y 4 semanas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El código es mío?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, 100%. No te ato a contratos forzosos. Todo queda registrado en cuentas a tu nombre (dominio, servidor y repositorio de código si aplica). Tienes control absoluto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Y si algo falla?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Todos los proyectos cuentan con 30 días de garantía sin costo adicional. Si detectas un error o algo no funciona como acordamos, lo corrijo de inmediato como prioridad."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Por qué no uso Tiendanube, Shopify o un facturador genérico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Las plataformas globales cobran mensualidades eternas, comisiones por venta y te obligan a adaptar tus procesos a sus plantillas rígidas. Yo te construyo una herramienta liviana que hace exactamente lo que tu negocio necesita, sin mensualidades obligadas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Sirve para un negocio pequeño o un rubro poco común?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Trabajo con negocios de cualquier rubro: desde una web informativa para darme a conocer hasta pedidos, citas, inventario o reportes. Si manejas entre 10 y 200 pedidos o citas por semana, un sistema simple te ordena el día a día y te devuelve tiempo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién paga el dominio y el hosting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tú, y quedan registrados a tu nombre: son tuyos, no míos. Un dominio (.com, .ec u otro) ronda los 15 a 55 USD al año y el hosting depende del tamaño del sistema; te aconsejo la opción más simple que sirva y te ayudo a contratarlos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo sigue después de la entrega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Con 30 días de garantía incluidos, sin costo. Si después quieres que siga pendiente del sistema, el mantenimiento mensual es de 35, 60 o 110 USD según el plan, con horas de ajustes ya incluidas. Lo que queda fuera de ese alcance se cobra de 35 a 50 USD por hora y solo se hace con tu aprobación escrita."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -62,7 +191,7 @@
 <a class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors rounded-lg" href="#faq-section">Preguntas</a>
 </nav>
 <div class="flex items-center gap-space-xs">
-<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded transition-colors shadow-card" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20tengo%20una%20consulta%20sobre%20tus%20servicios%20para%20mi%20negocio." rel="noopener noreferrer" target="_blank">
+<a class="hidden sm:inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-2.5 rounded transition-colors shadow-card" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Header%5D%20Hola%20Kevin%2C%20tengo%20una%20consulta%20sobre%20tus%20servicios%20para%20mi%20negocio." rel="noopener noreferrer" target="_blank">
 <svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 <span>Escríbeme</span>
 </a>
@@ -79,7 +208,7 @@
 <a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#proceso">Cómo trabajo</a>
 <a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#faq-section">Preguntas</a>
 <a class="py-space-sm font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#contacto-section">Contacto</a>
-<a class="mt-space-xs inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-3 rounded transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20quiero%20cotizar%20la%20web%20de%20mi%20negocio%20desde%20el%20men%C3%BA%20del%20sitio." rel="noopener noreferrer" target="_blank">
+<a class="mt-space-xs inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-space-md py-3 rounded transition-colors" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Men%C3%BA%20m%C3%B3vil%5D%20Hola%20Kevin%2C%20quiero%20cotizar%20la%20web%20de%20mi%20negocio." rel="noopener noreferrer" target="_blank">
 <svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 <span>Escríbeme por WhatsApp</span>
 </a>
@@ -99,13 +228,13 @@
 <span class="font-label-sm text-label-sm text-primary">Desarrollo web a medida para negocios en Latinoamérica</span>
 </div>
 <h1 class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface tracking-tight">
-            Tu negocio necesita una web que trabaje para ti. La construyo con precio fijo.
+            Tu negocio necesita una web que trabaje para ti. La construyo a tu medida, con precio claro.
           </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
             Desde una web informativa hasta pedidos, citas, inventario y reportes. Desarrollo a medida para negocios de Latinoamérica: entrega en días y el código es tuyo.
           </p>
 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm pt-space-xs">
-<a class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-6 py-3.5 rounded-[10px] shadow-sm transition-all duration-200 hover:shadow-md" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20cotizar%20un%20sistema%20para%20mi%20negocio" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md px-6 py-3.5 rounded-[10px] shadow-sm transition-all duration-200 hover:shadow-md" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Portada%5D%20Hola%20Kevin%2C%20quiero%20cotizar%20un%20sistema%20para%20mi%20negocio" rel="noopener noreferrer" target="_blank">
 <svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
 <span>Escríbeme por WhatsApp</span>
 </a>
@@ -118,7 +247,7 @@
 <div class="pt-space-md mt-space-xs flex flex-col sm:flex-row sm:items-center gap-y-3 gap-x-6 text-on-surface-variant font-label-sm text-label-sm">
 <div class="flex items-center gap-2">
 <svg class="inline-block shrink-0 w-[20px] h-[20px] text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-<span>Precio fijo antes de empezar</span>
+<span>Precio base cerrado antes de empezar</span>
 </div>
 <span class="hidden sm:inline text-outline-variant font-bold">·</span>
 <div class="flex items-center gap-2">
@@ -270,7 +399,7 @@
 </div>
 <h3 class="font-headline-sm text-headline-sm text-on-surface">Automatizaciones y conexiones a tu medida</h3>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Avisos, registros y tareas repetidas resueltas solas. En el plan Avanzado incluye la conexión con tu facturador por API; el SRI directo se cotiza como extra aparte.</p>
-<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20necesito%20una%20automatizaci%C3%B3n%20para%20mi%20negocio%20y%20quiero%20que%20me%20la%20cotes." rel="noopener noreferrer" target="_blank">Cuéntame tu caso
+<a class="inline-flex items-center gap-1.5 text-primary font-label-md text-label-md hover:underline mt-1" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Servicios%5D%20Hola%20Kevin%2C%20necesito%20una%20automatizaci%C3%B3n%20para%20mi%20negocio%20y%20quiero%20que%20me%20la%20cotes." rel="noopener noreferrer" target="_blank">Cuéntame tu caso
 <svg class="inline-block shrink-0 w-[20px] h-[20px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 </a>
 </div>
@@ -358,7 +487,7 @@
             Sitios y herramientas creados para ser aprendidos en menos de 10 minutos. Cero configuraciones enredadas.
           </p>
 </div>
-<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline self-start md:self-auto" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20probar%20las%20demos%20en%20vivo" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline self-start md:self-auto" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Demos%5D%20Hola%20Kevin%2C%20quiero%20probar%20las%20demos%20en%20vivo" rel="noopener noreferrer" target="_blank">
 <span>Solicitar demo guiada</span>
 <svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 </a>
@@ -539,7 +668,7 @@
             </p>
 </div>
 </div>
-<a class="whitespace-nowrap px-4 py-2 rounded-[10px] bg-secondary-container/70 text-primary font-label-md text-label-md hover:bg-secondary-container transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20postular%20al%20Programa%20Fundadores%20con%2020%25%20de%20descuento" rel="noopener noreferrer" target="_blank">
+<a class="whitespace-nowrap px-4 py-2 rounded-[10px] bg-secondary-container/70 text-primary font-label-md text-label-md hover:bg-secondary-container transition-colors" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Fundadores%5D%20Hola%20Kevin%2C%20quiero%20postular%20al%20Programa%20Fundadores%20con%2020%25%20de%20descuento" rel="noopener noreferrer" target="_blank">
           Aplicar al cupo (-20%)
         </a>
 </div>
@@ -581,7 +710,7 @@
 </ul>
 </div>
 <div class="pt-8">
-<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Basico%20(base%20250%20USD)" rel="noopener noreferrer" target="_blank">
+<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Precios%5D%20Hola%20Kevin%2C%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Basico%20(base%20250%20USD)" rel="noopener noreferrer" target="_blank">
               Cotizar plan Básico
             </a>
 </div>
@@ -628,7 +757,7 @@
 </ul>
 </div>
 <div class="pt-8">
-<a class="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-all duration-200" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Estandar%20(base%20490%20USD)" rel="noopener noreferrer" target="_blank">
+<a class="w-full inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-all duration-200" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Precios%5D%20Hola%20Kevin%2C%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Estandar%20(base%20490%20USD)" rel="noopener noreferrer" target="_blank">
               Cotizar plan Estándar
             </a>
 </div>
@@ -669,7 +798,7 @@
 </ul>
 </div>
 <div class="pt-8">
-<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=Hola%20Kevin,%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Avanzado%20(base%201150%20USD)" rel="noopener noreferrer" target="_blank">
+<a class="w-full inline-flex items-center justify-center bg-surface hover:bg-surface-container text-on-surface font-label-md text-label-md py-3 rounded-[10px] shadow-sm transition-colors" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Precios%5D%20Hola%20Kevin%2C%20quiero%20mi%20cotizacion%20a%20medida%20sobre%20el%20plan%20Avanzado%20(base%201150%20USD)" rel="noopener noreferrer" target="_blank">
               Cotizar plan Avanzado
             </a>
 </div>
@@ -716,7 +845,7 @@
 <!-- Custom Project Prompt -->
 <div class="mt-space-lg text-center font-body-md text-body-md text-on-surface-variant">
 <span>¿Necesitas algo distinto a los planes base? </span>
-<a class="text-primary font-semibold hover:underline inline-flex items-center gap-1" href="https://wa.me/593991371570?text=Hola%20Kevin,%20necesito%20un%20proyecto%20a%20medida" rel="noopener noreferrer" target="_blank">
+<a class="text-primary font-semibold hover:underline inline-flex items-center gap-1" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Precios%5D%20Hola%20Kevin%2C%20necesito%20un%20proyecto%20a%20medida" rel="noopener noreferrer" target="_blank">
 <span>Armemos tu cotización.</span>
 <svg class="inline-block shrink-0 w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 </a>
@@ -954,7 +1083,7 @@ Con 30 días de garantía incluidos, sin costo. Si después quieres que siga pen
 <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">ReuKev</span>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Desarrollo web a medida para negocios de Latinoamérica: webs informativas, catálogos, agendas, inventario y automatizaciones. Trato directo y precios base publicados: tu cotización llega antes de empezar.</p>
-<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="https://wa.me/593991371570?text=Hola%20Kevin%2C%20te%20escribo%20desde%20el%20pie%20de%20tu%20sitio." rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2 text-primary font-label-md text-label-md hover:underline" href="https://wa.me/593991371570?text=%5BWeb%20%C2%B7%20Pie%5D%20Hola%20Kevin%2C%20te%20escribo%20desde%20tu%20sitio." rel="noopener noreferrer" target="_blank">
 <svg class="inline-block shrink-0 w-[18px] h-[18px]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>+593 99 137 1570</span>
 </a>
 </div>
